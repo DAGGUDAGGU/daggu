@@ -3,7 +3,7 @@
 
 <head>
     <title></title>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
@@ -21,7 +21,8 @@
     <div class="container">
         <img src="img/다이어리커버1.png" width="1048px" height="536px">
     </div>
-    <div class="tap_wrap">
+    <div class="tab_wrap">
+        <div class="slide_btn"></div>
         <ul class="nav nav-tabs nav-justified">
             <li class="active"><a href="#maskingTape" data-toggle="tab">MASKING TAPE</a></li>
             <li><a href="#notePaper" data-toggle="tab">MEMO PAD</a></li>
@@ -64,7 +65,6 @@
                 </section>
             </div>
             <div class="tab-pane" id="notePaper">
-                <!-- <p>tab2 부분입니다.</p> -->
                 <section class="center slider">
                     <div>
                         <img src="img/notePad/ALWAYS.png">
@@ -89,14 +89,13 @@
                     </div>
                     <div>
                         <img src="img/notePad/꽃들.png">
-                    </div>  
+                    </div>
                     <div>
                         <img src="img/notePad/달떡메.png">
                     </div>
                 </section>
             </div>
             <div class="tab-pane" id="sticker">
-                <!-- <p>tab3 부분입니다.</p> -->
                 <section class="center slider">
                     <div>
                         <img src="img/stiker/Feelsgood.png">
@@ -121,7 +120,7 @@
                     </div>
                     <div>
                         <img src="img/stiker/구름.png">
-                    </div>  
+                    </div>
                     <div>
                         <img src="img/stiker/구름스티커.png">
                     </div>
@@ -150,6 +149,18 @@
             slidesToShow: 5,
             arrows: true,
             slidesToScroll: 5
+        });
+
+        $('.slide_btn').click(function () {
+
+            if ($('.tab_wrap').hasClass('down')) { //슬라이드가 아래로 내려가있는 상태
+                $('.tab_wrap,html').removeClass('on');
+                $('.tab_wrap,html').css('top', '50%');
+            } else { // 슬라이드 올라와있는 상태
+                $('.tab_wrap,html').addClass('down');
+                $('.tab_wrap,html').css('top', '100%');
+            }
+
         });
     </script>
 
