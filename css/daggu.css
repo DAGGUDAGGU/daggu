@@ -19,9 +19,10 @@ body {
     width: 100%;
     position: fixed;
     left: 0;
-    top: 50%;
     transition: all 600ms ease-in-out;
 }
+
+.tap_content {}
 
 #arrowBack {
     position: fixed;
