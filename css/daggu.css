@@ -10,8 +10,9 @@ body {
 
 .slide_btn {
     /*슬라이드 업 다운버튼*/
+    
     width: 50px;
-    height: 50px;
+    height: 50px;  
     background-color: aquamarine;
     border-radius: 30px;
     float: right;

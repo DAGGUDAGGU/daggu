@@ -19,6 +19,8 @@
 <body>
     <!-- 꾸미는 쪽 -->
     <img class="center-block" src="img/다이어리커버1.png" width="1048px" height="536px">
+    <!-- 테스트입니다 / 속지가 화면에 출력안됨-->
+    <img class="paperInCover" src="img/paper/격자.png">
     </div>
     <div class="tab_wrap down">
         <div class="slide_btn"></div>
@@ -129,7 +131,37 @@
                 <p>tab4 부분입니다.</p>
             </div>
             <div class="tab-pane" id="paper">
-                <p>tab5s 부분입니다.</p>
+                <!-- <p>tab5s 부분입니다.</p> -->
+                <section class="center slider">
+                    <div>
+                        <img src="img/paper/격자.png">
+                    </div>
+                    <div>
+                        <img src="img/paper/그라데이션-보라노랑.png">
+                    </div>
+                    <div>
+                        <img src="img/paper/그라데이션-블루그린.png">
+                    </div>
+                    <div>
+                        <img src="img/paper/그라데이션-핑크블루.png">
+                    </div>
+                    <div>
+                        <img src="img/paper/그라데이션-혼종.png">
+                    </div>
+                    <div>
+                        <img src="img/paper/노랑.png">
+                    </div>
+                    <div>
+                        <img src="img/paper/보라.png">
+                    </div>
+                    <div>
+                        <img src="img/paper/보라격자.png">
+                    </div>
+                    <div>
+                        <img src="img/paper/블랙.png">
+                    </div>
+                </section>
+
             </div>
         </div>
     </div>
@@ -151,7 +183,6 @@
         });
 
         $('.slide_btn').click(function () {
-
             if ($('.tab_wrap').hasClass('down')) { //슬라이드가 아래로 내려가있는 상태
                 $('.tab_wrap,html').removeClass('down');
                 $('.tab_wrap,html').css('top', '50%');
