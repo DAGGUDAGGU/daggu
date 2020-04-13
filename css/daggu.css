@@ -2,6 +2,12 @@ body {
     background-color: #EAE6F2;
 }
 
+#arrowBack {
+    position: fixed;
+    left: 0;
+    top: 10px;
+}
+
 .slide_btn {
     /*슬라이드 업 다운버튼*/
     width: 50px;
@@ -18,16 +24,8 @@ body {
     background-color: white;
     width: 100%;
     position: fixed;
-    left: 0;
+    top: 100%;
     transition: all 600ms ease-in-out;
-}
-
-.tap_content {}
-
-#arrowBack {
-    position: fixed;
-    left: 0;
-    top: 10px;
 }
 
 .nav li a {
@@ -38,16 +36,26 @@ body {
     color: #933DEA !important;
 }
 
-/*슬라이드 이미지*/
-.slick-slide img {
-    width: 100%;
-    background-size: 100px;
+
+.tab-pane {
+    position: relative;
+    height: 500px;
 }
 
 .slider {
-    position: relative;
+
     width: 80%;
     margin: 0 auto;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+
+}
+
+/*슬라이드 이미지*/
+.slider div img {
+    width: 100%;
+    background-size: 100px;
 }
 
 /*슬라이드 화살표 둘다*/
@@ -57,6 +65,8 @@ body {
     width: 45px;
     height: 45px;
 }
+
+
 
 /*슬라이드 왼쪽 화살표*/
 .slick-prev {
