@@ -8,13 +8,32 @@ body {
     top: 10px;
 }
 
+.diary {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.diary_cover {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+}
+
+.diary_paper {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+}
 
 
 .slide_btn {
     /*슬라이드 업 다운버튼*/
-    
+
     width: 50px;
-    height: 50px;  
+    height: 50px;
     background-color: aquamarine;
     border-radius: 30px;
     float: right;
