@@ -44,13 +44,13 @@
                 top: 90px;
                 left: 230px;
             }
-            .on-selection>.text-uppercase{
+            .on-selection > .text-uppercase {
                 position: relative;
                 top: 30px;
                 left: 20px;
                 font-size: 40px;
             }
-            .on-selection>.img-responsive{
+            .on-selection > .img-responsive {
                 position: relative;
                 width: 800px;
                 top: 70px;
@@ -62,11 +62,18 @@
                 margin: 0;
                 padding: 0;
                 top: 280px;
-                left:275px;
+                left: 275px;
             }
-            .image_selection>.img-responsive{
+            .image_selection > .img-responsive {
                 padding: 10px;
-            }           
+            }
+            @media (max-width: 500px){
+                .main-text{
+                    position: absolute;
+                    top: 250px;
+                    left:-200px;
+                }
+            }
         </style>
     </head>
     <body>
@@ -87,15 +94,16 @@
                 </li>
             </ul>
         </div>
-        <div class="on-selection">
-            <p class="text-uppercase">forum</p>
-            <img src="img/line.png" class="img-responsive">
-        </div>
-        <div class="image_selection">
+        <div class="main-text">
+            <div class="on-selection">
+                <p class="text-uppercase">forum</p>
+                <img src="img/line.png" class="img-responsive">
+            </div>
+            <div class="image_selection">
                 <img src="img/image.png" class="img-responsive">
                 <img src="img/image.png" class="img-responsive">
+            </div>
         </div>
-
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.js"></script>
     </body>
