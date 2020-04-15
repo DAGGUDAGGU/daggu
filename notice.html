@@ -2,19 +2,83 @@
 <html>
     <head>
         <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>다꾸 게시판</title>
-        <link rel="stylesheet" href="./css/notice.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <style>
+            /*시작*/
+            #left-selection {
+                position: absolute;
+                width: 150px;
+                height: 20px;
+                margin-top: 8px;
+            }
+            .left-selection>.img-responsive {
+                margin-left: 15px;
+                
+            }
+            ul {
+                list-style: none;
+                position: absolute;
+                top: 120px;
+                left: 20px;
+            }
+            li:before {
+                position: absolute;
+                left: 20px;
+                content: url("img/dot.png");
+                color: blueviolet;
+            }
+            .text {
+                position: relative;
+                top: -9px;
+                left: 3PX;
+                text-decoration: none;
+                color: black;
+                font-size: 17PX;
+                font-family: "Noto Sans KR";
+                font-weight: normal;
+                line-height: 40px;
+            }
+            .on-selection {
+                position: absolute;
+                top: 90px;
+                left: 230px;
+            }
+            .on-selection>.text-uppercase{
+                position: relative;
+                top: 30px;
+                left: 20px;
+                font-size: 40px;
+            }
+            .on-selection>.img-responsive{
+                position: relative;
+                width: 800px;
+                top: 70px;
+                left: 15px;
+            }
+            /*본문 이미지쪽*/
+            .image_selection {
+                position: absolute;
+                margin: 0;
+                padding: 0;
+                top: 280px;
+                left:275px;
+            }
+            .image_selection>.img-responsive{
+                padding: 10px;
+            }           
+        </style>
     </head>
     <body>
         <div id="left-selection">
-            <img src="img/circle.png" class="circle-img">
+            <img src="img/circle.png" class="img-responsive">
             <ul>
                 <li>
                     <a href="findpw.html" class="text">DAGGU</a>
                 </li>
                 <li>
-                    <a href="notice.html" 
-                    class="text" style="color: #FBDA65;">FORUM</a>
+                    <a href="notice.html" class="text" style="color: #FBDA65;">FORUM</a>
                 </li>
                 <li>
                     <a href="signin.html" class="text">MYPAGE</a>
@@ -24,13 +88,16 @@
                 </li>
             </ul>
         </div>
-        <div id="on-selection">
-            <p class="forum">FORUM</p>
-            <img src="img/line.png" class="line">
+        <div class="on-selection">
+            <p class="text-uppercase">forum this is test</p>
+            <img src="img/line.png" class="img-responsive">
         </div>
-        <div id="image-selection">
-            <img src="img/image.png" class="image1">
-            <img src="img/image.png" class="image2">
+        <div class="image_selection">
+                <img src="img/image.png" class="img-responsive">
+                <img src="img/image.png" class="img-responsive">
         </div>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.js"></script>
     </body>
 </html>
