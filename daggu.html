@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
 
     <!--slick CDN-->
     <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
@@ -24,7 +27,11 @@
     </div>
 
     <!--완성버튼-->
-    <button class="btn complete_btn">COMPLETE</button>
+    <div class="complete">
+        <input type="checkbox" checked data-toggle="toggle" data-on="공개" data-off="비공개" data-onstyle="warning"
+            data-style="slow" data-width="100px" data-height="40px">
+        <button class="btn complete_btn">COMPLETE</button>
+    </div>
 
     <div class="tab_wrap down">
         <!--슬라이드 버튼-->
@@ -40,7 +47,7 @@
             <li class="active"><a href="#maskingTape" data-toggle="tab">MASKING TAPE</a></li>
             <li><a href="#notePaper" data-toggle="tab">MEMO PAD</a></li>
             <li><a href="#sticker" data-toggle="tab">STICKER</a></li>
-            <li><a href="#font" data-toggle="tab">FONT</a></li>
+            <li><a href="#text" data-toggle="tab">TEXT</a></li>
             <li><a href="#paper" data-toggle="tab">PAPER</a></li>
         </ul>
         <!--탭 메뉴 하단-->
@@ -139,13 +146,12 @@
                     </div>
                 </section>
             </div>
-            <div class="tab-pane" id="font">
-                <!-- <p>tab4 부분입니다.</p> -->
+            <div class="tab-pane" id="text">
                 <form>
-                    <textarea placeholder="텍스트를 입력하세요." id="text" rows="10" cols="200" ></textarea>
+                    <textarea placeholder="텍스트를 입력하세요." class="form-control" rows="10" cols="200"></textarea>
                     <!-- <input type="submit" value="입력하기">-->
-                    <button type="button" onclick="alert('테스트')" value="제출"
-                    style="width:60pt;height:30pt;">제출</button>
+                    <button type="button" onclick="alert('테스트')" class="text_btn" value="제출"
+                        style="width:60pt;height:30pt;">제출</button>
                     <!-- 입력하면 새로고침이 됨 ㅠㅠ -->
                 </form>
             </div>
@@ -153,7 +159,7 @@
                 <section class="center slider">
                     <div>
                         <img src="img/paper/격자.png">
-                    </div> #paper section div img
+                    </div>
                     <div>
                         <img src="img/paper/그라데이션-보라노랑.png">
                     </div>
@@ -221,12 +227,11 @@
             var src = $(event.target).attr("src");
             $('.diary_paper').attr("src", src);
         });
-        
+
         // 새로고침, 뒤로가기 버튼 누르면 경고창 띄움
-        $(window).bind("beforeunload", function (e){
+        $(window).bind("beforeunload", function (e) {
             //return "창을 닫으시겠습니까?";
         });
-
     </script>
 
 </body>

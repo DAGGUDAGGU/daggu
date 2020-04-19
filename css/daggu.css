@@ -4,21 +4,44 @@ body {
 
 #arrowBack {
     position: fixed;
-    left: 0;
+    left: 5px;
     top: 10px;
 }
 
-/* 완성 버튼 */
-.complete_btn {
+/* 텍스트 입력*/
+.text_btn {
+    float: right;
+    margin: 10px;
+}
+
+form {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+/* 완성 버튼 그룹 */
+.slow .toggle-group {
+    transition: left 0.7s;
+    -webkit-transition: left 0.7s;
+}
+
+.complete {
     transform: translateX(-50%);
     position: fixed;
     left: 50%;
     bottom: 8%;
+}
+
+.complete_btn {
+    margin-left: 20px;
     font-size: 18pt;
     width: 250px;
     background-color: #933DEA;
     color: white;
     font-weight: bold;
+    border: 2px solid #933DEA;
+    border-radius: 7px;
 }
 
 .complete_btn:hover {
@@ -56,8 +79,8 @@ body {
     border-radius: 50px;
     float: right;
     position: absolute;
-    top: -70px;
-    left: 20px;
+    top: -80px;
+    right: 20px;
 }
 
 #slideIcon {
