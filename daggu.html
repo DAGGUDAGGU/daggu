@@ -23,8 +23,19 @@
         <img class="diary_paper" src="img/paper/격자.png" width="1000px" height="550px"></div>
     </div>
 
+    <!--완성버튼-->
+    <button class="btn complete_btn">COMPLETE</button>
+
     <div class="tab_wrap down">
-        <div class="slide_btn"></div>
+        <!--슬라이드 버튼-->
+        <div class="slide_btn">
+            <input type="checkbox" id="slideIcon">
+            <label for="slideIcon">
+                <span></span>
+                <span></span>
+            </label>
+        </div>
+        <!--탭 메뉴 상단-->
         <ul class="nav nav-tabs nav-justified">
             <li class="active"><a href="#maskingTape" data-toggle="tab">MASKING TAPE</a></li>
             <li><a href="#notePaper" data-toggle="tab">MEMO PAD</a></li>
@@ -32,7 +43,7 @@
             <li><a href="#font" data-toggle="tab">FONT</a></li>
             <li><a href="#paper" data-toggle="tab">PAPER</a></li>
         </ul>
-
+        <!--탭 메뉴 하단-->
         <div class="tab-content">
             <div class="tab-pane active" id="maskingTape">
                 <!--슬라이드-->
@@ -132,7 +143,6 @@
                 <p>tab4 부분입니다.</p>
             </div>
             <div class="tab-pane" id="paper">
-                <!-- <p>tab5s 부분입니다.</p> -->
                 <section class="center slider">
                     <div>
                         <img src="img/paper/격자.png">
@@ -167,11 +177,11 @@
         </div>
     </div>
 
-    <!-- 위쪽... -->
-    <div>
-        <!-- link main -->
-        <a href="main.html"><img src="img/arrow_back.png" id="arrowBack" class="backArrow"></a>
-    </div>
+    <!-- link main -->
+    <a href="main.html"><img src="img/arrow_back.png" id="arrowBack" class="backArrow"></a>
+
+
+
     <script>
         //슬라이드 jquery 
         $(".center").slick({
@@ -183,13 +193,16 @@
             slidesToScroll: 5
         });
 
-        $('.slide_btn').click(function () {
-            if ($('.tab_wrap').hasClass('down')) { //슬라이드가 아래로 내려가있는 상태
-                $('.tab_wrap,html').removeClass('down');
-                $('.tab_wrap,html').css('top', '50%');
-            } else { // 슬라이드 올라와있는 상태
-                $('.tab_wrap,html').addClass('down');
-                $('.tab_wrap,html').css('top', '100%');
+        $('#slideIcon').click(function () {
+            //슬라이드가 아래로 내려가있는 상태
+            if ($('.tab_wrap').hasClass('down')) {
+                $('.tab_wrap').removeClass('down');
+                $('.tab_wrap').css('top', '50%');
+            }
+            // 슬라이드 올라와있는 상태
+            else {
+                $('.tab_wrap').addClass('down');
+                $('.tab_wrap').css('top', '100%');
             }
         });
 

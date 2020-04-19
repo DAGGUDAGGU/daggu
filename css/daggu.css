@@ -8,6 +8,25 @@ body {
     top: 10px;
 }
 
+/* 완성 버튼 */
+.complete_btn {
+    transform: translateX(-50%);
+    position: fixed;
+    left: 50%;
+    bottom: 8%;
+    font-size: 18pt;
+    width: 250px;
+    background-color: #933DEA;
+    color: white;
+}
+
+.complete_btn:hover {
+    color: #933DEA;
+    background-color: white;
+    border: 2px solid #933DEA;
+}
+
+/*다이어리*/
 .diary {
     width: 100%;
     margin: 0 auto;
@@ -28,20 +47,68 @@ body {
     transform: translate(-50%, -30%);
 }
 
-
+/*슬라이드 업 다운버튼*/
 .slide_btn {
-    /*슬라이드 업 다운버튼*/
-
-    width: 50px;
-    height: 50px;
-    background-color: aquamarine;
-    border-radius: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #FBDA65;
+    border-radius: 50px;
     float: right;
     position: absolute;
     top: -70px;
     left: 20px;
 }
 
+#slideIcon {
+    display: none;
+}
+
+#slideIcon+label {
+    display: block;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    cursor: pointer;
+}
+
+#slideIcon+label span {
+    display: block;
+    position: absolute;
+    width: 60%;
+    height: 5px;
+    border-radius: 30px;
+    background-color: #EAE6F2;
+    transition: all .35s;
+}
+
+#slideIcon+label span:nth-child(1) {
+    top: 50%;
+    left: 37%;
+    transform: translateY(-50%) rotate(50deg);
+}
+
+#slideIcon+label span:nth-child(2) {
+    top: 50%;
+    right: 37%;
+    transform: translateY(-50%) rotate(-50deg);
+}
+
+#slideIcon:checked+label span:nth-child(1) {
+    top: 50%;
+    left: 37%;
+    transform: translateY(-50%) rotate(-50deg);
+}
+
+#slideIcon:checked+label span:nth-child(2) {
+    top: 50%;
+    right: 37%;
+    transform: translateY(-50%) rotate(50deg);
+}
+
+/*탭메뉴*/
 .tab_wrap {
     background-color: white;
     width: 100%;
