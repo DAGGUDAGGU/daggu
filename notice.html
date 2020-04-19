@@ -7,15 +7,14 @@
         <link rel="stylesheet" href="css/bootstrap.css">
         <style>
             /*시작*/
-            #left-selection {
-                position: absolute;
-                width: 150px;
-                height: 20px;
-                margin-top: 8px;
+            .left-selection {
+             margin: 0;
+             padding: 0;
             }
-            .left-selection>.img-responsive {
-                margin-left: 15px;
-                
+            .left-selection > .img-responsive {
+                position: absolute;
+                top: 10px;
+                left: 20px;
             }
             ul {
                 list-style: none;
@@ -45,13 +44,12 @@
                 top: 90px;
                 left: 230px;
             }
-            .on-selection>.text-uppercase{
+            .on-selection > .text-uppercase {
                 position: relative;
                 top: 30px;
                 left: 20px;
-                font-size: 40px;
             }
-            .on-selection>.img-responsive{
+            .on-selection > .img-responsive {
                 position: relative;
                 width: 800px;
                 top: 70px;
@@ -63,15 +61,37 @@
                 margin: 0;
                 padding: 0;
                 top: 280px;
-                left:275px;
+                left: 275px;
             }
-            .image_selection>.img-responsive{
+            .image_selection > .img-responsive {
                 padding: 10px;
-            }           
+            }
+            @media (max-width: 500px){
+                .main-text{
+                    position: absolute;
+                    top: 200px;
+                    text-align:center;
+                    left:-100px;
+                }
+                .on-selection>.text-uppercase{
+                    font-size: 30px;    
+                }
+                .image_selection>.img-responsive{
+                    position: relative; 
+                }
+            }
+            @media(min-width:4000px){
+                .left-selection{
+                    position: absolute;
+                    margin-top:15px;
+                    left: 100px;
+                }
+
+            }
         </style>
     </head>
     <body>
-        <div id="left-selection">
+        <div class="left-selection">
             <img src="img/circle.png" class="img-responsive">
             <ul>
                 <li>
@@ -88,15 +108,16 @@
                 </li>
             </ul>
         </div>
-        <div class="on-selection">
-            <p class="text-uppercase">forum this is test</p>
-            <img src="img/line.png" class="img-responsive">
-        </div>
-        <div class="image_selection">
+        <div class="main-text">
+            <div class="on-selection">
+                <h1 class="text-uppercase">forum</h1>
+                <img src="img/line.png" class="img-responsive">
+            </div>
+            <div class="image_selection">
                 <img src="img/image.png" class="img-responsive">
                 <img src="img/image.png" class="img-responsive">
+            </div>
         </div>
-
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.js"></script>
     </body>
