@@ -146,7 +146,7 @@
                 <section class="center slider">
                     <div>
                         <img src="img/paper/격자.png">
-                    </div>
+                    </div> #paper section div img
                     <div>
                         <img src="img/paper/그라데이션-보라노랑.png">
                     </div>
@@ -209,6 +209,12 @@
         //슬라이드 탭메뉴 바꿨을 때 이미지 안 뜨는 거 해결
         $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
             $('.slider').slick('setPosition'); // 슬릭 위치 재배치
+        });
+
+        // 다이어리 속지 변경이벤트
+        $('img[src^="img/paper/"]').click(function () {
+            var src = $(event.target).attr("src");
+            $('.diary_paper').attr("src", src);
         });
     </script>
 
