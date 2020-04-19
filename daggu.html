@@ -180,8 +180,6 @@
     <!-- link main -->
     <a href="main.html"><img src="img/arrow_back.png" id="arrowBack" class="backArrow"></a>
 
-
-
     <script>
         //슬라이드 jquery 
         $(".center").slick({
@@ -216,6 +214,12 @@
             var src = $(event.target).attr("src");
             $('.diary_paper').attr("src", src);
         });
+        
+        // 새로고침, 뒤로가기 버튼 누르면 경고창 띄움
+        $(window).bind("beforeunload", function (e){
+            //return "창을 닫으시겠습니까?";
+        });
+
     </script>
 
 </body>
