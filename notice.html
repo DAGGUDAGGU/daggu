@@ -7,43 +7,60 @@
         <link rel="stylesheet" href="css/bootstrap.css">
         <style>
             /*시작*/
-            .left-selection {
-             margin: 0;
-             padding: 0;
+            .bu {
+                border: 0;
+                background-color: #ffffff;
+                font-family: 'Noto Sans', sans-serif;
+                font-weight: bold;
+                font-size: 1.5vw;
+                line-height: 150%;
+                color: #000000;
+                margin: 0 0 15px 5px;
             }
-            .left-selection > .img-responsive {
-                position: absolute;
-                top: 10px;
-                left: 20px;
+            #fixmenu {
+                position: fixed;
             }
-            ul {
-                list-style: none;
-                position: absolute;
-                top: 120px;
-                left: 20px;
+            .buttons {
+                margin: 20px 0 0 15px;
             }
-            li:before {
-                position: absolute;
-                left: 20px;
-                content: url("img/dot.png");
-                color: blueviolet;
+            #menu {
+                width: 20%;
+                float: left;
+                margin-left: 20px;
+                margin-top: 20px;
+                padding-bottom: 30px;
+
+                /* border: 1px solid #000;  */
             }
-            .text {
-                position: relative;
-                top: -9px;
-                left: 3PX;
-                text-decoration: none;
-                color: black;
-                font-size: 17PX;
-                font-family: "Noto Sans KR";
-                font-weight: normal;
-                line-height: 40px;
+            #space {
+                width: 15%;
+                height: 100%;
+                float: left;
+                margin-left: 30px;
+                margin-top: 20px;
+                padding-bottom: 30px;
+                /* border: 1px solid #000; */
+
+            }
+            #circle {
+                width: 100%;
+                height: 20%;
+                /* margin-bottom: 30px; */
+                margin-bottom: 8%;
+
+            }
+            .main-text{
+                width: 60%; 
+                float: left;
+                position: static;
             }
             .on-selection {
+                /*이게 너로 따지면 MyPage 글씨랑 보라선 합친 쪽임*/
                 position: absolute;
-                top: 90px;
-                left: 270px;
-            }
+                width: 60%;
+                margin: 0 auto;
+                top: 6%;
+                }
             .on-selection > .text-uppercase {
                 position: relative;
                 top: 30px;
@@ -60,58 +77,55 @@
                 position: absolute;
                 margin: 0;
                 padding: 0;
-                top: 280px;
-                left: 320px;
+                margin: 20% 0 0 2%;
             }
             .image_selection > .img-responsive {
                 padding: 10px;
-                margin: 0 0 50px 0;
+                margin: 0 0 50px;
             }
-            @media (max-width: 500px){
-                .main-text{
-                    position: absolute;
-                    top: 200px;
-                    text-align:center;
-                    left:-100px;
-                }
-                .on-selection>.text-uppercase{
-                    font-size: 30px;    
-                }
-                .image_selection>.img-responsive{
-                    position: relative; 
-                }
-            }
-            @media(min-width:4000px){
-                .left-selection{
-                    position: absolute;
-                    margin-top:15px;
-                    left: 100px;
-                }
-
-            }
+            
         </style>
     </head>
     <body>
-        <div class="left-selection">
-            <img src="img/circle.png" class="img-responsive">
-            <ul>
-                <li>
-                    <a href="findpw.html" class="text">DAGGU</a>
-                </li>
-                <li>
-                    <a href="notice.html" class="text" style="color: #FBDA65;">FORUM</a>
-                </li>
-                <li>
-                    <a href="signin.html" class="text">MYPAGE</a>
-                </li>
-                <li>
-                    <a href="sign.html" class="text">LOGOUT</a>
-                </li>
-            </ul>
+        <div id="menu">
+            <div id="fixmenu">
+                <img src="img/circle.svg" id="circle"><br>
+                <div class="buttons">
+                    <img src="img/dot.png" id="dot">
+                    <a href="main.html">
+                        <button
+                            class="bu"
+                            onmouseover="this.style.color='#FBDA65'"
+                            onmouseout="this.style.color='#000'">DAGGU</button>
+                    </a><br>
+                    <!--다꾸하는 페이지-->
+
+                    <img src="img/dot.png" id="dot">
+                    <a href="forum.html">
+                        <button
+                            class="bu"
+                            onmouseover="this.style.color='#FBDA65'"
+                            onmouseout="this.style.color='#000'">FORUM</button>
+                    </a><br>
+
+                    <img src="img/dot.png" id="dot">
+                    <a href="mypage.html">
+                        <button class="bu" style="color: #FBDA65;">MY PAGE</button>
+                    </a><br>
+
+                    <img src="img/dot.png" id="dot">
+                    <a href="logout.html">
+                        <button
+                            class="bu"
+                            onmouseover="this.style.color='#FBDA65'"
+                            onmouseout="this.style.color='#000'">LOG OUT</button>
+                    </a>
+                </div>
+            </div>
         </div>
         <div class="main-text">
             <div class="on-selection">
-                <h1 class="text-uppercase">forum</h1>
+                <h1 class="text-uppercase">FORUM</h1>
                 <img src="img/line.png" class="img-responsive">
             </div>
             <div class="image_selection">
