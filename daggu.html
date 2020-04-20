@@ -11,6 +11,10 @@
         rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
 
+    <!--JQuery UI-->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+        integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+
     <!--slick CDN-->
     <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
@@ -25,7 +29,9 @@
         <img class="diary_cover" src="img/다이어리커버1.png" width="1048px" height="536px">
         <img class="diary_paper" src="img/paper/격자.png" width="1000px" height="550px"></div>
     </div>
+    <div class="diary_content">
 
+    </div>
     <!--완성버튼-->
     <div class="complete">
         <input type="checkbox" checked data-toggle="toggle" data-on="공개" data-off="비공개" data-onstyle="warning"
@@ -231,6 +237,23 @@
         // 새로고침, 뒤로가기 버튼 누르면 경고창 띄움
         $(window).bind("beforeunload", function (e) {
             //return "창을 닫으시겠습니까?";
+        });
+
+        //이미지 클릭 시 다이어리 부분에 추가, 
+        $('img[src^="img/maskingTape/"],img[src^="img/stiker/"], img[src^="img/notePad/"]').click(function () {
+            var src = $(event.target).attr("src");
+            $('.diary_content').append('<img class="daggu_ele" src=' + src + ' width="200px">');
+            //드래그 가능하게, 이미지 위에 커서 올라갔을 때 커서 변경, 클릭했을때 맨앞으로 오게
+            var css_test_idx = 1;
+            $('.daggu_ele')
+                .draggable()
+                .css('cursor', 'move')
+                .mousedown(function () { // mousedown 이벤트 생성
+
+                    $(this).css('z-index', css_test_idx); // 클릭한 이미지만 z-index 증가시킴
+                    css_test_idx++;
+                    // 그러면 이미지가 겹칠경우 클릭한 것이 항상 위에 표시됨
+                });;
         });
     </script>
 

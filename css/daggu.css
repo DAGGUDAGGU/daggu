@@ -71,6 +71,10 @@ form {
     transform: translate(-50%, -30%);
 }
 
+.daggu_ele {
+    position: absolute;
+}
+
 /*슬라이드 업 다운버튼*/
 .slide_btn {
     width: 60px;
@@ -139,6 +143,7 @@ form {
     position: fixed;
     top: 100%;
     transition: all 600ms ease-in-out;
+    z-index: 2147483647;
 }
 
 .nav li a {
