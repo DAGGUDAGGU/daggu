@@ -1,22 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>다꾸 게시판</title>
-        <link rel="stylesheet" href="css/bootstrap.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>다꾸다꾸</title>
         <style>
-            /*시작*/
+
+            body {
+                background-repeat: no-repeat;
+                background-size: cover;
+                font-family: 'Noto Sans', sans-serif;
+                text-align: left;
+            }
+
             .bu {
                 border: 0;
                 background-color: #ffffff;
                 font-family: 'Noto Sans', sans-serif;
+                font-weight: 1800;
                 font-weight: bold;
                 font-size: 1.5vw;
                 line-height: 150%;
                 color: #000000;
                 margin: 0 0 15px 5px;
             }
+
             #fixmenu {
                 position: fixed;
             }
@@ -26,7 +34,7 @@
             #menu {
                 width: 20%;
                 float: left;
-                margin-left: 20px;
+                margin-left: 15px;
                 margin-top: 20px;
                 padding-bottom: 30px;
 
@@ -43,58 +51,67 @@
 
             }
             #circle {
-                width: 100%;
-                height: 20%;
+                width: 70%;
                 /* margin-bottom: 30px; */
                 margin-bottom: 8%;
 
             }
-            .main-text{
-                width: 60%; 
+            .main {
+                width: 60%;
                 float: left;
                 position: static;
+                /* border: 1px solid rgb(192, 55, 55); */
             }
-            .on-selection {
-                /*이게 너로 따지면 MyPage 글씨랑 보라선 합친 쪽임*/
+
+            #head {
                 position: absolute;
                 width: 60%;
+                background-color: #ffffff;
                 margin: 0 auto;
-                top: 6%;
-                }
-            .on-selection > .text-uppercase {
-                position: relative;
-                top: 30px;
-                left: 20px;
-                font-size:3vw;
+                top: 0;
             }
-            .on-selection > .img-responsive {
-                position: relative;
-                width: 800px;
-                top: 70px;
-                left: 15px;
+
+            .body {
+                padding-top: 25%;
+                width: 100%;
+                float: right;
+                text-align: center;
             }
-            /*본문 이미지쪽*/
-            .image_selection {
-                position: absolute;
-                margin: 0;
-                padding: 0;
-                margin: 20% 0 0 2.3%;
-                width: 60%;
+
+            #content {
+                width: 50%;
+                float: right;
+                /* padding-bottom: 100px; */
+                padding-bottom: 10%;
+                
+
             }
-            .image_selection > .img-responsive {
-                padding: 10px;
-                margin: 0 0 50px;
+            #contentsWord {
+                text-align: left;
+                padding-left: 8%;
+                font-size: 1.3vw;
             }
-            
+
+            #mypage {
+                text-align: left;
+                padding-top: 6%;
+                padding-bottom: 15px;
+                font-size: 3vw;
+                font-family: 'Noto Sans', sans-serif;
+            }
+            #dot {
+                width: 4%;
+            }
         </style>
     </head>
     <body>
+
         <div id="menu">
             <div id="fixmenu">
-                <img src="img/circle.svg" id="circle"><br>
+                <img src="img/circle3.svg" id="circle"><br>
                 <div class="buttons">
-                    <img src="img/dot.png" id="dot">
-                    <a href="main.html">
+                    <img src="img/dot.svg" id="dot">
+                    <a href="daggu.html">
                         <button
                             class="bu"
                             onmouseover="this.style.color='#FBDA65'"
@@ -102,7 +119,7 @@
                     </a><br>
                     <!--다꾸하는 페이지-->
 
-                    <img src="img/dot.png" id="dot">
+                    <img src="img/dot.svg" id="dot">
                     <a href="forum.html">
                         <button
                             class="bu"
@@ -110,12 +127,12 @@
                             onmouseout="this.style.color='#000'">FORUM</button>
                     </a><br>
 
-                    <img src="img/dot.png" id="dot">
+                    <img src="img/dot.svg" id="dot">
                     <a href="mypage.html">
                         <button class="bu" style="color: #FBDA65;">MY PAGE</button>
                     </a><br>
 
-                    <img src="img/dot.png" id="dot">
+                    <img src="img/dot.svg" id="dot">
                     <a href="logout.html">
                         <button
                             class="bu"
@@ -125,17 +142,58 @@
                 </div>
             </div>
         </div>
-        <div class="main-text">
-            <div class="on-selection">
-                <div class="text-uppercase">FORUM</div>
-                <img src="img/line.png" class="img-responsive">
+
+        <div class="main" id="main">
+            <div id="head">
+                <div id="mypage">FORUM</div><br>
+                <!-- <div style="font-size: 5vw;">MY PAGE</div><br> -->
+                <hr width="100%" style="border: solid 0.1vw #8F35E9; ">
             </div>
-            <div class="image_selection">
-                <img src="img/image.png" class="img-responsive">
-                <img src="img/image.png" class="img-responsive">
+            <div class="body">
+                <div id="content">
+                    <div id="contentsWord"></div><!--id : contentsWord 부분은 사용자 이름 들어갈거임-->
+                    <img src="img/다이어리커버1.png" width="100%"><br>
+                </div>
+
+                <div id="content">
+                    <div id="contentsWord"></div><!--id : contentsWord 부분은 사용자 이름 들어갈거임-->
+                    <img src="img/다이어리커버1.png" width="100%"><br>
+                </div>
+
+                <div id="content">
+                    <div id="contentsWord"></div><!--id : contentsWord 부분은 사용자 이름 들어갈거임-->
+                    <img src="img/다이어리커버1.png" width="100%"><br>
+                </div>
+
+                <div id="content">
+                    <div id="contentsWord"></div><!--id : contentsWord 부분은 사용자 이름 들어갈거임-->
+                    <img src="img/다이어리커버1.png" width="100%"><br>
+                </div>
+
+                <div id="content">
+                    <div id="contentsWord"></div><!--id : contentsWord 부분은 사용자 이름 들어갈거임-->
+                    <img src="img/다이어리커버1.png" width="100%"><br>
+                </div>
+
+                <div id="content">
+                    <div id="contentsWord"></div><!--id : contentsWord 부분은 사용자 이름 들어갈거임-->
+                    <img src="img/다이어리커버1.png" width="100%"><br>
+                </div>
+
+                <div id="content">
+                    <div id="contentsWord"></div><!--id : contentsWord 부분은 사용자 이름 들어갈거임-->
+                    <img src="img/다이어리커버1.png" width="100%"><br>
+                </div>
+
+                <div id="content">
+                    <div id="contentsWord"></div><!--id : contentsWord 부분은 사용자 이름 들어갈거임-->
+                    <img src="img/다이어리커버1.png" width="100%"><br>
+                </div>
             </div>
+
         </div>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap.js"></script>
+
+        <div class="space" id="space"></div>
+
     </body>
 </html>
