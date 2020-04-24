@@ -76,12 +76,13 @@ body {
     width: 50%;
     float: right;
     padding-bottom: 10%;
+    /* margin: 10%; */
 
 }
 
 #contentsWord {
     text-align: left;
-    padding-left: 8%;
+    padding-left: 13%;
     font-size: 1.3vw;
 }
 
