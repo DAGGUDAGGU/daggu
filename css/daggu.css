@@ -1,0 +1,211 @@
+body {
+    background-color: #EAE6F2;
+}
+
+#arrowBack {
+    position: fixed;
+    left: 5px;
+    top: 10px;
+}
+
+/* 텍스트 입력*/
+.text_btn {
+    float: right;
+    margin: 10px;
+}
+
+form {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+/* 완성 버튼 그룹 */
+.slow .toggle-group {
+    transition: left 0.7s;
+    -webkit-transition: left 0.7s;
+}
+
+.complete {
+    transform: translateX(-50%);
+    position: fixed;
+    left: 50%;
+    bottom: 8%;
+}
+
+.complete_btn {
+    margin-left: 20px;
+    font-size: 18pt;
+    width: 250px;
+    background-color: #933DEA;
+    color: white;
+    font-weight: bold;
+    border: 2px solid #933DEA;
+    border-radius: 7px;
+}
+
+.complete_btn:hover {
+    color: #933DEA;
+    background-color: white;
+    border: 2px solid #933DEA;
+}
+
+/*다이어리*/
+.diary {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.diary_cover {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+}
+
+.diary_paper {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+}
+
+.daggu_ele {
+    position: absolute;
+}
+
+/*슬라이드 업 다운버튼*/
+.slide_btn {
+    width: 60px;
+    height: 60px;
+    background-color: #FBDA65;
+    border-radius: 50px;
+    float: right;
+    position: absolute;
+    top: -80px;
+    right: 20px;
+}
+
+#slideIcon {
+    display: none;
+}
+
+#slideIcon+label {
+    display: block;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    cursor: pointer;
+}
+
+#slideIcon+label span {
+    display: block;
+    position: absolute;
+    width: 60%;
+    height: 5px;
+    border-radius: 30px;
+    background-color: #EAE6F2;
+    transition: all .35s;
+}
+
+#slideIcon+label span:nth-child(1) {
+    top: 50%;
+    left: 37%;
+    transform: translateY(-50%) rotate(50deg);
+}
+
+#slideIcon+label span:nth-child(2) {
+    top: 50%;
+    right: 37%;
+    transform: translateY(-50%) rotate(-50deg);
+}
+
+#slideIcon:checked+label span:nth-child(1) {
+    top: 50%;
+    left: 37%;
+    transform: translateY(-50%) rotate(-50deg);
+}
+
+#slideIcon:checked+label span:nth-child(2) {
+    top: 50%;
+    right: 37%;
+    transform: translateY(-50%) rotate(50deg);
+}
+
+/*탭메뉴*/
+.tab_wrap {
+    background-color: white;
+    width: 100%;
+    position: fixed;
+    top: 100%;
+    transition: all 600ms ease-in-out;
+    z-index: 2147483647;
+}
+
+.nav li a {
+    color: black;
+}
+
+.active a {
+    color: #933DEA !important;
+}
+
+
+.tab-pane {
+    position: relative;
+    height: 500px;
+}
+
+.slider {
+
+    width: 80%;
+    margin: 0 auto;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+
+}
+
+/*슬라이드 이미지*/
+.slider div img {
+    width: 100%;
+    background-size: 100px;
+}
+
+/*슬라이드 화살표 둘다*/
+.slick-arrow {
+    position: absolute;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+}
+
+/*슬라이드 왼쪽 화살표*/
+.slick-prev {
+    left: -45px;
+    top: 50%;
+    z-index: 10;
+    background-image: url("../img/arrowL.png");
+    background-size: 45px;
+    border: none;
+    background-color: #00ff0000;
+    font-size: 0;
+    color: transparent;
+}
+
+/*슬라이드 오른쪽 화살표*/
+.slick-next {
+    right: -45px;
+    top: 50%;
+    z-index: 10;
+    background-image: url("../img/arrowR.png");
+    background-size: 45px;
+    border: none;
+    background-color: #00ff0000;
+    font-size: 0;
+    color: transparent;
+}
