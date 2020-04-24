@@ -47,6 +47,7 @@ body {
     /* margin-bottom: 30px; */
     margin-bottom: 8%;
 
+
 }
 .main {
     width: 60%;
@@ -56,7 +57,7 @@ body {
 }
 
 #head {
-    position: absolute;
+    position: fixed;
     width: 60%;
     background-color: #ffffff;
     margin: 0 auto;
@@ -75,15 +76,13 @@ body {
     float: right;
     /* padding-bottom: 100px; */
     padding-bottom: 10%;
-    
-
 }
 #contentsWord {
     text-align: left;
     padding-left: 8%;
     font-size: 1.3vw;
 }
-
+/*dfs*/
 #mypage {
     text-align: left;
     padding-top: 6%;
