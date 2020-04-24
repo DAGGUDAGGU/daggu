@@ -1,0 +1,98 @@
+body {
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Noto Sans', sans-serif;
+    text-align: left;
+    margin: 0 auto;
+}
+
+.bu {
+    border: 0px;
+    background-color: #ffffff;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 1800;
+    font-weight: bold;
+    font-size: 1.5vw;
+    line-height: 150%;
+    color: #000000;
+    margin: 0 0 15px 5px;
+}
+
+#fixmenu {
+    position: fixed;
+}
+
+.buttons {
+    margin: 20px 0 0 15px;
+}
+
+#menu {
+    width: 20%;
+    float: left;
+    margin-left: 15px;
+    margin-top: 20px;
+    padding-bottom: 30px;
+
+}
+
+#space {
+    width: 15%;
+    height: 100%;
+    float: left;
+    margin-left: 30px;
+    margin-top: 20px;
+    padding-bottom: 30px;
+
+}
+
+#circle {
+    width: 70%;
+    margin-bottom: 8%;
+
+}
+
+.main {
+    width: 60%;
+    float: left;
+    position: static;
+}
+
+#head {
+    position: fixed;
+    width: 60%;
+    background-color: #ffffff;
+    margin: 0 auto;
+    top: 0;
+}
+
+.body {
+    padding-top: 25%;
+    width: 100%;
+    float: right;
+    text-align: center;
+}
+
+#content {
+    width: 50%;
+    float: right;
+    padding-bottom: 10%;
+
+}
+
+#contentsWord {
+    text-align: left;
+    padding-left: 8%;
+    font-size: 1.3vw;
+}
+
+#mypage {
+    text-align: left;
+    padding-top: 6%;
+    padding-bottom: 15px;
+    font-size: 3vw;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+#dot {
+    width: 4%;
+}
