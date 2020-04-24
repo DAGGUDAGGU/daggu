@@ -8,7 +8,7 @@
 }
 
 body {
-    background-image: url("img/mainbg.png");
+    background-image: url("../img/mainbg.png");
     font-family: 'Noto Sans', sans-serif;
     text-align: center;
     overflow: hidden;
