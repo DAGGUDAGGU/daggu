@@ -1,110 +1,199 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>다꾸 게시판</title>
-        <link rel="stylesheet" href="css/bootstrap.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>다꾸다꾸</title>
         <style>
-            /*시작*/
-            #left-selection {
+
+            body {
+                background-repeat: no-repeat;
+                background-size: cover;
+                font-family: 'Noto Sans', sans-serif;
+                text-align: left;
+            }
+
+            .bu {
+                border: 0;
+                background-color: #ffffff;
+                font-family: 'Noto Sans', sans-serif;
+                font-weight: 1800;
+                font-weight: bold;
+                font-size: 1.5vw;
+                line-height: 150%;
+                color: #000000;
+                margin: 0 0 15px 5px;
+            }
+
+            #fixmenu {
+                position: fixed;
+            }
+            .buttons {
+                margin: 20px 0 0 15px;
+            }
+            #menu {
+                width: 20%;
+                float: left;
+                margin-left: 15px;
+                margin-top: 20px;
+                padding-bottom: 30px;
+
+                /* border: 1px solid #000;  */
+            }
+            #space {
+                width: 15%;
+                height: 100%;
+                float: left;
+                margin-left: 30px;
+                margin-top: 20px;
+                padding-bottom: 30px;
+                /* border: 1px solid #000; */
+
+            }
+            #circle {
+                width: 70%;
+                /* margin-bottom: 30px; */
+                margin-bottom: 8%;
+
+            }
+            .main {
+                width: 60%;
+                float: left;
+                position: static;
+                /* border: 1px solid rgb(192, 55, 55); */
+            }
+
+            #head {
                 position: absolute;
-                margin-top: 8px;
+                width: 60%;
+                background-color: #ffffff;
+                margin: 0 auto;
+                top: 0;
             }
-            .left-selection > .img-responsive {
-                position: relative;
-                top: 20px;
-                left: 10px;
+
+            .body {
+                padding-top: 25%;
+                width: 100%;
+                float: right;
+                text-align: center;
             }
-            ul {
-                list-style: none;
-                position: absolute;
-                top: 120px;
-                left: 20px;
+
+            #content {
+                width: 50%;
+                float: right;
+                /* padding-bottom: 100px; */
+                padding-bottom: 10%;
+                
+
             }
-            li:before {
-                position: absolute;
-                left: 20px;
-                content: url("img/dot.png");
-                color: blueviolet;
+            #contentsWord {
+                text-align: left;
+                padding-left: 8%;
+                font-size: 1.3vw;
             }
-            .text {
-                position: relative;
-                top: -9px;
-                left: 3PX;
-                text-decoration: none;
-                color: black;
-                font-size: 17PX;
-                font-family: "Noto Sans KR";
-                font-weight: normal;
-                line-height: 40px;
+
+            #mypage {
+                text-align: left;
+                padding-top: 6%;
+                padding-bottom: 15px;
+                font-size: 3vw;
+                font-family: 'Noto Sans', sans-serif;
             }
-            .on-selection {
-                position: absolute;
-                top: 90px;
-                left: 230px;
-            }
-            .on-selection > .text-uppercase {
-                position: relative;
-                top: 30px;
-                left: 20px;
-                font-size: 40px;
-            }
-            .on-selection > .img-responsive {
-                position: relative;
-                width: 800px;
-                top: 70px;
-                left: 15px;
-            }
-            /*본문 이미지쪽*/
-            .image_selection {
-                position: absolute;
-                margin: 0;
-                padding: 0;
-                top: 280px;
-                left: 275px;
-            }
-            .image_selection > .img-responsive {
-                padding: 10px;
-            }
-            @media (max-width: 500px){
-                .main-text{
-                    position: absolute;
-                    top: 250px;
-                    left:-200px;
-                }
+            #dot {
+                width: 4%;
             }
         </style>
     </head>
     <body>
-        <div id="left-selection">
-            <img src="img/circle.png" class="img-responsive">
-            <ul>
-                <li>
-                    <a href="findpw.html" class="text">DAGGU</a>
-                </li>
-                <li>
-                    <a href="notice.html" class="text" style="color: #FBDA65;">FORUM</a>
-                </li>
-                <li>
-                    <a href="signin.html" class="text">MYPAGE</a>
-                </li>
-                <li>
-                    <a href="sign.html" class="text">LOGOUT</a>
-                </li>
-            </ul>
-        </div>
-        <div class="main-text">
-            <div class="on-selection">
-                <p class="text-uppercase">forum</p>
-                <img src="img/line.png" class="img-responsive">
+
+        <div id="menu">
+            <div id="fixmenu">
+                <img src="img/circle3.svg" id="circle"><br>
+                <div class="buttons">
+                    <img src="img/dot.svg" id="dot">
+                    <a href="daggu.html">
+                        <button
+                            class="bu"
+                            onmouseover="this.style.color='#FBDA65'"
+                            onmouseout="this.style.color='#000'">DAGGU</button>
+                    </a><br>
+                    <!--다꾸하는 페이지-->
+
+                    <img src="img/dot.svg" id="dot">
+                    <a href="forum.html">
+                        <button
+                            class="bu"
+                            onmouseover="this.style.color='#FBDA65'"
+                            onmouseout="this.style.color='#000'">FORUM</button>
+                    </a><br>
+
+                    <img src="img/dot.svg" id="dot">
+                    <a href="mypage.html">
+                        <button class="bu" style="color: #FBDA65;">MY PAGE</button>
+                    </a><br>
+
+                    <img src="img/dot.svg" id="dot">
+                    <a href="logout.html">
+                        <button
+                            class="bu"
+                            onmouseover="this.style.color='#FBDA65'"
+                            onmouseout="this.style.color='#000'">LOG OUT</button>
+                    </a>
+                </div>
             </div>
-            <div class="image_selection">
-                <img src="img/image.png" class="img-responsive">
-                <img src="img/image.png" class="img-responsive">
-            </div>
         </div>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap.js"></script>
+
+        <div class="main" id="main">
+            <div id="head">
+                <div id="mypage">FORUM</div><br>
+                <!-- <div style="font-size: 5vw;">MY PAGE</div><br> -->
+                <hr width="100%" style="border: solid 0.1vw #8F35E9; ">
+            </div>
+            <div class="body">
+                <div id="content">
+                    <div id="contentsWord"></div><!--id : contentsWord 부분은 사용자 이름 들어갈거임-->
+                    <img src="img/다이어리커버1.png" width="100%"><br>
+                </div>
+
+                <div id="content">
+                    <div id="contentsWord"></div><!--id : contentsWord 부분은 사용자 이름 들어갈거임-->
+                    <img src="img/다이어리커버1.png" width="100%"><br>
+                </div>
+
+                <div id="content">
+                    <div id="contentsWord"></div><!--id : contentsWord 부분은 사용자 이름 들어갈거임-->
+                    <img src="img/다이어리커버1.png" width="100%"><br>
+                </div>
+
+                <div id="content">
+                    <div id="contentsWord"></div><!--id : contentsWord 부분은 사용자 이름 들어갈거임-->
+                    <img src="img/다이어리커버1.png" width="100%"><br>
+                </div>
+
+                <div id="content">
+                    <div id="contentsWord"></div><!--id : contentsWord 부분은 사용자 이름 들어갈거임-->
+                    <img src="img/다이어리커버1.png" width="100%"><br>
+                </div>
+
+                <div id="content">
+                    <div id="contentsWord"></div><!--id : contentsWord 부분은 사용자 이름 들어갈거임-->
+                    <img src="img/다이어리커버1.png" width="100%"><br>
+                </div>
+
+                <div id="content">
+                    <div id="contentsWord"></div><!--id : contentsWord 부분은 사용자 이름 들어갈거임-->
+                    <img src="img/다이어리커버1.png" width="100%"><br>
+                </div>
+
+                <div id="content">
+                    <div id="contentsWord"></div><!--id : contentsWord 부분은 사용자 이름 들어갈거임-->
+                    <img src="img/다이어리커버1.png" width="100%"><br>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="space" id="space"></div>
+
     </body>
 </html>
