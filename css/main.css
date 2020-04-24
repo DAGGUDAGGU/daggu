@@ -1,0 +1,180 @@
+#moon {
+    position: absolute;
+    width: 514px;
+    height: 510px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10%;
+}
+
+body {
+    background-image: url("img/mainbg.png");
+    font-family: 'Noto Sans', sans-serif;
+    text-align: center;
+    overflow: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+}
+
+button {
+    background: none;
+    border: 0;
+    color: white;
+    display: flex;
+}
+
+.forum {
+
+    font-family: 'Sanchez', serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 38px;
+
+    margin: auto 30px;
+    color: rgb(231, 212, 255);
+    /*white*/
+    ;
+}
+
+.mypage {
+    /*left: 994px;
+    top: 59px;*/
+
+    font-family: 'Sanchez', serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 38px;
+    margin: auto 30px;
+    color: rgb(231, 212, 255);
+    /*white*/
+    ;
+}
+
+.signin {
+    /*right: 114px;
+    top: 59px;*/
+
+    font-family: 'Sanchez', serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 38px;
+    margin: auto 30px;
+    color: rgb(231, 212, 255);
+    /*white*/
+
+}
+
+.buttons {
+    position: absolute;
+    right: 114px;
+    top: 59px;
+    DISPLAY: flex;
+}
+
+.daggu {
+    position: absolute;
+    width: 333px;
+    height: 103px;
+    right: 126px;
+    bottom: 114px;
+
+    border: 7px solid #D2B3F9;
+    box-sizing: border-box;
+    border-radius: 20px;
+    background: none;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+
+    text-align: center;
+    z-index: 10;
+    color: #D2B3F9;
+    display: block;
+}
+
+@media (min-width: 1281px) {}
+
+@media (min-width: 1025px) and (max-width: 1280px) {}
+
+@media (max-width: 1024px) {
+
+    img {
+        text-align: center;
+    }
+
+    .forum {
+        text-align: center;
+        font-weight: 900;
+        margin: 20px 0;
+        width: 246px;
+        height: 80.67px;
+        bottom: 773.33px;
+
+        font-size: 64px;
+
+    }
+
+    .mypage {
+        text-align: center;
+        font-weight: 900;
+        text-align: center;
+        margin: 20px 0;
+        width: 298px;
+        height: 81.99px;
+        bottom: 592.17px;
+
+        font-size: 64px;
+    }
+
+    .signin {
+        text-align: center;
+        font-weight: 900;
+        margin: 20px 0;
+        width: 278px;
+        height: 85.96px;
+        bottom: 411px;
+
+        font-size: 64px;
+    }
+
+    .daggu {
+        text-align: center;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        border: 3px solid #D2B3F9;
+        font-size: 72px;
+
+        bottom: 136px;
+    }
+
+    /* #moon {
+        display: block;
+        margin: 0px auto;
+        left: 0;
+        right: 0;
+        top: 186px;
+        width: 593px;
+        height: 588px;
+
+
+    } */
+
+    .buttons {
+
+        bottom: 411px;
+        width: 100%;
+        left: 0;
+        top: auto;
+        text-align: center;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {}
