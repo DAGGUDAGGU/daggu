@@ -20,9 +20,10 @@
     $result = $connect->query($query);
 
     if(mysqli_num_rows($result)>0){//아이디 중복 확인
-            echo "<script> alert('아이디가 이미 있습니다'); 
+       ?><script> alert('아이디가 이미 있습니다'); 
             document.signupfrm.id.focus();
-            </script>";
+            </script>
+            <?php
             
     }
 
