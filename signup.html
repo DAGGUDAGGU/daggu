@@ -129,21 +129,23 @@
     <img src="img/test.png" id="leftpic">
     <img src="img/000.png" id="botpic">
     <div class="signup_container">
-        <form>
+        <form name="signupfrm" method="GET" action="signup.php">
 
             <div class="title">SIGN UP</div>
-            <div class="suname su">이름<span id="essential"> *</span><br /><input type="text" class="signup" required>
+            <div class="suname su">이름<span id="essential"> *</span><br /><input type="text" class="signup" name="name"
+                    required>
             </div>
-            <div class="suid su">아이디<span id="essential"> *</span><br /><input type="text" class="signup" required>
+            <div class="suid su">아이디<span id="essential"> *</span><br /><input type="text" class="signup" name="id"
+                    required>
             </div>
             <div class="supw su">비밀번호<span id="essential"> *</span><br /><input type="password" class="signup"
-                    id="userPw" placeholder="8~16자로 작성하여 주십시오." required>
+                    id="userPw" placeholder="8~16자로 작성하여 주십시오." name="pw" required>
             </div>
             <div class="supwre su">비밀번호 확인<span id="essential"> *</span><br /><input type="password"
                     placeholder="비밀번호 재확인 입력" class="signup signuppwre" id="userPwChk" required>
                 <font id="chkNotice" size="2"></font>
             </div>
-            <div class="suemail su">이메일<input type="text" class="signup"></div>
+            <div class="suemail su">이메일<input type="text" class="signup" name="email"></div>
             <a href="signin.html"><button class="signupbtn">회원가입</button></a>
         </form>
 
