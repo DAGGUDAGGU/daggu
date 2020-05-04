@@ -157,9 +157,9 @@
     <img src="img/signinbgpic.png" id="down">
     <div class="login_container">
         <div class="title">다꾸다꾸다꾸</div>
-        <form>
-            <input type="text" class="login" placeholder="아이디" required><br />
-            <input type="password" class="login login1" placeholder="비밀번호" required><br />
+        <form name="signinfrm" method="GET" action="signin.php">
+            <input type="text" class="login" placeholder="아이디" name="id" required><br />
+            <input type="password" class="login login1" placeholder="비밀번호" name="pw" required><br />
             <button class="signin">로그인</button>
         </form>
         <hr>

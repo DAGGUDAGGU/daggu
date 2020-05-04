@@ -9,14 +9,17 @@
     if(!$conn){
         die("연결 실패 : ".mysqli_connect_error());
     }
-    echo "<script> console.log('연결성공')</script> <br>";
+?><script> console.log('연결성공')</script>
+<!--db연결 ------------------------------------------------------------------------------------------->
+<?php
 
     //이름과 이메일 html에서 가져오는거임
     $get_name = $_GET['name'];
     $get_id = $_GET['id'];
     $get_pw = $_GET['pw'];
     $get_email= $_GET['email'];
-    $query = "select * from member where id='$get_id'";
+    //값 받기
+    $query = "select * from members where id='$get_id'";
     $result = $connect->query($query);
 
     if(mysqli_num_rows($result)>0){//아이디 중복 확인
@@ -28,7 +31,6 @@
     }
 
     $sql = "insert into members (name, id, pw, email)values('$get_name', '$get_id', '$get_pw', '$get_email')";//정보 입력
-    // $sql = "SELECT id FROM members WHERE name= '$get_name' AND email='$get_email' ";
     $result1 = $connect->query($query);
 
     //저장이 됬다면 (result = true) 가입 완료
@@ -43,7 +45,7 @@
 ?>              
     <script>
         
-        alert("fail");
+        alert("가입이 되지 않았습니다......................");
     </script>
 <?php   }
 
