@@ -14,6 +14,7 @@
     <!--JQuery UI-->
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
         integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
     <!--slick CDN-->
     <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
@@ -25,6 +26,7 @@
 
 <body>
     <!-- 꾸미는 쪽 -->
+
     <div class="center-block diary">
         <img class="diary_cover" src="img/다이어리커버1.png" width="1048px" height="536px">
         <img class="diary_paper" src="img/paper/격자.png" width="1000px" height="550px"></div>
@@ -190,6 +192,7 @@
                     <div>
                         <img src="img/paper/블랙.png">
                     </div>
+
                 </section>
 
             </div>
@@ -242,18 +245,24 @@
         //이미지 클릭 시 다이어리 부분에 추가, 
         $('img[src^="img/maskingTape/"],img[src^="img/stiker/"], img[src^="img/notePad/"]').click(function () {
             var src = $(event.target).attr("src");
-            $('.diary_content').append('<img class="daggu_ele" src=' + src + ' width="200px">');
+            $('.diary_content').append('<div class="daggu_ele"><img src=' + src + ' width="100%"></div>');
+
             //드래그 가능하게, 이미지 위에 커서 올라갔을 때 커서 변경, 클릭했을때 맨앞으로 오게
             var css_test_idx = 1;
             $('.daggu_ele')
                 .draggable()
                 .css('cursor', 'move')
+                .resizable({
+                    //비율 유지
+                    aspectRatio: true,
+                    //마우스 hover 아닐때 핸들러 숨기기
+                    autoHide: true,
+                })
                 .mousedown(function () { // mousedown 이벤트 생성
-
                     $(this).css('z-index', css_test_idx); // 클릭한 이미지만 z-index 증가시킴
                     css_test_idx++;
                     // 그러면 이미지가 겹칠경우 클릭한 것이 항상 위에 표시됨
-                });;
+                });
         });
     </script>
 
