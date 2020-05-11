@@ -1,5 +1,5 @@
 <?php
-
+//박소원이 만듬
 $mysql_host = "localhost";
 $mysql_user="root";
 $mysql_passwd="mirim2";
