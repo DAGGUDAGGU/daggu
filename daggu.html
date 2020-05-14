@@ -22,6 +22,10 @@
 
     <link rel="stylesheet" href="css/daggu.css">
     <script type="text/javascript" src="daggu.js"></script>
+
+    <!--font-->
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -156,11 +160,17 @@
             </div>
             <div class="tab-pane" id="text">
                 <form>
-                    <textarea placeholder="텍스트를 입력하세요." class="form-control" rows="10" cols="200"></textarea>
-                    <!-- <input type="submit" value="입력하기">-->
-                    <button type="button" onclick="alert('테스트')" class="text_btn" value="제출"
-                        style="width:60pt;height:30pt;">제출</button>
-                    <!-- 입력하면 새로고침이 됨 ㅠㅠ -->
+                    <textarea placeholder="텍스트를 입력하세요." style="height:200px" class="form-control inputText" rows="10"
+                        cols="200"></textarea>
+                    <select id="selectFont">
+                        <option value="'Do Hyeon', sans-serif">Dohyun</option>
+                        <option value="'Nanum Pen Script', cursive">나눔 펜</option>
+                    </select>
+                    <input type="button" id="text_sizeUp" value="+">
+                    <input type="button" id="text_sizeDown" value="-">
+
+                    <button type="button" class="text_btn" value="제출" style="width:60pt;height:30pt;">제출</input>
+                        <!-- 입력하면 새로고침이 됨 ㅠㅠ -->
                 </form>
             </div>
             <div class="tab-pane" id="paper">
@@ -203,6 +213,44 @@
     <a href="main.html"><img src="img/arrow_back.png" id="arrowBack" class="backArrow"></a>
 
     <script>
+        $("#selectFont").change(function () {
+            var selectFont = $("#selectFont option:selected").val();
+            $(".inputText").css('font-family', selectFont);
+        });
+        var textSize = 18;
+        $("#text_sizeUp").click(function () {
+            textSize++;
+            $(".inputText").css('font-size', textSize);
+        });
+        $("#text_sizeDown").click(function () {
+            textSize--;
+            $(".inputText").css('font-size', textSize);
+        });
+
+        $(".text_btn").click(function () {
+            var text = $(".inputText").val();
+            var selectFont = $("#selectFont option:selected").val();
+            $('.diary_content').append('<div class="daggu_ele_text" style="font-family:' + selectFont +
+                ';font-size:' + textSize + 'px;">' + text + '</div>');
+            var css_test_idx = 1;
+            $('.daggu_ele_text')
+                .draggable()
+                .css('cursor', 'move')
+                .css('z-index', css_test_idx)
+                .resizable({
+                    //비율 유지
+                    //aspectRatio: true,
+                    //마우스 hover 아닐때 핸들러 숨기기
+                    autoHide: true
+                })
+                .mousedown(function () { // mousedown 이벤트 생성
+                    $(this).css('z-index', css_test_idx); // 클릭한 이미지만 z-index 증가시킴
+                    css_test_idx++;
+                    // 그러면 이미지가 겹칠경우 클릭한 것이 항상 위에 표시됨
+                });
+
+            $(".inputText").val("");
+        });
         //슬라이드 jquery 
         $(".center").slick({
             dots: false,
@@ -252,6 +300,7 @@
             $('.daggu_ele')
                 .draggable()
                 .css('cursor', 'move')
+                .css('z-index', css_test_idx)
                 .resizable({
                     //비율 유지
                     aspectRatio: true,
@@ -263,6 +312,7 @@
                     css_test_idx++;
                     // 그러면 이미지가 겹칠경우 클릭한 것이 항상 위에 표시됨
                 });
+
         });
     </script>
 

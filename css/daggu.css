@@ -14,6 +14,12 @@ body {
     margin: 10px;
 }
 
+.inputText {
+    resize: none;
+    font-size: 18px;
+    font-family: 'Do Hyeon', sans-serif;
+}
+
 form {
     width: 90%;
     margin: 0 auto;
@@ -74,6 +80,10 @@ form {
 .daggu_ele {
     position: absolute;
     width: 200px;
+}
+
+.daggu_ele_text {
+    position: absolute;
 }
 
 /*슬라이드 업 다운버튼*/
