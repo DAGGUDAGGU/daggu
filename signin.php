@@ -23,9 +23,9 @@
 ?>
     <script>
         alert('로그인 성공');
-        location.replace("main.html");
+        location.replace("main2.html");
     </script>
-<?php
+<?php 
     }else{
 ?>
     <script>

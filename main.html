@@ -11,11 +11,21 @@
 <body>
     <img src="img/moon.png" id="moon">
     <div class="buttons">
-        <a href="notice.html"><button class="forum">FORUM</button></a><br />
-        <a href="mypage.html"><button class="mypage">MY PAGE</button></a><br />
+        <!-- <a href="notice.html"><button class="forum" onclick="javascript:btn()">FORUM</button></a><br />
+        <a href="mypage.html"><button class="mypage" onclick="javascript:btn()">MY PAGE</button></a><br />
+        <a href="signin.html"><button class="signin" onclick="javascript:btn()">SIGN IN</button></a><br /> -->
+        <button class="forum" onclick="javascript:btn()">FORUM</button></a><br />
+        <button class="mypage" onclick="javascript:btn()">MY PAGE</button></a><br />
         <a href="signin.html"><button class="signin">SIGN IN</button></a><br />
     </div>
-    <a href="daggu.html"><button class="daggu">DAGGU</button></a>
+    <button class="daggu" onclick="javascript:btn()">DAGGU</button></a>
+
+    <script>
+        function btn(){
+            alert('로그인 후 사용가능');
+        }
+        </script>
+        
 </body>
 
 </html>

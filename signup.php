@@ -43,7 +43,7 @@
     
 ?>      
         <script> alert('회원가입이 되었습니다.');
-        location.href = 'signin.html'; 
+        location.replace('signin.html');
         </script>
 <?php
    }
