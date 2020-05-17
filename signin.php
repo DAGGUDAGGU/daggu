@@ -14,9 +14,9 @@
     //아이디와 패스워드 가져오기
     $get_id = $_GET['id'];
     $get_pw= $_GET['pw'];
-
-    $sql = "SELECT * FROM members WHERE name= '$get_id' AND id='$get_pw' ";
     
+    $sql = "SELECT * FROM members WHERE id= '$get_id' AND pws='$get_pw' ";
+    echo $sql,"::";
     $result = mysqli_query($conn,$sql);
 
     if(mysqli_num_rows($result)>0){//내가 가지고있는 데이터베이스 테이블에 비교
