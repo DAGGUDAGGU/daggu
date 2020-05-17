@@ -22,7 +22,7 @@
     if(mysqli_num_rows($result)>0){//내가 가지고있는 데이터베이스 테이블에 비교
 ?>
     <script>
-        alert('로그인 성공.');
+        alert('로그인 성공');
         location.replace("main.html");
     </script>
 <?php
