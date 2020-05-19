@@ -3,6 +3,7 @@
 
 <head>
     <title></title>
+    <meta charset="utf-8">
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
@@ -20,26 +21,34 @@
     <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
-    <link rel="stylesheet" href="css/daggu.css">
+    <link rel="stylesheet" href="css/daggu.css?1">
     <script type="text/javascript" src="daggu.js"></script>
 
     <!--font-->
     <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+
+    <!--html2canvas-->
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
 </head>
 
 <body>
     <!-- 꾸미는 쪽 -->
 
-    <div class="center-block diary">
-        <img class="diary_cover" src="img/다이어리커버1.png" width="1048px" height="536px">
-        <img class="diary_paper" src="img/paper/격자.png" width="1000px" height="550px"></div>
+    <!--<div id="diaryDiv">-->
+    <img class="diary_cover" src="img/다이어리커버1.png" width="1048px" height="536px">
+    <img class="diary_paper" src="img/paper/격자.png" width="1000px" height="550px">
+    <div class="diary_content"></div>
+
+
     </div>
-    <div class="diary_content">
+
+    <div id="trash" data-html2canvas-ignore="true">
 
     </div>
     <!--완성버튼-->
-    <div class="complete">
+    <div class="complete" data-html2canvas-ignore="true">
         <input type="checkbox" checked data-toggle="toggle" data-on="공개" data-off="비공개" data-onstyle="warning"
             data-style="slow" data-width="100px" data-height="40px">
         <button class="btn complete_btn">COMPLETE</button>
@@ -47,7 +56,7 @@
 
     <div class="tab_wrap down">
         <!--슬라이드 버튼-->
-        <div class="slide_btn">
+        <div class="slide_btn" data-html2canvas-ignore="true">
             <input type="checkbox" id="slideIcon">
             <label for="slideIcon">
                 <span></span>
@@ -210,9 +219,55 @@
     </div>
 
     <!-- link main -->
-    <a href="main.html"><img src="img/arrow_back.png" id="arrowBack" class="backArrow"></a>
+    <a href="main.html" data-html2canvas-ignore="true"><img src="img/arrow_back.png" id="arrowBack"
+            class="backArrow"></a>
 
     <script>
+        $(function () {
+            $("#trash").droppable({
+                accept: ".diary_content > div",
+                classes: {
+                    "ui-droppable-active": "ui-state-highlight"
+                },
+                drop: function (event, ui) {
+                    deleteImage(ui.draggable);
+                }
+            });
+        });
+
+        function deleteImage($item) {
+            $item.remove();
+        }
+        $(".complete_btn").on("click", function () {
+            html2canvas(document.querySelector("body")).then(canvas => {
+                saveAs(canvas.toDataURL('image/png'), "capture-test.png");
+                var photo = canvas.toDataURL("image/png");
+                $.ajax({
+                    method: 'POST',
+                    url: 'photo_upload.php',
+                    data: {
+                        photo: photo
+                    }
+                });
+            });
+
+
+        });
+
+        function saveAs(uri, filename) {
+            // 캡쳐된 파일을 이미지 파일로 내보낸다.
+            var link = document.createElement('a');
+            if (typeof link.download === 'string') {
+                link.href = uri;
+                link.download = filename;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            } else {
+                window.open(uri);
+            }
+        }
+
         $("#selectFont").change(function () {
             var selectFont = $("#selectFont option:selected").val();
             $(".inputText").css('font-family', selectFont);
@@ -227,12 +282,38 @@
             $(".inputText").css('font-size', textSize);
         });
 
+        var css_test_idx = 1;
+        //이미지 클릭 시 다이어리 부분에 추가, 
+        $('img[src^="img/maskingTape/"],img[src^="img/stiker/"], img[src^="img/notePad/"]').click(function () {
+            var src = $(event.target).attr("src");
+            $('.diary_content').append('<div class="daggu_ele"><img src=' + src + ' width="100%"></div>');
+
+            //드래그 가능하게, 이미지 위에 커서 올라갔을 때 커서 변경, 클릭했을때 맨앞으로 오게
+
+            $('.daggu_ele')
+                .draggable({
+                    containment: ".diary_content"
+                })
+                .css('cursor', 'move')
+                .css('z-index', css_test_idx)
+                .resizable({
+                    //비율 유지
+                    aspectRatio: true,
+                    //마우스 hover 아닐때 핸들러 숨기기
+                    autoHide: true,
+                })
+                .mousedown(function () { // mousedown 이벤트 생성
+                    $(this).css('z-index', css_test_idx); // 클릭한 이미지만 z-index 증가시킴
+                    css_test_idx++;
+                    // 그러면 이미지가 겹칠경우 클릭한 것이 항상 위에 표시됨
+                });
+
+        });
         $(".text_btn").click(function () {
             var text = $(".inputText").val();
             var selectFont = $("#selectFont option:selected").val();
             $('.diary_content').append('<div class="daggu_ele_text" style="font-family:' + selectFont +
                 ';font-size:' + textSize + 'px;">' + text + '</div>');
-            var css_test_idx = 1;
             $('.daggu_ele_text')
                 .draggable()
                 .css('cursor', 'move')
@@ -288,31 +369,6 @@
         // 새로고침, 뒤로가기 버튼 누르면 경고창 띄움
         $(window).bind("beforeunload", function (e) {
             //return "창을 닫으시겠습니까?";
-        });
-
-        //이미지 클릭 시 다이어리 부분에 추가, 
-        $('img[src^="img/maskingTape/"],img[src^="img/stiker/"], img[src^="img/notePad/"]').click(function () {
-            var src = $(event.target).attr("src");
-            $('.diary_content').append('<div class="daggu_ele"><img src=' + src + ' width="100%"></div>');
-
-            //드래그 가능하게, 이미지 위에 커서 올라갔을 때 커서 변경, 클릭했을때 맨앞으로 오게
-            var css_test_idx = 1;
-            $('.daggu_ele')
-                .draggable()
-                .css('cursor', 'move')
-                .css('z-index', css_test_idx)
-                .resizable({
-                    //비율 유지
-                    aspectRatio: true,
-                    //마우스 hover 아닐때 핸들러 숨기기
-                    autoHide: true,
-                })
-                .mousedown(function () { // mousedown 이벤트 생성
-                    $(this).css('z-index', css_test_idx); // 클릭한 이미지만 z-index 증가시킴
-                    css_test_idx++;
-                    // 그러면 이미지가 겹칠경우 클릭한 것이 항상 위에 표시됨
-                });
-
         });
     </script>
 
