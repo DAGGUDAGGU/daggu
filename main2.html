@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <style>
+
+    </style>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body onload="noBack();" onpageshow="if(event.persisted) noBack();" onunload="">
+    <script type="text/javascript">
+        window.history.forward();
+        function noBack(){window.history.forward();}
+       </script>
+    <img src="img/moon.png" id="moon">
+    <div class="buttons">
+        <a href="notice.html"><button class="forum">FORUM</button></a><br />
+        <a href="mypage.html"><button class="mypage">MY PAGE</button></a><br />
+        <a href="main.html"><button class="signin" onClick="window.close()" >LOG OUT</button></a><br />
+        
+    </div>
+    <button class="daggu">DAGGU</button></a>
+
+    <script>
+        function btn(){
+            alert('로그인 후 사용가능');
+        }
+        </script>
+        
+</body>
+
+</html>
