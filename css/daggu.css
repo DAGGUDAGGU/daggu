@@ -1,12 +1,126 @@
-body {
-    background-color: #EAE6F2;
+@font-face {
+    font-family: 'GmarketSansBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
-#arrowBack {
-    position: fixed;
-    left: 5px;
-    top: 10px;
+body {
+    background-color: #dddbed;
+    margin: 0;
+    padding: 0;
 }
+
+/* nav */
+
+#nav {
+    font-family: "GmarketSansBold";
+    width: 100%;
+    height: 60px;
+    background-color: #ffd98d;
+    border-bottom: 2px solid #b7b4ac;
+    display: inline-block;
+}
+
+#nav p {
+    padding-left: 10px;
+    display: inline;
+    color: #696554;
+    font-size: 18pt;
+}
+
+.slow .toggle-group {
+    transition: left 0.7s;
+    -webkit-transition: left 0.7s;
+}
+
+.complete {
+    float: right;
+    margin-right: -100px;
+    height: 100%;
+    line-height: 60px;
+    transform: translateX(-50%);
+}
+
+.complete_btn {
+    margin-left: 20px;
+    font-size: 16pt;
+    width: 150px;
+    height: 40px;
+    background-color: #fffbef;
+    color: #696554;
+    font-weight: bold;
+    border: 2px solid #696554;
+    border-radius: 7px;
+}
+
+/*switch*/
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin: 0;
+    /* top: 50%;
+    transform: translateY(-50%); */
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.switchSlider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #b7b4ac;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.switchSlider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #fffbef;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+#switchBox:checked+.switchSlider {
+    background-color: #696554;
+}
+
+#switchBox:focus+.switchSlider {
+    box-shadow: 0 0 1px #696554;
+}
+
+#switchBox:checked+.switchSlider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.switchSlider.round {
+    border-radius: 34px;
+}
+
+.switchSlider.round:before {
+    border-radius: 50%;
+}
+
+#arrowBack {}
 
 /* 텍스트 입력*/
 .text_btn {
@@ -37,35 +151,7 @@ form {
     transform: translateY(-50%);
 }
 
-/* 완성 버튼 그룹 */
-.slow .toggle-group {
-    transition: left 0.7s;
-    -webkit-transition: left 0.7s;
-}
 
-.complete {
-    transform: translateX(-50%);
-    position: fixed;
-    left: 50%;
-    bottom: 8%;
-}
-
-.complete_btn {
-    margin-left: 20px;
-    font-size: 18pt;
-    width: 250px;
-    background-color: #933DEA;
-    color: white;
-    font-weight: bold;
-    border: 2px solid #933DEA;
-    border-radius: 7px;
-}
-
-.complete_btn:hover {
-    color: #933DEA;
-    background-color: white;
-    border: 2px solid #933DEA;
-}
 
 /*다이어리*/
 .diary_content {

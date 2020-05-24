@@ -34,25 +34,30 @@
 </head>
 
 <body>
-    <!-- 꾸미는 쪽 -->
 
-    <!--<div id="diaryDiv">-->
-    <img class="diary_cover" src="img/다이어리커버1.png" width="1048px" height="536px">
-    <img class="diary_paper" src="img/paper/격자.png" width="1000px" height="550px">
+    <div id="nav">
+        <a href="newMain.html" data-html2canvas-ignore="true"><img src="img/arrow_back.png" id="arrowBack"
+                class="backArrow"></a>
+        <p>다꾸다꾸다꾸</p>
+        <div class="complete" data-html2canvas-ignore="true">
+            <p class="showSwitch">비공개</p>
+            <p style="display:none;" class="showSwitch"> 공개</p>
+            <label class="switch">
+                <input type="checkbox" id="switchBox">
+                <span class="switchSlider round"></span>
+            </label>
+            <button class="btn complete_btn">완성</button>
+        </div>
+    </div>
+    <!-- 꾸미는 쪽 -->
+    <img class="diary_cover" src="img/다이어리커버1.png" width="1048px" height="636px">
+    <img class="diary_paper" src="img/paper/격자.png" width="1000px" height="650px">
     <div class="diary_content"></div>
 
 
-    </div>
-
-    <div id="trash" data-html2canvas-ignore="true">
-
-    </div>
+    <div id="trash" data-html2canvas-ignore="true"> </div>
     <!--완성버튼-->
-    <div class="complete" data-html2canvas-ignore="true">
-        <input type="checkbox" checked data-toggle="toggle" data-on="공개" data-off="비공개" data-onstyle="warning"
-            data-style="slow" data-width="100px" data-height="40px">
-        <button class="btn complete_btn">COMPLETE</button>
-    </div>
+
 
     <div class="tab_wrap down">
         <!--슬라이드 버튼-->
@@ -219,10 +224,12 @@
     </div>
 
     <!-- link main -->
-    <a href="main.html" data-html2canvas-ignore="true"><img src="img/arrow_back.png" id="arrowBack"
-            class="backArrow"></a>
 
     <script>
+        $("#switchBox").click(function () {
+            $(".showSwitch").toggle();
+        });
+
         $(function () {
             $("#trash").droppable({
                 accept: ".diary_content > div",
@@ -357,7 +364,7 @@
 
         //슬라이드 탭메뉴 바꿨을 때 이미지 안 뜨는 거 해결
         $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-            $('.slider').slick('setPosition'); // 슬릭 위치 재배치
+            $('.slick-slider').slick('setPosition'); // 슬릭 위치 재배치
         });
 
         // 다이어리 속지 변경이벤트
