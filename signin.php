@@ -15,13 +15,16 @@
     $get_id = $_GET['id'];
     $get_pw= $_GET['pw'];
     
-    $sql = "SELECT * FROM members WHERE id= '$get_id' AND pws='$get_pw' ";
-    echo $sql,"::";
+    $sql = "SELECT * FROM members WHERE id= '$get_id' AND pw='$get_pw' ";
     $result = mysqli_query($conn,$sql);
 
     if(mysqli_num_rows($result)>0){//내가 가지고있는 데이터베이스 테이블에 비교
-?>
+      
+            session_start();
+            $_SESSION['id']=$get_id;
+      ?>
     <script>
+        
         alert('로그인 성공');
         location.replace("main2.html");
     </script>
