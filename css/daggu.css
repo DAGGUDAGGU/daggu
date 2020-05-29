@@ -20,13 +20,36 @@ body {
     background-color: #ffd98d;
     border-bottom: 2px solid #b7b4ac;
     display: inline-block;
+    position: relative;
 }
 
 #nav p {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     padding-left: 10px;
     display: inline;
     color: #696554;
     font-size: 18pt;
+}
+
+.menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    float: left;
+}
+
+.menu li img {
+    width: 60px;
 }
 
 .slow .toggle-group {
@@ -35,11 +58,21 @@ body {
 }
 
 .complete {
-    float: right;
+    position: absolute;
+    top: 50%;
+    right: 0;
     margin-right: -100px;
     height: 100%;
+    display: inline-block;
     line-height: 60px;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
+}
+
+.showSwitch {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 260px;
 }
 
 .complete_btn {
@@ -52,12 +85,13 @@ body {
     font-weight: bold;
     border: 2px solid #696554;
     border-radius: 7px;
+
 }
 
 /*switch*/
 .switch {
     position: relative;
-    display: inline-block;
+    top: 10px;
     width: 60px;
     height: 34px;
     margin: 0;
@@ -159,7 +193,8 @@ form {
     width: 100%;
     height: 530px;
     position: absolute;
-    top: 30%;
+    display: inline-block;
+    top: 39%;
     left: 50%;
     transform: translate(-50%, -30%);
 }
@@ -172,20 +207,22 @@ form {
 
 .diary_cover {
     position: absolute;
-    top: 30%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -30%);
 }
 
 .diary_paper {
     position: absolute;
-    top: 30%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -30%);
 }
 
 .daggu_ele {
     width: 200px;
+    position: absolute;
+    top: 0;
 
 }
 
