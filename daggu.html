@@ -39,9 +39,16 @@
         <a href="newMain.html" data-html2canvas-ignore="true"><img src="img/arrow_back.png" id="arrowBack"
                 class="backArrow"></a>
         <p>다꾸다꾸다꾸</p>
+        <ul class="menu">
+            <li><img src="img/스티커아이콘.png"></li>
+            <li><img src="img/속지 아이콘.png"></li>
+            <li><img src="img/쓰레기통 닫힌 아이콘.png"></li>
+        </ul>
+        <p class="showSwitch">비공개</p>
+        <p style="display:none;" class="showSwitch"> 공개</p>
+
         <div class="complete" data-html2canvas-ignore="true">
-            <p class="showSwitch">비공개</p>
-            <p style="display:none;" class="showSwitch"> 공개</p>
+
             <label class="switch">
                 <input type="checkbox" id="switchBox">
                 <span class="switchSlider round"></span>
@@ -226,6 +233,13 @@
     <!-- link main -->
 
     <script>
+        // 메뉴 클릭해서 탭메뉴 선택
+        function clickMenu() {
+            var idx = $(this).index();
+            switch (idx) {
+                case 0:
+            }
+        }
         $("#switchBox").click(function () {
             $(".showSwitch").toggle();
         });
