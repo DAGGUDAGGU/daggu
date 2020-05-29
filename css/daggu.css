@@ -13,7 +13,7 @@ body {
 
 /* nav */
 
-#nav {
+#Topnav {
     font-family: "GmarketSansBold";
     width: 100%;
     height: 60px;
@@ -23,7 +23,7 @@ body {
     position: relative;
 }
 
-#nav p {
+#Topnav p {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -31,6 +31,10 @@ body {
     display: inline;
     color: #696554;
     font-size: 18pt;
+}
+
+#title {
+    left: 50px;
 }
 
 .menu {
@@ -46,6 +50,7 @@ body {
 
 .menu li {
     float: left;
+    margin-left: 10px;
 }
 
 .menu li img {
@@ -154,7 +159,13 @@ body {
     border-radius: 50%;
 }
 
-#arrowBack {}
+#arrowBack {
+    width: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+}
 
 /* 텍스트 입력*/
 .text_btn {

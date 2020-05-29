@@ -35,12 +35,16 @@
 
 <body>
 
-    <div id="nav">
+    <div id="Topnav">
         <a href="newMain.html" data-html2canvas-ignore="true"><img src="img/arrow_back.png" id="arrowBack"
-                class="backArrow"></a> <!--화살표-->
-        <p>다꾸다꾸다꾸</p>
+                class="backArrow"></a>
+        <!--화살표-->
+        <p id="title">다꾸다꾸다꾸</p>
         <ul class="menu">
+            <li><img src="img/마스킹테이프2.png"></li>
+            <li><img src="img/메모장 아이콘.png"></li>
             <li><img src="img/스티커아이콘.png"></li>
+            <li><img src="img/텍스트 아이콘2.png"></li>
             <li><img src="img/속지 아이콘.png"></li>
             <li><img src="img/쓰레기통 닫힌 아이콘.png"></li>
         </ul>
@@ -230,15 +234,38 @@
     </div>
 
     <!-- link main -->
+    <!-- 
+    <li><img src="img/마스킹테이프2.png"></li>
+    <li><img src="img/메모장 아이콘.png"></li>
+    <li><img src="img/스티커아이콘.png"></li>
+    <li><img src="img/속지 아이콘.png"></li>
+    <li><img src="img/텍스트 아이콘2.png"></li>
+    <li><img src="img/쓰레기통 닫힌 아이콘.png"></li> -->
 
     <script>
+        //슬라이드 탭메뉴 바꿨을 때 이미지 안 뜨는 거 해결
+        $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+            $('.slick-slider').slick('setPosition'); // 슬릭 위치 재배치
+        });
+
         // 메뉴 클릭해서 탭메뉴 선택
-        function clickMenu() {
-            var idx = $(this).index();
-            switch (idx) {
-                case 0:
+        $('.menu li').click(function () {
+            var idx = $(this).index() + 1;
+
+
+            $('.tab-content div').removeClass('active');
+            $('.tab-content div:nth-child(' + idx + ')').addClass('active');
+            //$('.slick-slider').slick('refresh');
+
+            $('.slick-slider').slick('setPosition');
+            $('.nav li:nth-child(' + idx + ')').tab('show');
+
+            if ($('.tab_wrap').hasClass('down')) {
+                $('.tab_wrap').removeClass('down');
+                $('.tab_wrap').css('top', '50%');
             }
-        }
+        });
+
         $("#switchBox").click(function () {
             $(".showSwitch").toggle();
         });
@@ -375,10 +402,6 @@
             }
         });
 
-        //슬라이드 탭메뉴 바꿨을 때 이미지 안 뜨는 거 해결
-        $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-            $('.slick-slider').slick('setPosition'); // 슬릭 위치 재배치
-        });
 
         // 다이어리 속지 변경이벤트
         $('img[src^="img/paper/"]').click(function () {
