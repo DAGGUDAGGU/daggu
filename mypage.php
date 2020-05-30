@@ -1,5 +1,4 @@
 <?php
-
 //DB 연동
 header('Content-Type: text/html; charset=utf-8');
 $mysql_host = "localhost";
@@ -15,7 +14,8 @@ if(!$conn){//DB 연동 안될 때
 
 //session받기 -> 로그인 한 값가져오기
 session_start();
-$myId = $_SESSION['id'];
+$myId = $_SESSION['user_id'];
+$myName = $_SESSION['user_name'];
 
 //php 이미지 받을 list선언
 $imageList = null;
@@ -56,9 +56,12 @@ mysqli_close($conn);//데이터베이스 전송 종료하는 것이에용~
 </head>
 
 <body>
-
+    
     <div id="menu">
         <div id="fixmenu">
+        <div class = "name BU">
+        <?PHP ECHO"{$_SESSION['user_id']} "?>
+    </div>
             <img src="img/circle3.svg" id="circle"><br>
             <div class="buttons">
                 <img src="img/dot.svg" id="dot">
