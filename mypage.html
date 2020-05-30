@@ -27,8 +27,8 @@
                 <a href="mypage.html"><button class="bu" style="color: #FBDA65;">MY PAGE</button></a><br>
 
                 <img src="img/dot.svg" id="dot">
-                <a href="newMAin.html"><button class="bu" onMouseOver="this.style.color='#FBDA65'"
-                        onMouseOut="this.style.color='#000'">MAIN</button></a>
+                <button class="bu" onMouseOver="this.style.color='#FBDA65'" onclick="logout()"
+                    onMouseOut="this.style.color='#000'">LOG OUT</button>
             </div>
         </div>
     </div>
@@ -93,7 +93,12 @@
     </div> -->
 
     </div>
-
+    <script>
+        function logout() {
+            alert("정말 로그아웃을 하시겠습니까?");
+            location.href = 'logout.php';
+        }
+    </script>
 
 </body>
 

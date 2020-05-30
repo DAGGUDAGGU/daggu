@@ -59,9 +59,6 @@ mysqli_close($conn);//데이터베이스 전송 종료하는 것이에용~
     
     <div id="menu">
         <div id="fixmenu">
-        <div class = "name BU">
-        <?PHP ECHO"{$_SESSION['user_id']} "?>
-    </div>
             <img src="img/circle3.svg" id="circle"><br>
             <div class="buttons">
                 <img src="img/dot.svg" id="dot">
@@ -77,8 +74,8 @@ mysqli_close($conn);//데이터베이스 전송 종료하는 것이에용~
                 <a href="mypage.html"><button class="bu" style="color: #FBDA65;">MY PAGE</button></a><br>
 
                 <img src="img/dot.svg" id="dot">
-                <a href="main.html"><button class="bu" onMouseOver="this.style.color='#FBDA65'"
-                        onMouseOut="this.style.color='#000'">MAIN</button></a>
+                <a href="logout.php"><button class="bu" onMouseOver="this.style.color='#FBDA65'"
+                        onMouseOut="this.style.color='#000'">LOG OUT</button></a>
             </div>
         </div>
     </div>
