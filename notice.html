@@ -25,11 +25,11 @@
 
                 <img src="img/dot.svg" id="dot">
                 <a href="mypage.html"><button class="bu" onMouseOver="this.style.color='#FBDA65'"
-                    onMouseOut="this.style.color='#000'">MY PAGE</button></a><br>
+                        onMouseOut="this.style.color='#000'">MY PAGE</button></a><br>
 
                 <img src="img/dot.svg" id="dot">
-                <a href="main2.html"><button class="bu" onMouseOver="this.style.color='#FBDA65'"
-                        onMouseOut="this.style.color='#000'">MAIN</button></a>
+                <button class="bu" onMouseOver="this.style.color='#FBDA65'" onclick="logout()"
+                    onMouseOut="this.style.color='#000'">LOG OUT</button>
             </div>
         </div>
     </div>
@@ -45,7 +45,7 @@
         <div class="body">
             <div id="content">
                 <div id="contentsWord">2020.05.20</div>
-                <img src="img/image.png" width="90%" ><br>
+                <img src="img/image.png" width="90%"><br>
             </div>
 
             <div id="content">
@@ -89,12 +89,17 @@
     </div>
 
     <div class="space" id="space">
-    <!-- <div>
+        <!-- <div>
         <img src="img/user 3.svg" style="margin: 5%;">사용자이름
     </div> -->
 
     </div>
-
+    <script>
+        function logout() {
+            alert("정말 로그아웃을 하시겠습니까?");
+            location.href = 'logout.php';
+        }
+    </script>
 
 </body>
 
