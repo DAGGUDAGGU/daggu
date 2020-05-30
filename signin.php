@@ -26,11 +26,11 @@
         $_SESSION['user_name'] = $get_name;
         echo"{$_SESSION['user_id']} <- 아이디";
 ?>
-<meta http-equiv="refresh" content="0;url=notice.html"/>
+<!-- <meta http-equiv="refresh" content="0;url=notice.html"/> -->
     <script>
         alert('로그인 성공 ');
         
-        // location.replace("newMain.html");
+        location.replace("notice.html");
     </script>
 <?php 
     }else{

@@ -51,15 +51,40 @@ mysqli_close($conn);//데이터베이스 전송 종료하는 것이에용~
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>다꾸다꾸</title>
-    <link rel="stylesheet" href="css/mypage.css?after">
+    <link rel="stylesheet" href="css/mypage.css">
     
 </head>
 
 <body>
+
+
     
+    <!-- <div id="menu">
+        <div id="fixmenu">
+            <img src="img/circle3.svg" id="circle"><br>
+            <div class="buttons">
+                <img src="img/dot.svg" id="dot">
+                <a href="daggu.html"><button class="bu" onMouseOver="this.style.color='#FBDA65'"
+                        onMouseOut="this.style.color='#000'">DAGGU</button></a><br>
+                    다꾸하는 페이지
+
+                <img src="img/dot.svg" id="dot">
+                <a href="notice.html"><button class="bu" onMouseOver="this.style.color='#FBDA65'"
+                        onMouseOut="this.style.color='#000'">FORUM</button></a><br>
+
+                <img src="img/dot.svg" id="dot">
+                <a href="mypage.html"><button class="bu" style="color: #FBDA65;">MY PAGE</button></a><br>
+
+                <img src="img/dot.svg" id="dot">
+                <a href="logout.php"><button class="bu" onMouseOver="this.style.color='#FBDA65'"
+                        onMouseOut="this.style.color='#000'">LOG OUT</button></a>
+            </div>
+        </div>
+    </div> -->
     <div id="menu">
         <div id="fixmenu">
             <img src="img/circle3.svg" id="circle"><br>
+            
             <div class="buttons">
                 <img src="img/dot.svg" id="dot">
                 <a href="daggu.html"><button class="bu" onMouseOver="this.style.color='#FBDA65'"
@@ -74,11 +99,85 @@ mysqli_close($conn);//데이터베이스 전송 종료하는 것이에용~
                 <a href="mypage.html"><button class="bu" style="color: #FBDA65;">MY PAGE</button></a><br>
 
                 <img src="img/dot.svg" id="dot">
-                <a href="logout.php"><button class="bu" onMouseOver="this.style.color='#FBDA65'"
-                        onMouseOut="this.style.color='#000'">LOG OUT</button></a>
+                <button class="bu" onMouseOver="this.style.color='#FBDA65'" onclick="logout()"
+                    onMouseOut="this.style.color='#000'">LOG OUT</button>
             </div>
         </div>
     </div>
+
+
+
+    <div class="main" id="main">
+        <div id="head">
+            <div id="mypage">MY PAGE</div><br>
+            <!-- <div style="font-size: 5vw;">MY PAGE</div><br> -->
+            <hr width=100% style="border: solid 0.1vw #8F35E9; ">
+        </div>
+        <div class="body">
+            <div id="content">
+                <div id="contentsWord">2020.05.20</div>
+                <img src="img/image.png" width="90%"><br>
+            </div>
+
+            <div id="content">
+                <div id="contentsWord">2020.05.20</div>
+                <img src="img/image.png" width="90%"><br>
+            </div>
+
+
+
+            <div id="content">
+                <div id="contentsWord">2020.05.20</div>
+                <img src="img/다이어리커버1.png" width="90%"><br>
+            </div>
+
+            <div id="content">
+                <div id="contentsWord">2020.05.20</div>
+                <img src="img/다이어리커버1.png" width="90%"><br>
+            </div>
+
+            <div id="content">
+                <div id="contentsWord">2020.05.20</div>
+                <img src="img/다이어리커버1.png" width="90%"><br>
+            </div>
+
+            <div id="content">
+                <div id="contentsWord">2020.05.20</div>
+                <img src="img/다이어리커버1.png" width="90%"><br>
+            </div>
+
+            <div id="content">
+                <div id="contentsWord">2020.05.20</div>
+                <img src="img/다이어리커버1.png" width="90%"><br>
+            </div>
+
+            <div id="content">
+                <div id="contentsWord">2020.05.20</div>
+                <img src="img/다이어리커버1.png" width="90%"><br>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="space" id="space">
+
+            
+    
+        <div class = "info"style ="    display: flex;
+    margin-top: 30px;" >
+        <img src="img/user 3.svg"style = "margin-right:10px;">
+        <?php 
+            echo  $_SESSION['user_id'];
+            ?>
+    </div> 
+
+    </div>
+    <script>
+        function logout() {
+            alert("정말 로그아웃을 하시겠습니까?");
+            location.href = 'logout.php';
+        }
+    </script>
 
 
     <table>
