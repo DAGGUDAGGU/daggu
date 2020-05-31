@@ -15,22 +15,22 @@
     $get_id = $_GET['id'];
     $get_pw= $_GET['pw'];
     
-    $sql = "SELECT * FROM members WHERE id= '$get_id' AND pws='$get_pw' ";
-    echo $sql,"::";
+    $sql = "SELECT * FROM members WHERE id= '$get_id' AND pw='$get_pw' ";
+    echo $sql,"::**";
     $result = mysqli_query($conn,$sql);
 
     if(mysqli_num_rows($result)>0){//내가 가지고있는 데이터베이스 테이블에 비교
-        $get_name = "SELECT name FROM members WHERE id= '$get_id' AND pws='$get_pw' ";
+        $get_name = "SELECT name FROM members WHERE id= '$get_id' AND pw='$get_pw' ";
         session_start();
         $_SESSION['user_id'] = $get_id;
         $_SESSION['user_name'] = $get_name;
         echo"{$_SESSION['user_id']} <- 아이디";
 ?>
-<meta http-equiv="refresh" content="0;url=notice.html"/>
+<!-- <meta http-equiv="refresh" content="0;url=notice.html"/> -->
     <script>
         alert('로그인 성공 ');
         
-        location.replace("newMain.html");
+        location.replace("notice.html");
     </script>
 <?php 
     }else{

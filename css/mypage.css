@@ -5,7 +5,12 @@ body {
     text-align: left;
     margin: 0 auto;
 }
+.info{
+    display: inline-block;
+    margin-top: 30px;
+    background-color: #000000;
 
+}
 .bu {
     border: 0px;
     background-color: #ffffff;

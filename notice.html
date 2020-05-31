@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,9 +9,13 @@
     <title>다꾸다꾸</title>
     <link rel="stylesheet" href="css/mypage.css">
 </head>
-
 <body>
 
+    <?php 
+
+        echo $_SESSION['user_id'] = $get_id;
+        echo $_SESSION['user_name'] = $get_name;
+    ?>
     <div id="menu">
         <div id="fixmenu">
             <img src="img/circle3.svg" id="circle"><br>
@@ -24,7 +30,7 @@
 
 
                 <img src="img/dot.svg" id="dot">
-                <a href="mypage.html"><button class="bu" onMouseOver="this.style.color='#FBDA65'"
+                <a href="mypage.php"><button class="bu" onMouseOver="this.style.color='#FBDA65'"
                         onMouseOut="this.style.color='#000'">MY PAGE</button></a><br>
 
                 <img src="img/dot.svg" id="dot">
@@ -33,7 +39,6 @@
             </div>
         </div>
     </div>
-
 
 
     <div class="main" id="main">
