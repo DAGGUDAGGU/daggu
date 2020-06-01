@@ -12,6 +12,7 @@ $myName = $_SESSION['user_name'];
     <style>
 
     </style>
+    <meta charset="utf-8">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
@@ -48,10 +49,10 @@ $myName = $_SESSION['user_name'];
     ?>
     function signclick(){
         console.log(document.getElementById("sign").innerHTML);
-        if(res === "sign in"){
-            location.href = 'signin.html';
+        if((document.getElementById("sign").innerHTML) === "SIGN IN"){
+            location.href = 'signin.php';
         }
-        else if(res === "log out"){ 
+        else if((document.getElementById("sign").innerHTML)==="LOG OUT"){ 
             location.href = 'logout.php';
         }
     }

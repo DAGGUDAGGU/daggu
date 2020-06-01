@@ -3,9 +3,9 @@
 //DB 연동
 header('Content-Type: text/html; charset=utf-8');
 $mysql_host = "localhost";
-$mysql_user="root";
-$mysql_passwd="mirim2";
-$mysql_db="dakku";
+    $mysql_user="dakku";
+    $mysql_passwd="OTQlqUC5MF4lk2kl";
+    $mysql_db="dakku";
 
 $conn = mysqli_connect($mysql_host, $mysql_user,$mysql_passwd,$mysql_db);
 
@@ -51,7 +51,7 @@ mysqli_close($conn);//데이터베이스 전송 종료하는 것이에용~
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>다꾸다꾸</title>
-    <link rel="stylesheet" href="css/mypage.css?after">
+    <link rel="stylesheet" href="css/mypage.css">
     
 </head>
 
@@ -74,8 +74,8 @@ mysqli_close($conn);//데이터베이스 전송 종료하는 것이에용~
                 <a href="mypage.html"><button class="bu" style="color: #FBDA65;">MY PAGE</button></a><br>
 
                 <img src="img/dot.svg" id="dot">
-                <a href="main.html"><button class="bu" onMouseOver="this.style.color='#FBDA65'"
-                        onMouseOut="this.style.color='#000'">MAIN</button></a>
+                <a href="logout.php"><button class="bu" onMouseOver="this.style.color='#FBDA65'"
+                        onMouseOut="this.style.color='#000'">LOG OUT</button></a>
             </div>
         </div>
     </div>
@@ -88,7 +88,7 @@ mysqli_close($conn);//데이터베이스 전송 종료하는 것이에용~
                     if(mysqli_num_rows($result)>0){//내가 가지고있는 데이터베이스 테이블에 있는 튜플이 있는 경우
                         while($row=mysqli_fetch_array($result)){  
                             //echo '<img src="data:image/jpeg;base64,'.base64_encode($row['image']).'"/>';?>
-                            <img src=<?= '"data:image/jpeg;base64,'.base64_encode($row['image']).'"';?> id="imageDb">
+                            <img src=<?= '"data:image/jpeg;base64,'.base64_encode($row['image']).'"';?> id="imageDb"CLASS = "imageDb">
                             
                             <?php
                         }
