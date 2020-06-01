@@ -1,8 +1,8 @@
 <?php
-    $mysql_host = "localhost";
-    $mysql_user="root";
-    $mysql_passwd="mirim2";
-    $mysql_db="dakku";
+   $mysql_host = "localhost";
+   $mysql_user="dakku";
+   $mysql_passwd="OTQlqUC5MF4lk2kl";
+   $mysql_db="dakku";
     
     $conn = mysqli_connect($mysql_host, $mysql_user,$mysql_passwd,$mysql_db);
     
@@ -16,7 +16,6 @@
     $get_pw= $_GET['pw'];
     
     $sql = "SELECT * FROM members WHERE id= '$get_id' AND pw='$get_pw' ";
-    echo $sql,"::**";
     $result = mysqli_query($conn,$sql);
 
     if(mysqli_num_rows($result)>0){//내가 가지고있는 데이터베이스 테이블에 비교
