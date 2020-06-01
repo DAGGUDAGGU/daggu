@@ -46,7 +46,7 @@
             <li><img src="img/스티커 아이콘.png"></li>
             <li><img src="img/텍스트 아이콘2.png"></li>
             <li><img src="img/속지 아이콘.png"></li>
-            <li><img src="img/쓰레기통수정.png"></li>
+            <li><img src="img/쓰레기통수정.png" id="trashIcon"></li>
         </ul>
         <p class="showSwitch">비공개</p>
         <p style="display:none;" class="showSwitch"> 공개</p>
@@ -65,8 +65,6 @@
     <img class="diary_paper" src="img/paper/격자.png" width="1000px" height="650px">
     <div class="diary_content"></div>
 
-
-    <div id="trash" data-html2canvas-ignore="true"> </div>
     <!--완성버튼-->
 
     <div class="tab_wrap down">
@@ -232,15 +230,6 @@
         </div>
     </div>
 
-    <!-- link main -->
-    <!-- 
-    <li><img src="img/마스킹테이프2.png"></li>
-    <li><img src="img/메모장 아이콘.png"></li>
-    <li><img src="img/스티커아이콘.png"></li>
-    <li><img src="img/속지 아이콘.png"></li>
-    <li><img src="img/텍스트 아이콘2.png"></li>
-    <li><img src="img/쓰레기통 닫힌 아이콘.png"></li> -->
-
     <script>
         //슬라이드 탭메뉴 바꿨을 때 이미지 안 뜨는 거 해결
         $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
@@ -251,6 +240,11 @@
         $('.menu li').click(function () {
             var idx = $(this).index() + 1;
 
+            if (idx == 6) {
+                $('#trashIcon').attr("src", "img/쓰레기통 열린 아이콘.png");
+
+                return false;
+            }
 
             $('.tab-content div').removeClass('active');
             $('.tab-content div:nth-child(' + idx + ')').addClass('active');
