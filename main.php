@@ -51,7 +51,7 @@ $myName = $_SESSION['user_name'];
         if(res === "SIGN IN"){
             location.href = 'signin.html';
         }
-        else if(document.getElementById("sign").innerHTML){ 
+        else if((document.getElementById("sign").innerHTML)==="LOG OUT"){ 
             location.href = 'logout.php';
         }
     }
