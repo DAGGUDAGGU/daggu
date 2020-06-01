@@ -1,14 +1,14 @@
 <html>
 
 <head>
-<meta charset="utf-8">
+
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/signin.css">
 </head>
 
 <body>
-    <img src="img/signinbgpic.png" id="up">
-    <img src="img/signinbgpic.png" id="down">
+    <img src="img/UpQuotes.svg" id="up">
+    <img src="img/UpQuotes.svg" id="down">
     <div class="login_container">
         <div class="title">다꾸다꾸다꾸</div>
         <form name="signinfrm" method="POST">
@@ -32,11 +32,10 @@
 </html>
 
 <?php
-       $mysql_host = "localhost";
-       $mysql_user="dakku";
-       $mysql_passwd="OTQlqUC5MF4lk2kl";
-       $mysql_db="dakku";
-    
+    $mysql_host = "localhost";
+    $mysql_user="root";
+    $mysql_passwd="mirim2";
+    $mysql_db="dakku";
     
     $conn = mysqli_connect($mysql_host, $mysql_user,$mysql_passwd,$mysql_db);
     
