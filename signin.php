@@ -10,9 +10,7 @@
     <img src="img/signinbgpic.png" id="up">
     <img src="img/signinbgpic.png" id="down">
     <div class="login_container">
-
         <div class="title">다꾸다꾸다꾸</div>
-
         <form name="signinfrm" method="GET">
             <input type="text" class="login" placeholder="아이디" name="id" required><br />
             <input type="password" class="login login1" placeholder="비밀번호" name="pw" required><br />
@@ -27,17 +25,17 @@
                 <li><a href="signup.html">회원가입</a></li>
             </ul>
         </div>
-
+        
     </div>
 </body>
 
 </html>
 
 <?php
-   $mysql_host = "localhost";
-   $mysql_user="dakku";
-   $mysql_passwd="OTQlqUC5MF4lk2kl";
-   $mysql_db="dakku";
+    $mysql_host = "localhost";
+    $mysql_user="root";
+    $mysql_passwd="mirim2";
+    $mysql_db="dakku";
     
     $conn = mysqli_connect($mysql_host, $mysql_user,$mysql_passwd,$mysql_db);
     
