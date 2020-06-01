@@ -48,10 +48,10 @@ $myName = $_SESSION['user_name'];
     ?>
     function signclick(){
         console.log(document.getElementById("sign").innerHTML);
-        if(res === "sign in"){
+        if(res === "SIGN IN"){
             location.href = 'signin.html';
         }
-        else if(res === "log out"){ 
+        else if(document.getElementById("sign").innerHTML){ 
             location.href = 'logout.php';
         }
     }

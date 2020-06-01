@@ -1,3 +1,34 @@
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/signin.css">
+</head>
+
+<body>
+    <img src="img/signinbgpic.png" id="up">
+    <img src="img/signinbgpic.png" id="down">
+    <div class="login_container">
+        <div class="title">다꾸다꾸다꾸</div>
+        <form name="signinfrm" method="GET" action="signin.php">
+            <input type="text" class="login" placeholder="아이디" name="id" required><br />
+            <input type="password" class="login login1" placeholder="비밀번호" name="pw" required><br />
+            <button class="signin">로그인</button>
+        </form>
+        <hr>
+        <div class="opt">
+            <ul>
+                <li><a href="findid.html">아이디 찾기</a></li>
+                <li><a href="findpw.html">비밀번호 찾기</a></li>
+                <li><a href="signup.html">회원가입</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
+
 <?php
     $mysql_host = "localhost";
     $mysql_user="root";
@@ -16,7 +47,6 @@
     $get_pw= $_GET['pw'];
     
     $sql = "SELECT * FROM members WHERE id= '$get_id' AND pw='$get_pw' ";
-    echo $sql,"::**";
     $result = mysqli_query($conn,$sql);
 
     if(mysqli_num_rows($result)>0){//내가 가지고있는 데이터베이스 테이블에 비교
