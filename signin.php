@@ -10,13 +10,16 @@
     <img src="img/signinbgpic.png" id="up">
     <img src="img/signinbgpic.png" id="down">
     <div class="login_container">
+
         <div class="title">다꾸다꾸다꾸</div>
-        <form name="signinfrm" method="GET" action="signin.php">
+
+        <form name="signinfrm" method="GET">
             <input type="text" class="login" placeholder="아이디" name="id" required><br />
             <input type="password" class="login login1" placeholder="비밀번호" name="pw" required><br />
             <button class="signin">로그인</button>
         </form>
         <hr>
+
         <div class="opt">
             <ul>
                 <li><a href="findid.html">아이디 찾기</a></li>
@@ -24,6 +27,7 @@
                 <li><a href="signup.html">회원가입</a></li>
             </ul>
         </div>
+
     </div>
 </body>
 
