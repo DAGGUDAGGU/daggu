@@ -142,5 +142,5 @@ hr {
     height: 57px;
     right: 191px;
     bottom: 70px;
-    transform: rotate(180deg);
+    /* transform: rotate(180deg); */
 }
