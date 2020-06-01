@@ -1,23 +1,9 @@
-<?php
-//DB 연동
-header('Content-Type: text/html; charset=utf-8');
-$mysql_host = "localhost";
-$mysql_user="root";
-$mysql_passwd="mirim2";
-$mysql_db="dakku";
-
-$conn = mysqli_connect($mysql_host, $mysql_user,$mysql_passwd,$mysql_db);
-
-if(!$conn){//DB 연동 안될 때
-   die("연결 실패 : ".mysqli_connect_error());
-}
-
+<?php //DB 연동
 //session받기 -> 로그인 한 값가져오기
 session_start();
 $myId = $_SESSION['user_id'];
 $myName = $_SESSION['user_name'];
 
-mysqli_close($conn);//데이터베이스 전송 종료하는 것이에용~
 
 ?>
 <html>
@@ -52,19 +38,20 @@ mysqli_close($conn);//데이터베이스 전송 종료하는 것이에용~
     <?php
     if($myId!=null){//내가 가지고있는 데이터베이스 테이블에 비교
     ?>
-        document.getElementById("sign").innerHTML="log out";
+        document.getElementById("sign").innerHTML="LOG OUT";
     <?php
     }else{
     ?>
-        document.getElementById("sign").innerHTML="sign in";
+        document.getElementById("sign").innerHTML="SIGN IN";
     <?php
     }
     ?>
     function signclick(){
-        if(res.equals("sign in")){
+        console.log(document.getElementById("sign").innerHTML);
+        if(res === "sign in"){
             location.href = 'signin.html';
         }
-        else if(res.equals("log out")){
+        else if(res === "log out"){ 
             location.href = 'logout.php';
         }
     }
