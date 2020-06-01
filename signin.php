@@ -64,13 +64,15 @@
         
         location.replace("notice.html");
     </script>
+
 <?php 
-    }else{
+    }else if(!($get_id==null ||$get_name=null)){
 ?>
     <script>
         alert('아이디 또는 비밀번호가 맞지 않습니다.');
         document.signinfrm.id.focus();
     </script>
+    
 <?php
     }
 
