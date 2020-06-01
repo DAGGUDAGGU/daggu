@@ -12,6 +12,7 @@ $myName = $_SESSION['user_name'];
     <style>
 
     </style>
+    <meta charset="utf-8">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
