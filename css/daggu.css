@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 @font-face {
     font-family: 'GmarketSansBold';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
@@ -48,10 +50,10 @@ body {
     margin: 0;
 }
 
-.menu li:hover{
-    filter: brightness(80%);  
+.menu li:hover {
+    filter: brightness(80%);
     /*opacity:0;*/
-    transition:all .1s linear;
+    transition: all .1s linear;
 }
 
 .menu li {
@@ -193,16 +195,9 @@ form {
 }
 
 /*휴지통*/
-#trash {
-    background-color: sandybrown;
-    width: 100px;
-    height: 300px;
-    position: fixed;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
+.trash {
+    filter: drop-shadow(0 0 0.75rem crimson);
 }
-
 
 
 /*다이어리*/
@@ -244,6 +239,17 @@ form {
 
 }
 
+.eleGroup {
+    position: relative;
+}
+
+.deleteIcon {
+    width: 20px;
+    position: absolute;
+    right: -20px;
+    top: -20px;
+}
+
 .daggu_ele_text {
     position: absolute;
 }
@@ -252,7 +258,6 @@ form {
 .slide_btn {
     width: 60px;
     height: 60px;
-    background-color: #FBDA65;
     border-radius: 50px;
     float: right;
     position: absolute;
@@ -278,35 +283,39 @@ form {
 #slideIcon+label span {
     display: block;
     position: absolute;
-    width: 60%;
+    width: 70%;
     height: 5px;
     border-radius: 30px;
-    background-color: #EAE6F2;
+    background-color: #696554;
     transition: all .35s;
 }
 
 #slideIcon+label span:nth-child(1) {
-    top: 50%;
+    /* top: 50%;
     left: 37%;
-    transform: translateY(-50%) rotate(50deg);
+    transform: translateY(-50%) rotate(45deg); */
+    opacity: 0;
 }
 
 #slideIcon+label span:nth-child(2) {
-    top: 50%;
+    /* top: 50%;
     right: 37%;
-    transform: translateY(-50%) rotate(-50deg);
+    transform: translateY(-50%) rotate(-45deg); */
+    opacity: 0;
 }
 
 #slideIcon:checked+label span:nth-child(1) {
     top: 50%;
-    left: 37%;
-    transform: translateY(-50%) rotate(-50deg);
+    left: 17%;
+    transform: translateY(-50%) rotate(45deg);
+    opacity: 1;
 }
 
 #slideIcon:checked+label span:nth-child(2) {
     top: 50%;
-    right: 37%;
-    transform: translateY(-50%) rotate(50deg);
+    right: 17%;
+    transform: translateY(-50%) rotate(-45deg);
+    opacity: 1;
 }
 
 /*탭메뉴*/
@@ -381,4 +390,73 @@ form {
     background-color: #00ff0000;
     font-size: 0;
     color: transparent;
+}
+
+.vibrate-1 {
+    -webkit-animation: vibrate-1 0.3s linear infinite both;
+    animation: vibrate-1 0.3s linear infinite both;
+}
+
+@-webkit-keyframes vibrate-1 {
+    0% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+
+    20% {
+        -webkit-transform: translate(-2px, 2px);
+        transform: translate(-2px, 2px);
+    }
+
+    40% {
+        -webkit-transform: translate(-2px, -2px);
+        transform: translate(-2px, -2px);
+    }
+
+    60% {
+        -webkit-transform: translate(2px, 2px);
+        transform: translate(2px, 2px);
+    }
+
+    80% {
+        -webkit-transform: translate(2px, -2px);
+        transform: translate(2px, -2px);
+    }
+
+    100% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+}
+
+@keyframes vibrate-1 {
+    0% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+
+    20% {
+        -webkit-transform: translate(-2px, 2px);
+        transform: translate(-2px, 2px);
+    }
+
+    40% {
+        -webkit-transform: translate(-2px, -2px);
+        transform: translate(-2px, -2px);
+    }
+
+    60% {
+        -webkit-transform: translate(2px, 2px);
+        transform: translate(2px, 2px);
+    }
+
+    80% {
+        -webkit-transform: translate(2px, -2px);
+        transform: translate(2px, -2px);
+    }
+
+    100% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
 }
