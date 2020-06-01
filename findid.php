@@ -1,3 +1,27 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+      
+    </style>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/findid.css">
+</head>
+
+<body>
+    <div class="findid_container">
+        <div class="title">아이디 찾기</div>
+        <form method="GET" action="findid.php">
+            <input type="text" class="findid" placeholder="이름" name="name" required><br />
+            <input type="text" class="findid findid1" placeholder="이메일" name="email"" required><br />
+            <button class=" find">찾기</button>
+        </form>
+    </div>
+</body>
+
+</html>
+
 <?php
     $mysql_host = "localhost";
     $mysql_user="dakku";
