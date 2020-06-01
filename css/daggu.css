@@ -48,6 +48,12 @@ body {
     margin: 0;
 }
 
+.menu li:hover{
+    filter: brightness(80%);  
+    /*opacity:0;*/
+    transition:all .1s linear;
+}
+
 .menu li {
     float: left;
     margin-left: 10px;
@@ -55,6 +61,7 @@ body {
 
 .menu li img {
     width: 60px;
+    height: 50px;
 }
 
 .slow .toggle-group {
