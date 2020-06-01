@@ -17,28 +17,10 @@ if(!$conn){//DB 연동 안될 때
 session_start();
 $myId = $_SESSION['id'];
 
-//php 이미지 받을 list선언
-$imageList = null;
-
 //php부분
 $sql = "SELECT image FROM image WHERE id = '$myId'";
 $result = mysqli_query($conn,$sql);
 
-/*
-if(mysqli_num_rows($result)>0){//내가 가지고있는 데이터베이스 테이블에 있는 튜플이 있는 경우
-    while($row=mysqli_fetch_array($result)){
-        
-        echo '
-        <table>
-            <tr border=1px>
-        <td><img src="data:image/jpeg;base64,'.base64_encode($row['image']).'" id="myImage"/></td>
-            </tr>
-        </table>';
-    }
-}else{
-    echo "저장되있는 이미지가 없습니다.";
-}
-*/
 mysqli_close($conn);//데이터베이스 전송 종료하는 것이에용~
 
 ?>
