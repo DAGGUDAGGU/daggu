@@ -48,7 +48,7 @@
                 $content = $row['pw'];
                 //echo "아이디 : ".$row['id']."<br>";
                 echo "<script> alert('$content');  
-                location.href = 'signin.html'; 
+                location.href = 'signin.php'; 
                 </script>";
                 
             }

@@ -241,8 +241,39 @@
             var idx = $(this).index() + 1;
 
             if (idx == 6) {
-                $('#trashIcon').attr("src", "img/쓰레기통 열린 아이콘.png");
+                var src = ($('#trashIcon').attr('src') == 'img/쓰레기통수정.png') ? 'img/쓰레기통 열린 아이콘.png' :
+                    'img/쓰레기통수정.png';
+                $('#trashIcon').toggleClass('trashOn');
+                $('#trashIcon').attr('src', src);
 
+                if ($('#trashIcon').hasClass('trashOn')) {
+                    $('.daggu_ele').addClass('trash');
+                    $('.daggu_ele').addClass('vibrate-1');
+
+                    $('.daggu_ele_text').addClass('trash');
+                    $('.daggu_ele_text').addClass('vibrate-1');
+
+                    // $('.eleGroup').append('<img src="img/criss-cross.png" class="deleteIcon">');
+
+                    $('.daggu_ele').click(function () {
+                        if ($('.daggu_ele').hasClass('trash')) {
+                            $(this).remove();
+                        }
+                    });
+
+                    $('.daggu_ele_text').click(function () {
+                        if ($('.daggu_ele_text').hasClass('trash')) {
+                            $(this).remove();
+                        }
+                    });
+
+                } else {
+                    // $('.deleteIcon').remove();
+                    $('.daggu_ele').removeClass('trash');
+                    $('.daggu_ele').removeClass('vibrate-1');
+                    $('.daggu_ele_text').removeClass('trash');
+                    $('.daggu_ele_text').removeClass('vibrate-1');
+                }
                 return false;
             }
 
@@ -326,13 +357,15 @@
         //이미지 클릭 시 다이어리 부분에 추가, 
         $('img[src^="img/maskingTape/"],img[src^="img/stiker/"], img[src^="img/notePad/"]').click(function () {
             var src = $(event.target).attr("src");
-            $('.diary_content').append('<div class="daggu_ele"><img src=' + src + ' width="100%"></div>');
+            $('.diary_content').append('<div class="daggu_ele"><div class="eleGroup"><img src=' + src +
+                ' width="100%"></div></div>');
 
             //드래그 가능하게, 이미지 위에 커서 올라갔을 때 커서 변경, 클릭했을때 맨앞으로 오게
 
             $('.daggu_ele')
                 .draggable({
-                    containment: ".diary_content"
+                    containment: ".diary_content",
+                    cancel: ".deleteIcon"
                 })
                 .css('cursor', 'move')
                 .css('z-index', css_test_idx)
@@ -347,6 +380,16 @@
                     css_test_idx++;
                     // 그러면 이미지가 겹칠경우 클릭한 것이 항상 위에 표시됨
                 });
+
+            if ($('#trashIcon').hasClass('trashOn')) {
+                $('.daggu_ele').addClass('trash');
+                $('.daggu_ele').addClass('vibrate-1');
+                $('.daggu_ele').click(function () {
+                    if ($('.daggu_ele').hasClass('trash')) {
+                        $(this).remove();
+                    }
+                });
+            }
 
         });
         $(".text_btn").click(function () {
@@ -370,6 +413,15 @@
                     // 그러면 이미지가 겹칠경우 클릭한 것이 항상 위에 표시됨
                 });
 
+            if ($('#trashIcon').hasClass('trashOn')) {
+                $('.daggu_ele_text').addClass('trash');
+                $('.daggu_ele_text').addClass('vibrate-1');
+                $('.daggu_ele_text').click(function () {
+                    if ($('.daggu_ele_text').hasClass('trash')) {
+                        $(this).remove();
+                    }
+                });
+            }
             $(".inputText").val("");
         });
         //슬라이드 jquery 

@@ -1,7 +1,7 @@
 <html>
 
 <head>
-
+<meta charset="utf-8">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/signin.css">
 </head>
@@ -32,10 +32,11 @@
 </html>
 
 <?php
-    $mysql_host = "localhost";
-    $mysql_user="root";
-    $mysql_passwd="mirim2";
-    $mysql_db="dakku";
+       $mysql_host = "localhost";
+       $mysql_user="dakku";
+       $mysql_passwd="OTQlqUC5MF4lk2kl";
+       $mysql_db="dakku";
+    
     
     $conn = mysqli_connect($mysql_host, $mysql_user,$mysql_passwd,$mysql_db);
     
