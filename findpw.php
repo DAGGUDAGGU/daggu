@@ -1,3 +1,27 @@
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+    </style>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/findpw.css">
+
+</head>
+
+<body>
+    <div class="findpw_container">
+        <div class="title">비밀번호 찾기</div>
+        <form action="findpw.php" method="GET">
+            <input type="text" class="findpw" placeholder="이름" name="name" required><br />
+            <input type="text" class="findpw findpw1" placeholder="아이디" name="id" required><br />
+            <button class="find">찾기</button>
+        </form>
+    </div>
+</body>
+
+</html>
 <?php
         $mysql_host = "localhost";
         $mysql_user="dakku";
