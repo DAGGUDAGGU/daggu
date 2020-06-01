@@ -20,8 +20,8 @@
 
         <div class="opt">
             <ul>
-                <li><a href="findid.html">아이디 찾기</a></li>
-                <li><a href="findpw.html">비밀번호 찾기</a></li>
+                <li><a href="findid.php">아이디 찾기</a></li>
+                <li><a href="findpw.php">비밀번호 찾기</a></li>
                 <li><a href="signup.php">회원가입</a></li>
             </ul>
         </div>
