@@ -21,26 +21,28 @@ $myName = $_SESSION['user_name'];
 </head>
 
 <body>
-    <img src="img/mainbg2.jpg" id="background">
+<img src="img/mainbg2.jpg" id="background">
 
-    <img src="img/별똥별아이콘.png" id="star" class="slide-in-blurred-tr slide-out-bl">
-    <img src="img/구름1.png" id="cloud1" class="fade-in-right">
-    <img src="img/구름2.png" id="cloud2" class="fade-in-left">
-    <img src="img/구름3.png" id="cloud3" class="fade-in-left">
+<img src="img/별똥별아이콘.png" id="star" class="slide-out-bl">
 
-    <img src="img/Moon2.png" id="moon" class="wobble-hor-top">
+<img src="img/구름1.png" id="cloud1" class="fade-in-right">
+<img src="img/구름2.png" id="cloud2" class="fade-in-left">
+<img src="img/구름3.png" id="cloud3" class="fade-in-left">
+<img src="img/별똥별아이콘.png" id="star2" class="slide-out-bl2">
+<img src="img/별똥별아이콘.png" id="star3" class="slide-out-bl2">
+<img src="img/Moon2.png" id="moon" class="wobble-hor-top">
 
-    <div class="right bounce-in-right">
-        <img src="img/backgroundWhite.png" id="whiteBg">
-        <img src="img/backgroundLine.png" id="lineBg">
-        <div class="nav">
-            <a href="notice.html">게시판</a>
-            <a href="mypage.php">마이페이지</a>
-            <a href="signin.html"id = "sign">로그인</a>
-        </div>
-        <p>나만의 다이어리를 만드세요<br>다꾸다꾸다꾸</p>
-        <a href="daggu.html" class="dakkuBtn">다이어리 꾸미기</a>
+<div class="right bounce-in-right">
+    <img src="img/backgroundWhite.png" id="whiteBg">
+    <img src="img/backgroundLine.png" id="lineBg">
+    <div class="nav">
+        <a href="notice.html">게시판</a>
+        <a href="mypage.html">마이페이지</a>
+        <a href="signin.html">로그인</a>
     </div>
+    <p>나만의 다이어리를 만드세요<br>다꾸다꾸다꾸</p>
+    <a href="daggu.html" class="dakkuBtn">다이어리 꾸미기</a>
+</div>
 
     <script>
         var res = document.getElementById("sign").innerHTML;
