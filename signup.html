@@ -13,20 +13,20 @@
         <form name="signupfrm" method="GET" action="signup.php">
 
             <div class="title">SIGN UP</div>
-            <div class="suname su">이름<span id="essential"> *</span><br /><input type="text" class="signup" name="name"
+            <div class="suname su">이름<span id="essential"> *</span><br /><input type="new-text" class="signup"
+                    name="name" required>
+            </div>
+            <div class="suid su">아이디<span id="essential"> *</span><br /><input type="new-text" class="signup" name="id"
                     required>
             </div>
-            <div class="suid su">아이디<span id="essential"> *</span><br /><input type="text" class="signup" name="id"
-                    required>
-            </div>
-            <div class="supw su">비밀번호<span id="essential"> *</span><br /><input type="password" class="signup"
+            <div class="supw su">비밀번호<span id="essential"> *</span><br /><input type="new-password" class="signup"
                     id="userPw" placeholder="" name="pw" required>
             </div>
-            <div class="supwre su">비밀번호 확인<span id="essential"> *</span><br /><input type="password"
+            <div class="supwre su">비밀번호 확인<span id="essential"> *</span><br /><input type="new-password"
                     placeholder="비밀번호 재확인 입력" class="signup signuppwre" id="userPwChk" required>
                 <font id="chkNotice" size="2"></font>
             </div>
-            <div class="suemail su">이메일<input type="text" class="signup" name="email"></div>
+            <div class="suemail su">이메일<input type="new-text" class="signup" name="email"></div>
             <a href="signin.html"><button class="signupbtn">회원가입</button></a>
         </form>
 

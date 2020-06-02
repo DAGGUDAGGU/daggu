@@ -1,4 +1,4 @@
-<html>
+<!-- <html>
 
 <head>
 
@@ -29,12 +29,12 @@
     </div>
 </body>
 
-</html>
+</html> -->
 
 <?php
     $mysql_host = "localhost";
-    $mysql_user="root";
-    $mysql_passwd="mirim2";
+    $mysql_user="dakku";
+    $mysql_passwd="OTQlqUC5MF4lk2kl";
     $mysql_db="dakku";
     
     $conn = mysqli_connect($mysql_host, $mysql_user,$mysql_passwd,$mysql_db);
@@ -43,6 +43,7 @@
         die("연결 실패 : ".mysqli_connect_error());
     }
     echo "<script> console.log('연결성공')</script> <br>";
+
     
     //아이디와 패스워드 가져오기
     $get_id = $_GET['id'];
@@ -62,7 +63,7 @@
     <script>
         alert('로그인 성공 ');
         
-        location.replace("notice.html");
+        location.replace("newMain.php");
     </script>
 
 <?php 

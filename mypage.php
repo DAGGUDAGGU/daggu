@@ -1,17 +1,16 @@
 <?php
+    $mysql_host = "localhost";
+    $mysql_user="dakku";
+    $mysql_passwd="OTQlqUC5MF4lk2kl";
+    $mysql_db="dakku";
+    
+    $conn = mysqli_connect($mysql_host, $mysql_user,$mysql_passwd,$mysql_db);
+    
+    if(!$conn){
+        die("연결 실패 : ".mysqli_connect_error());
+    }
+    echo "<script> console.log('연결성공')</script> <br>";
 
-//DB 연동
-header('Content-Type: text/html; charset=utf-8');
-$mysql_host = "localhost";
-$mysql_user="root";
-$mysql_passwd="mirim2";
-$mysql_db="dakku";
-
-$conn = mysqli_connect($mysql_host, $mysql_user,$mysql_passwd,$mysql_db);
-
-if(!$conn){//DB 연동 안될 때
-   die("연결 실패 : ".mysqli_connect_error());
-}
 
 //session받기 -> 로그인 한 값가져오기
 session_start();

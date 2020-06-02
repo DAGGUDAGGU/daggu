@@ -1,4 +1,4 @@
-<html>
+<!--<html>
 
 <head>
 
@@ -10,7 +10,8 @@
     <img src="img/test.png" id="leftpic">
     <img src="img/000.png" id="botpic">
     <div class="signup_container">
-        <form name="signupfrm" method="GET" action="signup.php">
+        <!--<form name="signupfrm" method="GET" action="signup.php">
+        <form name="signupfrm" method="POST"action = "signup.php">
 
             <div class="title">SIGN UP</div>
             <div class="suname su">이름<span id="essential"> *</span><br /><input type="text" class="signup" name="name"
@@ -20,14 +21,14 @@
                     required>
             </div>
             <div class="supw su">비밀번호<span id="essential"> *</span><br /><input type="password" class="signup"
-                    id="userPw" placeholder="" name="pw" required>
+                    id="userPw" name="pw" required>
             </div>
             <div class="supwre su">비밀번호 확인<span id="essential"> *</span><br /><input type="password"
                     placeholder="비밀번호 재확인 입력" class="signup signuppwre" id="userPwChk" required>
                 <font id="chkNotice" size="2"></font>
             </div>
             <div class="suemail su">이메일<input type="text" class="signup" name="email"></div>
-            <a href="signin.html"><button class="signupbtn">회원가입</button></a>
+            <a href="signin.php"><button class="signupbtn">회원가입</button></a>
         </form>
 
     </div>
@@ -60,7 +61,7 @@
     </script>
 </body>
 
-</html>
+</html> -->
 
 <?php
   $mysql_host = "localhost";
@@ -73,9 +74,11 @@
     if(!$conn){
         die("연결 실패 : ".mysqli_connect_error());
     }
-?><script> console.log('연결성공')</script>
-<!--db연결 ------------------------------------------------------------------------------------------->
-<?php
+    echo "<script> console.log('연결성공')</script> <br>";
+
+
+//<!--db연결 ------------------------------------------------------------------------------------------->
+
     //이름과 이메일 html에서 가져오는거임
     $get_name = $_GET['name'];
     $get_id = $_GET['id'];
@@ -91,13 +94,13 @@
     
     if(mysqli_num_rows($result)>0){//아이디 중복 확인
        ?><script> alert('아이디가 이미 있습니다'); 
-            location.href = 'signup.html'; 
+            location.href = 'signup.php'; 
             document.signupfrm.id.focus();
             </script>
             <?php    
     }else{
 
-        $sql = "insert into members (name, id, pws, email)values('$get_name', '$get_id', '$get_pw', '$get_email')";//정보 입력
+        $sql = "insert into members (name, id, pw, email)values('$get_name', '$get_id', '$get_pw', '$get_email')";//정보 입력
 
         $result1 = mysqli_query($conn,$sql);
     }
