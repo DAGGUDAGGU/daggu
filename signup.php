@@ -97,7 +97,7 @@
             <?php    
     }else{
 
-        $sql = "insert into members (name, id, pws, email)values('$get_name', '$get_id', '$get_pw', '$get_email')";//정보 입력
+        $sql = "insert into members (name, id, pw, email)values('$get_name', '$get_id', '$get_pw', '$get_email')";//정보 입력
 
         $result1 = mysqli_query($conn,$sql);
     }

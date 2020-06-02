@@ -35,7 +35,7 @@ $myName = $_SESSION['user_name'];
         <img src="img/backgroundLine.png" id="lineBg">
         <div class="nav">
             <a href="notice.html">게시판</a>
-            <a href="mypage.html">마이페이지</a>
+            <a href="mypage.php">마이페이지</a>
             <a href="signin.html"id = "sign">로그인</a>
         </div>
         <p>나만의 다이어리를 만드세요<br>다꾸다꾸다꾸</p>
@@ -58,7 +58,7 @@ $myName = $_SESSION['user_name'];
         function signclick(){
             console.log(document.getElementById("sign").innerHTML);
             if((document.getElementById("sign").innerHTML) === "SIGN IN"){
-                location.href = 'signin.php';
+                location.href = 'signin.html';
             }
             else if((document.getElementById("sign").innerHTML)==="LOG OUT"){ 
                 location.href = 'logout.php';
