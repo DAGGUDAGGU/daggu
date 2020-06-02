@@ -31,7 +31,7 @@ mysqli_close($conn);//데이터베이스 전송 종료하는 것이에용~
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>다꾸다꾸</title>
-        <link rel="stylesheet" href="css/mypage.css">
+        <link rel="stylesheet" href="css/forum.css">
     </head>
 
     <body>
@@ -88,7 +88,7 @@ mysqli_close($conn);//데이터베이스 전송 종료하는 것이에용~
                         while($row=mysqli_fetch_array($result)){
                     ?>
                             <img
-                                src=<?= '"data:image/jpeg;base64,'.base64_encode($row['image']).'" id="imageDb"';?>
+                                src=<?= '"data:image/jpeg;base64,'.base64_encode($row['image']).'" id="callImage"';?>
                                 class="callImage">
                         <?php
                         }//if문 끝
