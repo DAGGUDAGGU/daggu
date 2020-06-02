@@ -36,12 +36,12 @@ $myName = $_SESSION['user_name'];
     <img src="img/backgroundWhite.png" id="whiteBg">
     <img src="img/backgroundLine.png" id="lineBg">
     <div class="nav">
-        <a href="notice.html">게시판</a>
-        <a href="mypage.html">마이페이지</a>
+        <a href="#"onclick="btn1()">게시판</a>
+        <a href="#"onclick="btn()">마이페이지</a>
         <a href="signin.html"id = "sign"onclick="signclick()">로그인</a> 
         </div>
         <p>나만의 다이어리를 만드세요<br>다꾸다꾸다꾸</p>
-        <a href="daggu.html" class="dakkuBtn">다이어리 꾸미기</a>
+        <a href="#" class="dakkuBtn"onclick="btn2()">다이어리 꾸미기</a>
     </div>
 
     <script>
@@ -67,9 +67,30 @@ $myName = $_SESSION['user_name'];
             }
         }
         function btn(){
-            if(document.getElementById("Button").disabled == "true"){
+            if((document.getElementById("sign").innerHTML) === "로그인"){
                 
                 alert('로그인 후 사용가능');
+            }else if((document.getElementById("sign").innerHTML) === "로그아웃"){
+                
+                location.href="mypage.html";
+            }
+        }
+        function btn1(){
+            if((document.getElementById("sign").innerHTML) === "로그인"){
+                
+                alert('로그인 후 사용가능');
+            }else if((document.getElementById("sign").innerHTML) === "로그아웃"){
+                
+                location.href="notice.html";
+            }
+        }
+        function btn2(){
+            if((document.getElementById("sign").innerHTML) === "로그인"){
+                
+                alert('로그인 후 사용가능');
+            }else if((document.getElementById("sign").innerHTML) === "로그아웃"){
+                
+                location.href="daggu.html";
             }
         }
     </script>
