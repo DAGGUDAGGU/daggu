@@ -6,6 +6,9 @@
 
     mkdir($_SERVER['DOCUMENT_ROOT'] . "/photos");
 
-    file_put_contents($_SERVER['DOCUMENT_ROOT'] . "/photos/".time().'.png', $data);
+    echo $_SERVER['DOCUMENT_ROOT'];
+    // file_put_contents($_SERVER['DOCUMENT_ROOT'] . "/photos/".time().'.png', $data);
+    file_put_contents("https://dakku.emirim.kr/photos/".time().'.png', $data);
+    echo "성공";
     die;
 ?>
