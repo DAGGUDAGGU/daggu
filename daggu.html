@@ -285,6 +285,8 @@
             $('.slick-slider').slick('setPosition');
             $('.nav li:nth-child(' + idx + ')').tab('show');
 
+            $("input:checkbox[id='slideIcon']").prop("checked", true);
+
             if ($('.tab_wrap').hasClass('down')) {
                 $('.tab_wrap').removeClass('down');
                 $('.tab_wrap').css('top', '50%');
@@ -438,8 +440,9 @@
         $('#slideIcon').click(function () {
             //슬라이드가 아래로 내려가있는 상태
             if ($('.tab_wrap').hasClass('down')) {
-                $('.tab_wrap').removeClass('down');
-                $('.tab_wrap').css('top', '50%');
+                $("input:checkbox[id='slideIcon']").prop("checked", false);
+                // $('.tab_wrap').removeClass('down');
+                // $('.tab_wrap').css('top', '50%');
             }
             // 슬라이드 올라와있는 상태
             else {

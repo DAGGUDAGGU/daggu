@@ -291,16 +291,16 @@ form {
 }
 
 #slideIcon+label span:nth-child(1) {
-    /* top: 50%;
-    left: 37%;
-    transform: translateY(-50%) rotate(45deg); */
+    top: 50%;
+    left: 17%;
+    transform: translateY(-50%);
     opacity: 0;
 }
 
 #slideIcon+label span:nth-child(2) {
-    /* top: 50%;
-    right: 37%;
-    transform: translateY(-50%) rotate(-45deg); */
+    top: 50%;
+    right: 17%;
+    transform: translateY(-50%);
     opacity: 0;
 }
 
