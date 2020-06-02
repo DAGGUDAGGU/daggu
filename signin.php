@@ -3,6 +3,10 @@
     $mysql_user="dakku";
     $mysql_passwd="OTQlqUC5MF4lk2kl";
     $mysql_db="dakku";
+    // $mysql_host = "localhost";
+    // $mysql_user="root";
+    // $mysql_passwd="mirim2";
+    // $mysql_db="dakku";
     
     $conn = mysqli_connect($mysql_host, $mysql_user,$mysql_passwd,$mysql_db);
     
@@ -36,7 +40,8 @@
 ?>
     <script>
         alert('아이디 또는 비밀번호가 맞지 않습니다.');
-        document.signinfrm.id.focus();
+        location.replace("signin.html");
+        // document.signinfrm.id.focus();
     </script>
     
 <?php
