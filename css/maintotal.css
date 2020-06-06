@@ -1,0 +1,63 @@
+.signup_container {
+    width: 90%;
+    float: right;
+}
+
+.title {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 50px;
+    text-align: center;
+    color: #660EC0;
+
+}
+
+.su {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    text-align: left;
+    /* identical to box height, or 167% */
+
+    text-indent: 1px;
+    text-transform: uppercase;
+
+    color: #000000;
+    margin: 10px auto;
+
+}
+
+#essential {
+    color: red;
+}
+
+.signup {
+    width: 95%;
+    background: rgba(245, 245, 245, 0.9);
+    box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.25);
+    padding: 10px;
+}
+
+.signupbtn {
+    /*
+            position: absolute;*/
+    border: 0;
+    width: 100%;
+    margin: 15px auto;
+    color: white;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 65px;
+    /* identical to box height, or 219% */
+
+    text-align: center;
+    text-indent: 1px;
+    text-transform: uppercase;
+    background: #933DEA;
+    box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.25);
+}
