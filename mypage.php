@@ -14,13 +14,13 @@
 
 //session받기 -> 로그인 한 값가져오기
 session_start();
-$myId = $_SESSION['id'];
+$myId = $_SESSION['user_id'];
 
-//php부분
+
+//id맞게 이미지 출력 부분
 $sql = "SELECT image FROM image WHERE id = '$myId'";
 $result = mysqli_query($conn,$sql);
 
-mysqli_close($conn);//데이터베이스 전송 종료하는 것이에용~
 
 ?>
 
@@ -87,8 +87,7 @@ mysqli_close($conn);//데이터베이스 전송 종료하는 것이에용~
                         <th>
                             <?php
                     if(mysqli_num_rows($result)>0){//내가 가지고있는 데이터베이스 테이블에 있는 튜플이 있는 경우
-                        while($row=mysqli_fetch_array($result)){  
-                            //echo '<img src="data:image/jpeg;base64,'.base64_encode($row['image']).'"/>';?>
+                        while($row=mysqli_fetch_array($result)){  ?>
 
                             <img
                                 src=<?= '"data:image/jpeg;base64,'.base64_encode($row['image']).'"';?>
@@ -98,6 +97,7 @@ mysqli_close($conn);//데이터베이스 전송 종료하는 것이에용~
                         }
                     }else{
                         echo "저장되있는 이미지가 없습니다.";
+                        echo "<script> console.log('야 왜 안되는거야? 진짜 손가락 뿌셔뿌셔')</script> <br>";
                     }
                 ?>
                         </th>
@@ -109,3 +109,6 @@ mysqli_close($conn);//데이터베이스 전송 종료하는 것이에용~
     </body>
 
 </html>
+<?php
+mysqli_close($conn);//데이터베이스 전송 종료하는 것이에용~
+?>

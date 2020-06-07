@@ -25,6 +25,7 @@ body {
 .buttons {
     margin: 20px 0 0 15px;
 }
+
 #menu {
     width: 20%;
     float: left;
@@ -96,8 +97,9 @@ body {
 #dot {
     width: 4%;
 }
+
 .callImage {
-    width: 50%;
+    width: 200px;
     position: relative;
     float:right;
 }
