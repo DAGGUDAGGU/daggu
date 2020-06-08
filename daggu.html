@@ -21,7 +21,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
-    <link rel="stylesheet" href="css/daggu.css?1">
+    <link rel="stylesheet" href="css/daggu.css?2">
     <script type="text/javascript" src="daggu.js"></script>
 
     <!--font-->
@@ -36,7 +36,7 @@
 
 <body>
 
-    <div id="Topnav">
+    <div id="Topnav" data-html2canvas-ignore="true">
         <a href="newMain.php" data-html2canvas-ignore="true"><img src="img/arrow_back.png" id="arrowBack"
                 class="backArrow"></a>
         <!--화살표-->
@@ -47,6 +47,7 @@
             <li><img src="img/스티커 아이콘.png"></li>
             <li><img src="img/텍스트 아이콘2.png"></li>
             <li><img src="img/속지 아이콘.png"></li>
+            <li><img src="img/사진 아이콘.png"></li>
             <li><img src="img/쓰레기통수정.png" id="trashIcon"></li>
         </ul>
         <p class="showSwitch">비공개</p>
@@ -84,6 +85,7 @@
             <li><a href="#sticker" data-toggle="tab">STICKER</a></li>
             <li><a href="#text" data-toggle="tab">TEXT</a></li>
             <li><a href="#paper" data-toggle="tab">PAPER</a></li>
+            <li><a href="#myImg" data-toggle="tab">MY IMAGE</a></li>
         </ul>
         <!--탭 메뉴 하단-->
         <div class="tab-content">
@@ -104,9 +106,6 @@
                     </div>
                     <div>
                         <img src="img/maskingTape/universe.png">
-                    </div>
-                    <div>
-                        <img src="img/maskingTape/고구마단색s.png">
                     </div>
                     <div>
                         <img src="img/maskingTape/WEEKDAY.png">
@@ -228,10 +227,40 @@
                 </section>
 
             </div>
+            <div class="tab-pane" id="myImg">
+                <div class="input-file center-block" style='width:490px;'>
+                    <input type="text" class="file-name" />
+                    <label for="upload01" class="file-label">사진 업로드</label>
+                    <input type="file" name="" id="upload01" class="file-upload" />
+                    <input type="button" id="inputImg" value="사진 삽입">
+                </div>
+                <div class="showImg">
+
+                </div>
+
+            </div>
+
         </div>
     </div>
 
     <script>
+        //사용자의 이미지 삽입
+        window.addEventListener('load', function () {
+            document.querySelector('input[type="file"]').addEventListener('change', function () {
+                if (this.files && this.files[0]) {
+                    var src = URL.createObjectURL(this.files[0]);
+                    $('.showImg').append('<img src=' + src + ' width="500px">');
+                    $('#inputImg').click(function () {
+                        $('.diary_content').append('<div class="daggu_ele"><img src=' + src +
+                            ' width="100%"></div>');
+                        addEventToEle();
+                    });
+
+
+                }
+            });
+        });
+
         //슬라이드 탭메뉴 바꿨을 때 이미지 안 뜨는 거 해결
         $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
             $('.slick-slider').slick('setPosition'); // 슬릭 위치 재배치
@@ -241,7 +270,7 @@
         $('.menu li').click(function () {
             var idx = $(this).index() + 1;
 
-            if (idx == 6) {
+            if (idx == 7) {
                 var src = ($('#trashIcon').attr('src') == 'img/쓰레기통수정.png') ? 'img/쓰레기통 열린 아이콘.png' :
                     'img/쓰레기통수정.png';
                 $('#trashIcon').toggleClass('trashOn');
@@ -313,7 +342,9 @@
             $item.remove();
         }
         $(".complete_btn").on("click", function () {
-            html2canvas(document.querySelector("body")).then(canvas => {
+            html2canvas(document.querySelector("body"), {
+                allowTaint: true //외부 이미지 허용
+            }).then(canvas => {
                 saveAs(canvas.toDataURL('image/png'), "capture-test.png");
                 var photo = canvas.toDataURL("image/png");
                 $.ajax({
@@ -360,9 +391,23 @@
         //이미지 클릭 시 다이어리 부분에 추가, 
         $('img[src^="img/maskingTape/"],img[src^="img/stiker/"], img[src^="img/notePad/"]').click(function () {
             var src = $(event.target).attr("src");
-            $('.diary_content').append('<div class="daggu_ele"><div class="eleGroup"><img src=' + src +
+            $('.diary_content').append('<div class="daggu_ele"><img src=' + src +
                 ' width="100%"></div></div>');
 
+            addEventToEle();
+            if ($('#trashIcon').hasClass('trashOn')) {
+                $('.daggu_ele').addClass('trash');
+                $('.daggu_ele').addClass('vibrate-1');
+                $('.daggu_ele').click(function () {
+                    if ($('.daggu_ele').hasClass('trash')) {
+                        $(this).remove();
+                    }
+                });
+            }
+
+        });
+
+        function addEventToEle() {
             //드래그 가능하게, 이미지 위에 커서 올라갔을 때 커서 변경, 클릭했을때 맨앞으로 오게
 
             $('.daggu_ele')
@@ -384,17 +429,7 @@
                     // 그러면 이미지가 겹칠경우 클릭한 것이 항상 위에 표시됨
                 });
 
-            if ($('#trashIcon').hasClass('trashOn')) {
-                $('.daggu_ele').addClass('trash');
-                $('.daggu_ele').addClass('vibrate-1');
-                $('.daggu_ele').click(function () {
-                    if ($('.daggu_ele').hasClass('trash')) {
-                        $(this).remove();
-                    }
-                });
-            }
-
-        });
+        }
         $(".text_btn").click(function () {
             var text = $(".inputText").val();
             var selectFont = $("#selectFont option:selected").val();

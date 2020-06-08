@@ -3,8 +3,8 @@
 //DB 연동
 header('Content-Type: text/html; charset=utf-8');
 $mysql_host = "localhost";
-$mysql_user="root";
-$mysql_passwd="mirim2";
+$mysql_user="dakku";
+$mysql_passwd="OTQlqUC5MF4lk2kl";
 $mysql_db="dakku";
 
 $conn = mysqli_connect($mysql_host, $mysql_user,$mysql_passwd,$mysql_db);
@@ -15,10 +15,10 @@ if(!$conn){//DB 연동 안될 때
 
 //session받기 -> 로그인 한 값가져오기
 session_start();
-$myId = $_SESSION['id'];
+$myId = $_SESSION['user_id'];
 
 //php부분
-$sql = "SELECT image FROM image WHERE id = '$myId' AND truefalse=1";
+$sql = "SELECT id,image FROM image WHERE truefalse=1";
 $result = mysqli_query($conn,$sql);
 //echo "$sql : ".$sql;
 
