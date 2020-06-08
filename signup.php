@@ -1,3 +1,4 @@
+
 <html>
 
 <head>
@@ -62,6 +63,10 @@
 
 </html>
 
+<?php
+session_start();
+session_destroy();
+?>
 <?php
   $mysql_host = "localhost";
   $mysql_user="dakku";
