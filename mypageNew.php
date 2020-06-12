@@ -1,7 +1,7 @@
 <?php
     $mysql_host = "localhost";
-    $mysql_user="root";
-    $mysql_passwd="mirim2";
+    $mysql_user="dakku";
+    $mysql_passwd="OTQlqUC5MF4lk2kl";
     $mysql_db="dakku";
     
     $getDate=$_POST['date'];
@@ -12,7 +12,7 @@
         die("연결 실패 : ".mysqli_connect_error());
     }
     echo "<script> console.log('연결성공')</script> <br>";
-    $myId="dgh09053";
+    $myId = $_SESSION['user_id'];
 
 
     if($getDate==null){
