@@ -1,67 +1,9 @@
-<html>
 
-<head>
 
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/signup.css">
-</head>
-
-<body>
-    <img src="img/test.png" id="leftpic">
-    <img src="img/000.png" id="botpic">
-    <div class="signup_container">
-        <form name="signupfrm" method="GET" action="signup.php">
-
-            <div class="title">SIGN UP</div>
-            <div class="suname su">이름<span id="essential"> *</span><br /><input type="text" class="signup" name="name"
-                    required>
-            </div>
-            <div class="suid su">아이디<span id="essential"> *</span><br /><input type="text" class="signup" name="id"
-                    required>
-            </div>
-            <div class="supw su">비밀번호<span id="essential"> *</span><br /><input type="password" class="signup"
-                    id="userPw" placeholder="" name="pw" required>
-            </div>
-            <div class="supwre su">비밀번호 확인<span id="essential"> *</span><br /><input type="password"
-                    placeholder="비밀번호 재확인 입력" class="signup signuppwre" id="userPwChk" required>
-                <font id="chkNotice" size="2"></font>
-            </div>
-            <div class="suemail su">이메일<input type="text" class="signup" name="email"></div>
-            <a href="signin.html"><button class="signupbtn">회원가입</button></a>
-        </form>
-
-    </div>
-    <script type="text/javascript"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script>
-        $(function () {
-            $('#userPw').keyup(function () {
-                $('#chkNotice').html('');
-            });
-
-            $('#userPwChk').keyup(function () {
-
-                if ($('#userPw').val() != $('#userPwChk').val()) {
-                    $('#chkNotice').html('비밀번호 일치하지 않음<br><br>');
-                    $('#chkNotice').attr('color', '#f82a2aa3');
-                    $('#chkNotice').css({
-                        margin: "0 0 0 -160px"
-                    });
-                } else {
-                    $('#chkNotice').html('비밀번호 일치함<br><br>');
-                    $('#chkNotice').attr('color', '#199894b3');
-                    $('#chkNotice').css({
-                        margin: "0 0 0 -120px"
-                    });
-                }
-
-            });
-        });
-    </script>
-</body>
-
-</html>
-
+<?php
+session_start();
+session_destroy();
+?>
 <?php
   $mysql_host = "localhost";
   $mysql_user="dakku";

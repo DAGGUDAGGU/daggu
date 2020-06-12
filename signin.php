@@ -32,7 +32,7 @@
 <!-- <meta http-equiv="refresh" content="0;url=notice.html"/> -->
     <script>
         alert('로그인 성공 ');
-        location.replace("newMain.php");
+        location.replace("mypage.php");
     </script>
 
 <?php 
@@ -40,7 +40,7 @@
 ?>
     <script>
         alert('아이디 또는 비밀번호가 맞지 않습니다.');
-        location.replace("signin.html");
+        location.replace("totalMain.php");
         // document.signinfrm.id.focus();
     </script>
     
