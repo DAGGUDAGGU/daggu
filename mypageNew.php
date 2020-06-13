@@ -12,11 +12,13 @@
         die("연결 실패 : ".mysqli_connect_error());
     }
     echo "<script> console.log('연결성공')</script> <br>";
+    session_start();
     $myId = $_SESSION['user_id'];
-
+    // $myId = "sowon0934";
+    // echo "<script>"+$myId+"console.log('연결성공')</script> <br>";
 
     if($getDate==null){
-        $sql = "SELECT * FROM image";
+        $sql = "SELECT * FROM image WHERE id = '$myId'";
     }else{
         $sql = "SELECT * FROM image WHERE id = '$myId' AND select_date='$getDate'";
 
@@ -26,7 +28,6 @@
     // }
 
     //  echo("날짜:" . $_POST['date'] . "<br/>");
-    //  echo $sql;
 
 //session받기 -> 로그인 한 값가져오기
 session_start();
@@ -45,20 +46,22 @@ $result = mysqli_query($conn,$sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />  
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.0.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.2.1.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />  
     <link rel="stylesheet" href="css/mypageNew.css">
     <link rel="stylesheet" href="css/forum.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> -->
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>  
-    <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>  
+    <script src="https://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
     
     <script>
-        
+        jQuery.browser = {}; (function () { jQuery.browser.msie = false; jQuery.browser.version = 0; if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) { jQuery.browser.msie = true; jQuery.browser.version = RegExp.$1; } })();
         $(function() {
             $( "#calender" ).datepicker({
             showAnim: "slide",
@@ -66,7 +69,7 @@ $result = mysqli_query($conn,$sql);
             showOn: 'button',
             changeMonth:'true',
             buttonImageOnly: true,
-            buttonImage: 'img/mypageIcon/calenderIcon.png',
+            buttonImage: 'img/mypageIcon/calenderIcon.svg',
             onSelect: function(date) {
             var ttt=$('#calender').val()
             }
@@ -104,9 +107,9 @@ $result = mysqli_query($conn,$sql);
         </nav>
         <div class="d-flex justify-content-center textDragDisable">
             <div class="row flex-column flex-md-row font" id="sub">
-                <div class="pr-5 pl-5">다꾸다꾸다꾸</div>
+                <div class="pr-5 pl-5"><a href="https://dakku.emirim.kr/daggu.html">다꾸다꾸다꾸</a></div>
                 <div class="pr-5 pl-5">게시판</div>
-                <div class="pr-5 pl-5">마이페이지</div>
+                <div class="pr-5 pl-5"><a href="https://dakku.emirim.kr/mypageNew.php">마이페이지</a></div>
                 <div class="pr-5 pl-5">로그아웃</div>
             </div>
         </div>

@@ -15,6 +15,11 @@ hr.line{
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none;
 }
+
+.fixed-bottom {
+    z-index:0;
+}
+
 #title{
     margin-top: 10px;
     color:#745C97;
@@ -42,7 +47,7 @@ hr.line{
     margin-bottom: clamp(200px, 230px, 50%);
     width:25%;
     opacity: 70%;
-    z-index: 1;
+    
 }
 #sub{
     font-size: clamp(1.1em, 1.3vw, 5vw);
