@@ -191,16 +191,15 @@
                         <option value="'Gamja Flower', cursive">감자꽃</option>
                     </select>
                     <span id="color_val"></span>
-                    <input type = "color" id="colorChange" onchange = "document.getElementById('textInput').style.color = this.value" 
+                    <input type = "color" id="colorChange" onchange = "document.getElementById('textInput').style.color = 'this.value'" 
                     @change="changeColor()">
-                    <select name="pets" id="font_size">
+                    <select name="font_size" id="font_size">
                         <option value="">폰트 크기</option>
-                            <option value="14pt">14pt</option>
-                            <option value="16pt">16pt</option>
-                            <option value="18pt">18pt</option>
-                            <option value="20pt">20pt</option>
-                            <option value="22pt">22pt</option>
-                            <option value="24pt">24pt</option>
+                        <script>
+                            for (var i = 10; i < 32; i += 2) {
+                                document.write("<option value = " + i + "pt> " + i + "</option>");
+                            }
+                        </script>
                     </select>
                     <input type="button" id="text_sizeUp" value="+">
                     <input type="button" id="text_sizeDown" value="-">

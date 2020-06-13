@@ -215,6 +215,7 @@ $("#font_size").change(()=>{
     $(".inputText").css('font-size', fontSize);
 });
 
+
 $(".text_btn").click(function () {
     var text = $(".inputText").val();
     var color=$("#colorChange").val();
