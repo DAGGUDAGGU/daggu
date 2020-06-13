@@ -183,7 +183,7 @@
             </div>
             <div class="tab-pane" id="text">
                 <form>
-                    <textarea id="textInput"placeholder="텍스트를 입력하세요." style="height:200px" class="form-control inputText" rows="10"
+                    <textarea id="textInput" placeholder="텍스트를 입력하세요." style="height:200px" class="form-control inputText" rows="10"
                         cols="200"></textarea>
                     <select id="selectFont">
                         <option value="'Do Hyeon', sans-serif">Dohyun</option>
@@ -191,8 +191,16 @@
                         <option value="'Gamja Flower', cursive">감자꽃</option>
                     </select>
                     <span id="color_val"></span>
-                    <input type = "color" id="colorChange" onchange = "document.getElementById('textInput').style.color = this.value" 
+                    <input type = "color" id="colorChange" onchange = "document.getElementById('textInput').style.color = 'this.value'" 
                     @change="changeColor()">
+                    <select name="font_size" id="font_size">
+                        <option value="">폰트 크기</option>
+                        <script>
+                            for (var i = 10; i < 32; i += 2) {
+                                document.write("<option value = " + i + "pt> " + i + "</option>");
+                            }
+                        </script>
+                    </select>
                     <input type="button" id="text_sizeUp" value="+">
                     <input type="button" id="text_sizeDown" value="-">
 
