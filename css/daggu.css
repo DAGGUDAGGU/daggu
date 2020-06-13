@@ -256,12 +256,7 @@ form {
     position: relative;
 }
 
-.deleteIcon {
-    width: 20px;
-    position: absolute;
-    right: -20px;
-    top: -20px;
-}
+
 
 .daggu_ele_text {
     position: absolute;
@@ -408,6 +403,8 @@ form {
 /*파일*/
 .input-file {
     margin-top: 10px;
+    margin-right: 10%;
+    float: right;
 }
 
 .input-file [type="file"] {
@@ -435,16 +432,6 @@ form {
     text-align: center;
 }
 
-.input-file .file-name {
-    width: 300px;
-    background: #f5f5f5;
-    height: 27px;
-    line-height: 26px;
-    text-indent: 5px;
-    border: 1px solid #bbb;
-    border-radius: 3px;
-}
-
 .input-file #inputImg {
     display: inline-block;
     min-width: 53px;
@@ -459,8 +446,46 @@ form {
     text-align: center;
 }
 
+.input-file #deleteUploadImg {
+    display: inline-block;
+    min-width: 53px;
+    height: 27px;
+    line-height: 24px;
+    padding: 0 10px;
+    border-radius: 3px;
+    border: 0;
+    font-size: 13px;
+    background-color: salmon;
+    color: black;
+    text-align: center;
+}
+
 .showImg {
     text-align: center;
+    margin-top: 10px;
+    width: 90%;
+    height: 50%;
+    background-color: #f5f5f5;
+    border-radius: 30px;
+
+}
+
+.userImg {
+    margin-left: 10px;
+    height: 100%;
+    display: inline-block;
+    position: relative;
+}
+
+.userImg img {
+    margin-top: 15%;
+}
+
+.deleteIcon {
+    width: 20px;
+    position: absolute;
+    right: 3px;
+    top: 3px;
 }
 
 .vibrate-1 {
