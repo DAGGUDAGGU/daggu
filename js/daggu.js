@@ -190,7 +190,6 @@ $('img[src^="img/maskingTape/"],img[src^="img/stiker/"], img[src^="img/notePad/"
 
 function addEventToEle() {
     //드래그 가능하게, 이미지 위에 커서 올라갔을 때 커서 변경, 클릭했을때 맨앞으로 오게
-
     $('.daggu_ele')
         .draggable({
             containment: ".diary_content"
@@ -210,12 +209,20 @@ function addEventToEle() {
         });
 
 }
+
+$("#font_size").change(()=>{
+    var fontSize = $("#font_size option:selected").val();
+    $(".inputText").css('font-size', fontSize);
+});
+
 $(".text_btn").click(function () {
     var text = $(".inputText").val();
     var color=$("#colorChange").val();
     var selectFont = $("#selectFont option:selected").val();
+    var fontSize = $("#font_size option:selected").val();
+
     $('.diary_content').append('<div class="daggu_ele_text" style="font-family:' + selectFont +
-        ';font-size:' + textSize + 'px;color:'+ color+';">'+text + '</div>');
+        ';font-size:' + textSize + 'px;color:'+ color+';font-size:'+fontSize+'">'+text + '</div>');
     $('.daggu_ele_text')
         .draggable()
         .css('cursor', 'move')
