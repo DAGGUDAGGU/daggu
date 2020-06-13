@@ -31,7 +31,6 @@
 ?>
 <!-- <meta http-equiv="refresh" content="0;url=notice.html"/> -->
     <script>
-        alert('로그인 성공 ');
         location.replace("mypage.php");
     </script>
 

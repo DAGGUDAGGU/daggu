@@ -42,8 +42,8 @@ $myName = $_SESSION['user_name'];
 ">
             <table>
                 <tr >
-                    <td>아이디</td>
-                    <td>비밀번호</td>
+                    <td class = "up">아이디</td>
+                    <td class = "up">비밀번호</td>
                     <td></td>
                 </tr>
                 <tr>
