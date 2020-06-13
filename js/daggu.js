@@ -212,9 +212,10 @@ function addEventToEle() {
 }
 $(".text_btn").click(function () {
     var text = $(".inputText").val();
+    var color=$("#colorChange").val();
     var selectFont = $("#selectFont option:selected").val();
     $('.diary_content').append('<div class="daggu_ele_text" style="font-family:' + selectFont +
-        ';font-size:' + textSize + 'px;">' + text + '</div>');
+        ';font-size:' + textSize + 'px;color:'+ color+';">'+text + '</div>');
     $('.daggu_ele_text')
         .draggable()
         .css('cursor', 'move')
