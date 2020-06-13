@@ -83,6 +83,8 @@ body {
     right: 3%;
     font-size: 22pt;
     font-family: 'GmarketSansBold';
+    width: 38%;
+    height: 100%;
 }
 
 .nav a {
