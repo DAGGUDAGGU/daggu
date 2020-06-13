@@ -190,7 +190,9 @@
                         <option value="'Nanum Pen Script', cursive">나눔 펜</option>
                         <option value="'Gamja Flower', cursive">감자꽃</option>
                     </select>
-                    <input type = "color" id="colorChange" onchange = "document.getElementById('textInput').style.color = this.value">
+                    <span id="color_val"></span>
+                    <input type = "color" id="colorChange" onchange = "document.getElementById('textInput').style.color = this.value" 
+                    @change="changeColor()">
                     <input type="button" id="text_sizeUp" value="+">
                     <input type="button" id="text_sizeDown" value="-">
 

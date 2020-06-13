@@ -243,6 +243,12 @@ $(".text_btn").click(function () {
     }
     $(".inputText").val("");
 });
+
+var colorButton = document.getElementById("colorChange");
+var colorDiv = document.getElementById("color_val");
+colorButton.onchange = ()=>{
+colorDiv.innerHTML = colorButton.value;
+}
 //슬라이드 jquery 
 $(".center").slick({
     dots: false,
