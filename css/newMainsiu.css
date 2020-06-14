@@ -80,11 +80,11 @@ body {
 .nav {
     position: absolute;
     top: 15px;
-    right: 2%;
+    right: 3%;
     font-size: 22pt;
     font-family: 'GmarketSansBold';
-    width : 38%;
-    height : 100%;
+    width: 38%;
+    height: 100%;
 }
 
 .nav a {
@@ -158,9 +158,7 @@ body {
     -webkit-animation: slide-left 2s cubic-bezier(0.785, 0.135, 0.150, 0.860) both;
     animation: slide-left 2s cubic-bezier(0.785, 0.135, 0.150, 0.860) both;
 }
-table{
-    float:right;
-}
+
 @-webkit-keyframes slide-left {
     0% {
         -webkit-transform: translateX(500px);

@@ -2,68 +2,32 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     font-family: 'Noto Sans', sans-serif;
-    text-align: left;
+    float: center;
     margin: 0 auto;
 }
-
-.bu {
-    border: 0px;
-    background-color: #ffffff;
-    font-family: 'Noto Sans', sans-serif;
-    font-weight: 1800;
-    font-weight: bold;
-    font-size: 1.5vw;
-    line-height: 150%;
-    color: #000000;
-    margin: 0 0 15px 5px;
-}
-
-#fixmenu {
-    position: fixed;
-}
-
-.buttons {
-    margin: 20px 0 0 15px;
-}
-
-#menu {
-    width: 20%;
-    float: left;
-    margin-left: 15px;
-    margin-top: 20px;
-    padding-bottom: 30px;
-
-}
-
-#space {
-    width: 15%;
-    height: 100%;
-    float: left;
-    margin-left: 30px;
-    margin-top: 20px;
-    padding-bottom: 30px;
-
-}
-
-#circle {
-    width: 60%;
-    margin-bottom: 8%;
-
-}
-
+/*
 .main {
     width: 60%;
-    float: left;
+    float: center;
     position: static;
 }
 
-#head {
-    position: fixed;
+/* .left{
     width: 60%;
+    height: 100%;
+    float: left;
+   
+
+} 
+
+
+ #head {
+    position: fixed;
     background-color: #ffffff;
     margin: 0 auto;
     top: 0;
-}
+    float: center;
+} 
 
 .body {
     padding-top: 25%;
@@ -73,15 +37,16 @@ body {
 }
 
 #content {
-    width: 50%;
-    float: right;
+    width: 100%;
     padding-bottom: 10%;
-    /* margin: 10%; */
+    /* margin: 10%; 
 
 }
 
+
+
 #contentsWord {
-    text-align: left;
+    text-align: center;
     padding-left: 13%;
     font-size: 1.3vw;
 }
@@ -92,8 +57,33 @@ body {
     padding-bottom: 15px;
     font-size: 3vw;
     font-family: 'Noto Sans', sans-serif;
+} */
+
+#title{
+    margin-top: 2%;
+    text-align: center;
+    font-size: 1.5vw;
+    margin-bottom: 5%;
 }
 
-#dot {
-    width: 4%;
+#main{
+    width: 60%;
+    float: center;
+    margin: 0 auto;
+    /* text-align: center; */
+    /* position: relative; */
 }
+#contentsWord{
+    margin-left: 22%;
+}
+#content{
+    
+    float: center;
+}
+
+/* #leftSpace{
+    width: 30%;
+    height: 100%;
+    float: left;
+    position: static;
+} */

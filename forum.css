@@ -1,95 +1,122 @@
-body {
-    background-repeat: no-repeat;
-    background-size: cover;
-    font-family: 'Noto Sans', sans-serif;
-    text-align: left;
+.img-fluid {
+    max-width: 100%;
+}
+hr.line {
+    border-top: 3px solid #745C97;
+    margin-top: 1%;
+    padding: 0;
+    width: 80%;
+}
+.textDragDisable {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
 }
 
-.bu {
-    border: 0;
-    background-color: #ffffff;
-    font-family: 'Noto Sans', sans-serif;
-    font-weight: 1800;
-    font-weight: bold;
-    font-size: 1.5vw;
-    line-height: 150%;
-    color: #000000;
-    margin: 0 0 15px 5px;
+.fixed-bottom {
+    z-index: 0;
 }
 
-#fixmenu {
-    position: fixed;
-}
-.buttons {
-    margin: 20px 0 0 15px;
-}
-#menu {
-    width: 20%;
-    float: left;
-    margin-left: 15px;
-    margin-top: 20px;
-    padding-bottom: 30px;
-
-    /* border: 1px solid #000;  */
-}
-#space {
-    width: 15%;
-    height: 100%;
-    float: left;
-    margin-left: 30px;
-    margin-top: 20px;
-    padding-bottom: 30px;
-    /* border: 1px solid #000; */
-
-}
-#circle {
-    width: 60%;
-    /* margin-bottom: 30px; */
-    margin-bottom: 8%;
-
-
-}
-.main {
-    width: 60%;
-    float: left;
-    position: static;
-    /* border: 1px solid rgb(192, 55, 55); */
-}
-
-#head {
-    position: fixed;
-    width: 60%;
-    background-color: #ffffff;
-    margin: 0 auto;
-    top: 0;
-}
-
-.body {
-    padding-top: 25%;
-    width: 100%;
-    float: right;
+#title {
+    margin-top: 10px;
+    color: #745C97;
+    font-size: clamp(2.3em, 3vw, 6em);
+    font-family: "GmarketSansBold";
     text-align: center;
+    cursor: pointer;
+    margin-bottom: 0;
+}
+#titleImage {
+    margin-top: 2px;
+    max-width: 100%;
+    width: clamp(1.2em, 2.6vw, 6em);
 }
 
-#content {
-    width: 50%;
-    float: right;
-    /* padding-bottom: 100px; */
-    padding-bottom: 10%;
+#cloud2 {
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+    width: 40%;
+    opacity: 70%;
 }
-#contentsWord {
-    text-align: left;
-    padding-left: 13%;
+
+#cloud1 {
+    position: relative;
+    margin-bottom: clamp(200px, 230px, 50%);
+    width: 25%;
+    opacity: 70%;
+
+}
+#sub {
+    font-size: clamp(1.1em, 1.3vw, 5vw);
+    color: #606060;
+    font-family: "GmarketSansMedium";
+    text-align: center;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+}
+
+#sub div:hover {
+    color: #000000;
+    font-weight: bold;
+}
+
+.nav {
+    text-align: center;
+    margin: 0;
+}
+
+a,s
+a:active,
+a:hover,
+a:visited {
+    color: inherit;
+}
+
+.card{
+    margin:4%;
+    float:left;
+    border:0;
+}
+
+#text{
+    font-family: 'Bazzi';
     font-size: 1.3vw;
+    /*border:1px solid #000000;*/
+    padding:0;
+    position: absolute;
+    left:0.3%;
+    margin:3% 0 0 10%;
 }
-/*dfs*/
-#mypage {
-    text-align: left;
-    padding-top: 6%;
-    padding-bottom: 15px;
-    font-size: 3vw;
-    font-family: 'Noto Sans', sans-serif;
+.imageFluid{
+    /*border:1px solid #745C97; */
+    margin-top:1.5%;
+   
 }
-#dot {
-    width: 4%;
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff") format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GmarketSansBold';
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff") format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Bazzi';
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/Bazzi.woff") format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
