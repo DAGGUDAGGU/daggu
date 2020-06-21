@@ -49,7 +49,7 @@ session_destroy();
     
 ?>      
         <script> alert('회원가입이 되었습니다.');
-        location.replace('signin.html');
+        location.replace('index.html');
         </script>
 <?php
    }
