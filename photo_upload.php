@@ -1,22 +1,26 @@
 <?php
-    $data = $_POST['photo'];
-    // list($type, $data) = explode(';', $data);
-    // list(, $data)      = explode(',', $data);
-    $data = str_replace(' ','+',$data);
-    $data = base64_decode($data);
-
-    mkdir($_SERVER['DOCUMENT_ROOT'] . "/photos");
-
-    echo $_SERVER['DOCUMENT_ROOT'];
     
-    //file_put_contents($_SERVER['DOCUMENT_ROOT'] . '/photos/'.'test.png', $data);
-    //file_put_contents('/home/dakku/www/photos/test.png', $data);
-    if (!$data =file_put_contents('/home/dakku/www/test.png', $data)) {
-        $error = error_get_last();
-        echo "HTTP request failed. Error was: " . $error['message'];
-  } else {
-        echo "Everything went better than expected";
-  }
+    session_start();
+    $myId = $_SESSION['user_id'];
+    $data = $_POST['photo'];
+    
+    $mysql_host = "localhost";
+    $mysql_user="dakku";
+    $mysql_passwd="OTQlqUC5MF4lk2kl";
+    $mysql_db="dakku";
 
-    die;
+    $conn = mysqli_connect($mysql_host, $mysql_user,$mysql_passwd,$mysql_db);
+
+    if(!$conn){
+        die("연결 실패 : ".mysqli_connect_error());
+    }
+    echo "<script> console.log('연결성공')</script> <br>";
+
+
+    $insertQuery = "insert into image (id,image,truefalse,select_date)"
+        ." values ('".$myId."','$data','1','20200614')";
+
+    $result = mysqli_query($conn,$insertQuery);
+
+    mysqli_close($conn);
 ?>

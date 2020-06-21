@@ -152,21 +152,6 @@ function saveAs(uri, filename) {
     }
 }
 
-$("#selectFont").change(function () {
-    var selectFont = $("#selectFont option:selected").val();
-    $(".inputText").css('font-family', selectFont);
-});
-
-
-var textSize = 18;
-$("#text_sizeUp").click(function () {
-    textSize++;
-    $(".inputText").css('font-size', textSize);
-});
-$("#text_sizeDown").click(function () {
-    textSize--;
-    $(".inputText").css('font-size', textSize);
-});
 
 var css_test_idx = 1;
 //이미지 클릭 시 다이어리 부분에 추가, 
@@ -210,20 +195,43 @@ function addEventToEle() {
 
 }
 
-$("#font_size").change(()=>{
-    var fontSize = $("#font_size option:selected").val();
+// 텍스트 추가
+$("#selectFont").change(function () {
+    var selectFont = $("#selectFont option:selected").val();
+    $(".inputText").css('font-family', selectFont);
+});
+
+var fontSize = 18;
+$("#font_size").change(() => {
+    fontSize = $("#font_size option:selected").val();
+    $(".inputText").css('font-size', fontSize + "px");
+});
+$("#text_sizeUp").click(function () {
+    fontSize++;
+    $(".inputText").css('font-size', fontSize);
+});
+$("#text_sizeDown").click(function () {
+    fontSize--;
     $(".inputText").css('font-size', fontSize);
 });
 
 
+var colorButton = document.getElementById("colorChange");
+var colorDiv = document.getElementById("color_val");
+colorButton.onchange = () => {
+    colorDiv.innerHTML = colorButton.value;
+    var color = $("#colorChange").val();
+    $(".inputText").css('color', color);
+}
+
 $(".text_btn").click(function () {
     var text = $(".inputText").val();
-    var color=$("#colorChange").val();
+    var color = $("#colorChange").val();
     var selectFont = $("#selectFont option:selected").val();
     var fontSize = $("#font_size option:selected").val();
 
     $('.diary_content').append('<div class="daggu_ele_text" style="font-family:' + selectFont +
-        ';font-size:' + textSize + 'px;color:'+ color+';font-size:'+fontSize+'">'+text + '</div>');
+        ';font-size:' + textSize + 'px;color:' + color + ';font-size:' + fontSize + '">' + text + '</div>');
     $('.daggu_ele_text')
         .draggable()
         .css('cursor', 'move')
@@ -252,11 +260,6 @@ $(".text_btn").click(function () {
     $(".inputText").val("");
 });
 
-var colorButton = document.getElementById("colorChange");
-var colorDiv = document.getElementById("color_val");
-colorButton.onchange = ()=>{
-colorDiv.innerHTML = colorButton.value;
-}
 //슬라이드 jquery 
 $(".center").slick({
     dots: false,
