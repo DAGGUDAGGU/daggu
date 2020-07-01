@@ -18,7 +18,7 @@
     // echo "<script>"+$myId+"console.log('연결성공')</script> <br>";
 
     if($getDate==null){
-        $sql = "SELECT * FROM image WHERE id = '$myId'";
+        $sql = "SELECT * FROM image WHERE id = '$myId' order by select_date";
     }else{
         $sql = "SELECT * FROM image WHERE id = '$myId' AND select_date='$getDate'";
 
@@ -49,13 +49,15 @@ $result = mysqli_query($conn,$sql);
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.9.0.js"></script>
     <script src="https://code.jquery.com/jquery-migrate-1.2.1.js"></script>
+
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />  
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/mypageNew.css">
     <link rel="stylesheet" href="css/forum.css">
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> -->
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
@@ -64,23 +66,38 @@ $result = mysqli_query($conn,$sql);
         jQuery.browser = {}; (function () { jQuery.browser.msie = false; jQuery.browser.version = 0; if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) { jQuery.browser.msie = true; jQuery.browser.version = RegExp.$1; } })();
         $(function() {
             $( "#calender" ).datepicker({
-            showAnim: "slide",
+            closeText : '닫기',        
+            prevText : '이전달',        
+            nextText : '다음달',        
+            currentText : '오늘',        
+            monthNames : ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],        
+            monthNamesShort : ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],        
+            dayNames : ['일', '월', '화', '수', '목', '금', '토'],        
+            dayNamesShort : ['일', '월', '화', '수', '목', '금', '토'],        
+            dayNamesMin : ['일', '월', '화', '수', '목', '금', '토'], 
+            showAnim: 'slide',
             dateFormat: 'yymmdd',
             showOn: 'button',
             changeMonth:'true',
             buttonImageOnly: true,
+            showButtonPanel: true,
             buttonImage: 'img/mypageIcon/calenderIcon.svg',
             onSelect: function(date) {
             var ttt=$('#calender').val()
-            }
-            // ,beforeShow: function (input, inst) {
-            // var rect = input.getBoundingClientRect();
-            // setTimeout(function () {
-            // inst.dpDiv.css({ top: rect.top - 250, left: rect.left +0 });
-            //     }, 0);
-            //     }
-            });
-            $("img.ui-datepicker-trigger").attr("style","padding-left:20%;  height:10%; vertical-align:middle; cursor: Pointer; ");           
+            document.getElementById('dateFrm').submit();
+            },
+            beforeShow: function (input, inst) {
+            var rect = input.getBoundingClientRect();
+            setTimeout(function () {
+                inst.dpDiv.css({ top: rect.top-100, left: rect.left + 0 });
+        }, 0);
+    }
+            
+            }); 
+            $('.ui-datepicker ').css({ "margin-left" : "-10%", "margin-top": "5%"});  //달력(calendar) 위치
+            $('.jquery-datepicker__panel').css({ "background-color": "#fff"}); 
+            $('img.ui-datepicker-trigger').css({'cursor':'pointer','height':'50px'});  //아이콘(icon) 위치
+            // $("img.ui-datepicker-trigger").attr("style"," height:15%; vertical-align:middle; cursor: Pointer; ");           
             });
     </script> 
 
@@ -89,10 +106,10 @@ $result = mysqli_query($conn,$sql);
 </head>
 <body>
 <div>
-        <div class="fixed-bottom" style="z-index:0;">
+        <div class="fixed-bottom" style="z-index:-2;">
             <img class="img-fluid" id="cloud2" src="img/구름2.png" alt="구름 2 이미지">
         </div>
-        <div class="fixed-bottom" style="z-index:0;">
+        <div class="fixed-bottom" style="z-index:-2;">
             <img src="img/구름1_1.png" id="cloud1" class="img-fluid float-right" alt="구름 1 이미지">
         </div>
     </div>
@@ -102,15 +119,17 @@ $result = mysqli_query($conn,$sql);
         <nav class="nav navbar-light justify-content-center">
             <div id="title" class="textDragDisable">
                 <img src="img/Moon2.png" class="d-inline-block align-top img-fluid" id="titleImage" alt="타이틀 이미지">
+                <a href="https://dakku.emirim.kr/index.php" style="text-decoration:none">
                 다꾸다꾸다꾸
+                </a>
             </div>
         </nav>
         <div class="d-flex justify-content-center textDragDisable">
             <div class="row flex-column flex-md-row font" id="sub">
-                <div class="pr-5 pl-5"><a href="https://dakku.emirim.kr/daggu.html">다꾸다꾸다꾸</a></div>
-                <div class="pr-5 pl-5">게시판</div>
-                <div class="pr-5 pl-5"><a href="https://dakku.emirim.kr/mypageNew.php">마이페이지</a></div>
-                <div class="pr-5 pl-5">로그아웃</div>
+                <div class="pr-5 pl-5"><a href="https://dakku.emirim.kr/daggu.html" style="text-decoration:none; " >다이어리 꾸미기</a></div>
+                <div class="pr-5 pl-5"><a href="https://dakku.emirim.kr/forum.php" style="text-decoration:none;">게시판</a></div>
+                <div class="pr-5 pl-5"><a href="https://dakku.emirim.kr/mypageNew.php"style="text-decoration:none; ">내 다이어리</a></div>
+                <!-- <div class="pr-5 pl-5"><a href="https://dakku.emirim.kr/logout.php"style="text-decoration:none;">로그아웃</a></div> -->
             </div>
         </div>
     </header>
@@ -118,21 +137,28 @@ $result = mysqli_query($conn,$sql);
 
    
 <div id="left">
-    <form action="mypageNew.php" method="post" id="dateFrm">
-    <input type="text"  id="calender" name="date" style="display:none;">
-      <!-- <input type="text" src="img/mypageIcon/calenderIcon.svg" id="calender" name="date" onclick='return false;'> -->
-    <input type="submit" value="검색" id="go" class="btn btn-primary">
-    <!-- <input type="hidden" name="date2" > -->
-    </form>
 </div>
 
 <div id="center">
 
     <div id="title">
+    <form action="mypageNew.php" method="post" id="dateFrm">
+        <input type="text"  id="calender" name="date" style="display:none">
+        </form> 
     <p id ="title_text">
         <img src="img/mypageIcon/sparkler.svg" width=2%>
-        <?php echo $myId; ?>님의 마이페이지 어쩌구 저쩌구 추카추카
+        <?php
+         
+         if($getDate==null){
+            echo $myId,"님의 모든 다이어리입니다"; 
+        }else{
+            echo $myId,"님의 ",substr($getDate, 0, 4),"년 ",substr($getDate, 4, 2),"월 ",substr($getDate, 6, 2),"일 다이어리입니다";     
+        }
+         
+         ?>
         <img src="img/mypageIcon/sparkler2.svg" width=2%>
+
+        
     </p>
     </div>
     
@@ -145,9 +171,15 @@ $result = mysqli_query($conn,$sql);
                             <?php
                     if(mysqli_num_rows($result)>0){//내가 가지고있는 데이터베이스 테이블에 있는 튜플이 있는 경우
                         while($row=mysqli_fetch_array($result)){  ?>
-                            <div id="contentsWord"><?=$row['select_date'] ?></div>
+                            <div id="contentsWord">
+                            <?php 
+                             $date_all = $row['select_date'];
+                             $dateVal_year = substr($date_all, 0, 3); 
+                             echo substr($date_all, 0, 4),"년",substr($date_all, 4, 2),"월",substr($date_all, 6, 2),"일"; 
+                            ?>
+                            </div>
                             <img
-                                src=<?= '"data:image/jpeg;base64,'.base64_encode($row['image']).'"';?>
+                                src=<?= '"'.$row['image'].'"';?>'
                                 class="callImage" width="100%">
 
                         <?php   
@@ -167,7 +199,9 @@ $result = mysqli_query($conn,$sql);
 
 </div>
 
-<div id="right"></div>
+<div id="right">
+
+</div>
                
 </div>
 
