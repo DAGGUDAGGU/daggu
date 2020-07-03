@@ -121,11 +121,12 @@ $("#switchBox").click(function () {
 
 $(".complete_btn").on("click", function () {
     html2canvas(document.querySelector("body"), {
-        allowTaint: true //외부 이미지 허용
+        allowTaint: true
     }).then(canvas => {
         saveAs(canvas.toDataURL('image/png'), "capture-test.png");
         var photo = canvas.toDataURL("image/png");
         //음 뭔가 photo를 폴더에 저장하지 말고 바로 db에 넣을 수 있을 것 같기도 하고...
+
         $.ajax({
             method: 'POST',
             url: 'photo_upload.php',
