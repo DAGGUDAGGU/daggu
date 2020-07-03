@@ -42,14 +42,15 @@ mysqli_close($conn);//데이터베이스 전송 종료하는 것이에용~
         <header>
             <!--내비바를 사용한 타이틀 부분-->
             <nav class="nav navbar-light justify-content-center">
-                <div id="title" class="textDragDisable">
-                    <img
-                        src="img/Moon2.png"
-                        class="d-inline-block align-top img-fluid"
-                        id="titleImage"
-                        alt="타이틀 이미지">
+            <div id="title" class="textDragDisable">
+                <a href="index.php">
+                    <img src="img/Moon2.png" 
+                    class="d-inline-block align-top img-fluid" 
+                    id="titleImage"
+                    alt="타이틀 이미지">
                     다꾸다꾸다꾸
-                </div>
+                </a>
+            </div>
             </nav>
             <div class="d-flex justify-content-center textDragDisable">
                 <div class="row flex-column flex-md-row font" id="sub">
