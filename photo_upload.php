@@ -3,6 +3,7 @@
     session_start();
     $myId = $_SESSION['user_id'];
     $data = $_POST['photo'];
+    $availability =$_POST['availability'];
     
     $mysql_host = "localhost";
     $mysql_user="dakku";
@@ -16,9 +17,10 @@
     }
     echo "<script> console.log('연결성공')</script> <br>";
 
+    $today = date("Ymd");
 
     $insertQuery = "insert into image (id,image,truefalse,select_date)"
-        ." values ('".$myId."','$data','1','20200614')";
+        ." values ('".$myId."','$data','".$availability."','".$today."')";
 
     $result = mysqli_query($conn,$insertQuery);
 

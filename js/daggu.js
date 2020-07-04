@@ -120,18 +120,29 @@ $("#switchBox").click(function () {
 });
 
 $(".complete_btn").on("click", function () {
+
+    var test = document.getElementById("switchBox");
+    alert(test.checked);
+    var availability;
+    if (test.checked == true) {
+        availability = 1;
+    } else {
+        availability = 0;
+    }
+
     html2canvas(document.querySelector("body"), {
         allowTaint: true
     }).then(canvas => {
         saveAs(canvas.toDataURL('image/png'), "capture-test.png");
         var photo = canvas.toDataURL("image/png");
         //음 뭔가 photo를 폴더에 저장하지 말고 바로 db에 넣을 수 있을 것 같기도 하고...
-
+        var a = 0;
         $.ajax({
             method: 'POST',
             url: 'photo_upload.php',
             data: {
-                photo: photo
+                photo: photo,
+                availability: availability
             }
         });
     });
