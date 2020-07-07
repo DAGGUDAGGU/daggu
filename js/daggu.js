@@ -202,7 +202,7 @@ function addEventToEle() {
         .mousedown(function () { // mousedown 이벤트 생성
             $(this).css('z-index', css_test_idx); // 클릭한 이미지만 z-index 증가시킴
             css_test_idx++;
-            // 그러면 이미지가 겹칠경우 클릭한 것이 항상 위에 표시됨
+            //  이미지가 겹칠경우 클릭한 것이 항상 위에 표시됨
         });
 
 }
@@ -243,7 +243,7 @@ $(".text_btn").click(function () {
     var fontSize = $("#font_size option:selected").val();
 
     $('.diary_content').append('<div class="daggu_ele_text" style="font-family:' + selectFont +
-        ';font-size:' + textSize + 'px;color:' + color + ';font-size:' + fontSize + '">' + text + '</div>');
+        ';font-size:' + fontSize + 'px;color:' + color + ';">' + text + '</div>');
     $('.daggu_ele_text')
         .draggable()
         .css('cursor', 'move')
