@@ -307,3 +307,4 @@ $('img[src^="img/paper/"]').click(function () {
 $(window).bind("beforeunload", function (e) {
     //return "창을 닫으시겠습니까?";
 });
+

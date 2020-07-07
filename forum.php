@@ -84,7 +84,6 @@ else{
     echo "저장되있는 이미지가 없습니다.";
 }//else 문 끝
 ?>
-
         <!--bottom-->
         <div>
             <div class="fixed-bottom" >
