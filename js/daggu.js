@@ -90,12 +90,24 @@ $('.menu li').click(function () {
                 }
             });
 
-        } else {
+        } 
+        else {
             // $('.deleteIcon').remove();
             $('.daggu_ele').removeClass('trash');
             $('.daggu_ele').removeClass('vibrate-1');
             $('.daggu_ele_text').removeClass('trash');
             $('.daggu_ele_text').removeClass('vibrate-1');
+        }
+        return false;
+    }
+    else if(idx==8)
+    {
+        var modal = document.getElementById('id01');
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
         }
         return false;
     }
@@ -307,3 +319,9 @@ $('img[src^="img/paper/"]').click(function () {
 $(window).bind("beforeunload", function (e) {
     //return "창을 닫으시겠습니까?";
 });
+
+
+$('#helpIcon').click(()=>{
+    document.getElementById('id01').style.display='block'
+})
+
