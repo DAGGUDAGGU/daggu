@@ -129,9 +129,7 @@ $("#switchBox").click(function () {
 });
 
 $(".complete_btn").on("click", function () {
-
     var test = document.getElementById("switchBox");
-    alert(test.checked);
     var availability;
     if (test.checked == true) {
         availability = 1;

@@ -589,7 +589,7 @@ form {
 
 
 #helpImage {
-    width: 80%;
+    width: 90%;
     height: auto;
     display: block;
     margin-left: auto;
@@ -615,7 +615,7 @@ form {
     /* Enable scroll if needed */
     background-color: rgb(0, 0, 0);
     /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.7);
     /* Black w/ opacity */
     padding-top: 60px;
 }
@@ -631,15 +631,17 @@ form {
 /* The Close Button (x) */
 .close {
     position: absolute;
-    right: 0px;
-    top: 0;
-    color: #000;
+    right: 30px;
+    top: 10px;
+    color: #ffffff;
     font-size: 35px;
     font-weight: bold;
+    opacity: 100%;
 }
 
 .close:hover,
 .close:focus {
+    opacity: 100%;
     color: red;
     cursor: pointer;
 }
@@ -668,4 +670,4 @@ form {
     to {
         transform: scale(1)
     }
-}
+} 

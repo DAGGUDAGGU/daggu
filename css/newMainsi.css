@@ -521,8 +521,8 @@ body {
     }
 
     100% {
-        -webkit-transform: translateY(1000px) translateX(-2000px);
-        transform: translateY(1000px) translateX(-2000px);
+        -webkit-transform: translateY(1000px) translateX(-8000px);
+        transform: translateY(1000px) translateX(-8000px);
     }
 }
 
@@ -533,7 +533,7 @@ body {
     }
 
     100% {
-        -webkit-transform: translateY(1000px) translateX(-2000px);
-        transform: translateY(1000px) translateX(-2000px);
+        -webkit-transform: translateY(1000px) translateX(-8000px);
+        transform: translateY(1000px) translateX(-8000px);
     }
 }
