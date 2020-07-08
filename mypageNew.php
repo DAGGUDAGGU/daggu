@@ -34,7 +34,7 @@ $result = mysqli_query($conn,$sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>다꾸다꾸다꾸 마이페이지</title>
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.9.0.js"></script>
     <script src="https://code.jquery.com/jquery-migrate-1.2.1.js"></script>
