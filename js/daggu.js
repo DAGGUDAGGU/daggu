@@ -239,7 +239,7 @@ $("#text_sizeDown").click(function () {
 
 var colorButton = document.getElementById("colorChange");
 var colorDiv = document.getElementById("color_val");
-colorButton.onchange = () => {
+colorButton.onchange = function () {
     colorDiv.innerHTML = colorButton.value;
     var color = $("#colorChange").val();
     $(".inputText").css('color', color);

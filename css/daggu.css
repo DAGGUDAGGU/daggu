@@ -252,6 +252,20 @@ form {
     transform: translate(-50%, -30%);
 }
 
+.diary_container {
+    width: 900px;
+    height: 600px;
+    margin: auto auto;
+}
+
+@media (min-width : 1600px) {
+
+    .diary_container {
+
+        margin: 6% auto;
+    }
+}
+
 .diary_paper {
     position: absolute;
     /* width: 100%; */
@@ -606,20 +620,18 @@ form {
     padding-top: 60px;
 }
 
-/* Modal Content/Box */
 .modal-content {
     background-color: #fefefe;
     margin: 5% auto 15% auto;
     /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid #888;
     width: 80%;
-    /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button (x) */
 .close {
     position: absolute;
-    right: 25px;
+    right: 0px;
     top: 0;
     color: #000;
     font-size: 35px;
