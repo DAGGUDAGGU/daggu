@@ -5,7 +5,6 @@
     $mysql_db="dakku";
     
     $getDate=$_POST['date'];
-    // echo  "날짜 "+$getDate;
     $conn = mysqli_connect($mysql_host, $mysql_user,$mysql_passwd,$mysql_db);
     
     if(!$conn){
@@ -14,27 +13,17 @@
     echo "<script> console.log('연결성공')</script> <br>";
     session_start();
     $myId = $_SESSION['user_id'];
-    // $myId = "sowon0934";
-    // echo "<script>"+$myId+"console.log('연결성공')</script> <br>";
 
     if($getDate==null){
-        $sql = "SELECT * FROM image WHERE id = '$myId' order by select_date";
+        $sql = "SELECT * FROM image WHERE id = '$myId' order by num";
     }else{
-        $sql = "SELECT * FROM image WHERE id = '$myId' AND select_date='$getDate'";
+        $sql = "SELECT * FROM image WHERE id = '$myId' AND select_date='$getDate' order by num";
 
     }
-    // else{
-    //     $sql = "SELECT image FROM image WHERE id = '$myId'";
-    // }
-
-    //  echo("날짜:" . $_POST['date'] . "<br/>");
-
-//session받기 -> 로그인 한 값가져오기
+    
 session_start();
-// $myId = $_SESSION['user_id'];
 
 
-//id, select_date에 맞게 이미지 출력 부분
 $result = mysqli_query($conn,$sql);
 
 
@@ -96,10 +85,13 @@ $result = mysqli_query($conn,$sql);
             }); 
             $('.ui-datepicker ').css({ "margin-left" : "-10%", "margin-top": "5%"});  //달력(calendar) 위치
             $('.jquery-datepicker__panel').css({ "background-color": "#fff"}); 
-            $('img.ui-datepicker-trigger').css({'cursor':'pointer','height':'50px'});  //아이콘(icon) 위치
-            // $("img.ui-datepicker-trigger").attr("style"," height:15%; vertical-align:middle; cursor: Pointer; ");           
+            $('img.ui-datepicker-trigger').css({'cursor':'pointer','margin-top':'-9.6%','right':'-10%','height':'5%'});  //아이콘(icon) 위치
+            // $("img.ui-datepicker-trigger").attr("style"," height:15%; vertical-align:middle; cursor: Pointer; ");      
+                 
             });
     </script> 
+
+
 
 
 
@@ -119,7 +111,7 @@ $result = mysqli_query($conn,$sql);
         <nav class="nav navbar-light justify-content-center">
             <div id="title" class="textDragDisable">
                 <img src="img/Moon2.png" class="d-inline-block align-top img-fluid" id="titleImage" alt="타이틀 이미지">
-                <a href="https://dakku.emirim.kr/index.php" style="text-decoration:none">
+                <a href="https://dakku.emirim.kr/index.php" style="text-decoration:none;line-height: 2;font-size: 4vw;">
                 다꾸다꾸다꾸
                 </a>
             </div>
@@ -128,7 +120,7 @@ $result = mysqli_query($conn,$sql);
             <div class="row flex-column flex-md-row font" id="sub">
                 <div class="pr-5 pl-5"><a href="https://dakku.emirim.kr/daggu.html" style="text-decoration:none; " >다이어리 꾸미기</a></div>
                 <div class="pr-5 pl-5"><a href="https://dakku.emirim.kr/forum.php" style="text-decoration:none;">게시판</a></div>
-                <div class="pr-5 pl-5"><a href="https://dakku.emirim.kr/mypageNew.php"style="text-decoration:none; ">내 다이어리</a></div>
+                <div class="pr-5 pl-5"><a href="https://dakku.emirim.kr/mypageNew.php"style="text-decoration:none; "><strong>내 다이어리</strong></a></div>
                 <!-- <div class="pr-5 pl-5"><a href="https://dakku.emirim.kr/logout.php"style="text-decoration:none;">로그아웃</a></div> -->
             </div>
         </div>
@@ -137,31 +129,90 @@ $result = mysqli_query($conn,$sql);
 
    
 <div id="left">
+<!-- <img src="img/upBtn.png" alt="My Image"> -->
 </div>
 
 <div id="center">
 
     <div id="title">
-    <form action="mypageNew.php" method="post" id="dateFrm">
-        <input type="text"  id="calender" name="date" style="display:none">
-        </form> 
+    
     <p id ="title_text">
         <img src="img/mypageIcon/sparkler.svg" width=2%>
+        <?php echo $myId?>님의 다이어리
+        <img src="img/mypageIcon/sparkler2.svg" width=2%>
+        <br><br>
+        <input type="image" name="button" src="img/LYarrow.svg" width=3% onclick="button2_click();" style="margin-right:10%;">
+
+        <script>
+        function button2_click() {
+            var a = new Date(
+                <?php echo substr($getDate, 0, 4) ?>,
+                <?php echo substr($getDate, 4, 2) ?>-1,
+                <?php echo substr($getDate, 6, 2) ?>
+                  );
+
+            a.setDate(a.getDate() - 1);
+            var year = a.getFullYear();              
+            var month = (1 + a.getMonth()); 
+            month = month >= 10 ? month : '0' + month; 
+            var day = a.getDate(); 
+            day = day >= 10 ? day : '0' + day;       
+            var date=  year + '' + month + '' + day;
+
+            console.log(date);
+            document.getElementById('calender').value=date;
+            document.getElementById('dateFrm').submit();
+        }
+        </script>
+
         <?php
-         
-         if($getDate==null){
-            echo $myId,"님의 모든 다이어리입니다"; 
+         if($getDate!=null){
+            echo substr($getDate, 0, 4),"년 ",substr($getDate, 4, 2),"월 ",substr($getDate, 6, 2),"일";
+            // echo $myId,"님의 모든 다이어리입니다"; 
         }else{
-            echo $myId,"님의 ",substr($getDate, 0, 4),"년 ",substr($getDate, 4, 2),"월 ",substr($getDate, 6, 2),"일 다이어리입니다";     
+            echo "전체"; 
+            ?>
+            <script>
+                document.getElementById("showAll").style.display = "none";
+            </script>
+            <?php
         }
          
          ?>
-        <img src="img/mypageIcon/sparkler2.svg" width=2%>
+         
+         <input type="image" name="button" src="img/RYarrow.svg" width=3% onclick="button1_click();"  style="margin-left:10%;">
 
+         <script>
+        function button1_click() {
+            var a = new Date(
+                <?php echo substr($getDate, 0, 4) ?>,
+                <?php echo substr($getDate, 4, 2) ?>-1,
+                <?php echo substr($getDate, 6, 2) ?>
+                  );
+
+            a.setDate(a.getDate() + 1);
+            var year = a.getFullYear();              
+            var month = (1 + a.getMonth()); 
+            month = month >= 10 ? month : '0' + month; 
+            var day = a.getDate(); 
+            day = day >= 10 ? day : '0' + day;       
+            var date=  year + '' + month + '' + day;
+
+            console.log(date);
+            document.getElementById('calender').value=date;
+            document.getElementById('dateFrm').submit();
+        }
+        </script>
+
+         <form action="mypageNew.php" method="post" id="dateFrm">
+        <input type="text"  id="calender" name="date" style="display:none">
+        </form> 
+        
+        <a href="mypageNew.php" style="text-align: right;font-size: 1vw;"><div id="showAll">전체보기</div></a>
         
     </p>
-    </div>
     
+    </div>
 
     <div id="main">
          <div class="body">
@@ -202,7 +253,8 @@ $result = mysqli_query($conn,$sql);
 <div id="right">
 
 </div>
-               
+          
+
 </div>
 
     
