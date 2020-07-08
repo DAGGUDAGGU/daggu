@@ -90,8 +90,7 @@ $('.menu li').click(function () {
                 }
             });
 
-        } 
-        else {
+        } else {
             // $('.deleteIcon').remove();
             $('.daggu_ele').removeClass('trash');
             $('.daggu_ele').removeClass('vibrate-1');
@@ -99,12 +98,10 @@ $('.menu li').click(function () {
             $('.daggu_ele_text').removeClass('vibrate-1');
         }
         return false;
-    }
-    else if(idx==8)
-    {
+    } else if (idx == 8) {
         var modal = document.getElementById('id01');
         // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
+        window.onclick = function (event) {
             if (event.target == modal) {
                 modal.style.display = "none";
             }
@@ -142,7 +139,7 @@ $(".complete_btn").on("click", function () {
         availability = 0;
     }
 
-    html2canvas(document.querySelector("body"), {
+    html2canvas(document.querySelector(".diary_container"), {
         allowTaint: true
     }).then(canvas => {
         //saveAs(canvas.toDataURL('image/png'), "capture-test.png");
@@ -321,7 +318,6 @@ $(window).bind("beforeunload", function (e) {
 });
 
 
-$('#helpIcon').click(()=>{
-    document.getElementById('id01').style.display='block'
+$('#helpIcon').click(() => {
+    document.getElementById('id01').style.display = 'block'
 })
-
