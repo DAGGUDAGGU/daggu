@@ -224,19 +224,7 @@ form {
     transform: translate(-50%, -30%);
 }
 
-.diary_container {
-    width: 900px;
-    height: 600px;
-    margin: auto auto;
-}
 
-@media (min-width : 1600px) {
-
-    .diary_container {
-
-        margin: 6% auto;
-    }
-}
 
 .diary {
     width: 100%;
@@ -670,4 +658,4 @@ form {
     to {
         transform: scale(1)
     }
-} 
+}

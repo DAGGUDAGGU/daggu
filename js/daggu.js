@@ -152,6 +152,7 @@ $(".complete_btn").on("click", function () {
                 availability: availability
             }
         });
+        location.href = "mypageNew.php";
     });
 
 
