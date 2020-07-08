@@ -255,7 +255,7 @@ form {
 .diary_container {
     width: 900px;
     height: 600px;
-    margin: auto auto;
+    margin: 6% auto;
 }
 
 @media (min-width : 1600px) {
