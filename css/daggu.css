@@ -243,10 +243,10 @@ form {
 .diary_container {
     width: 900px;
     height: 600px;
-    margin: 6% auto;
+    margin: auto auto;
 }
 
-@media (min-width : 1600px) {
+@media (min-height : 740px) {
 
     .diary_container {
 
