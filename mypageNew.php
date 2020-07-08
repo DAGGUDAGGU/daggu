@@ -85,7 +85,7 @@ $result = mysqli_query($conn,$sql);
             }); 
             $('.ui-datepicker ').css({ "margin-left" : "-10%", "margin-top": "5%"});  //달력(calendar) 위치
             $('.jquery-datepicker__panel').css({ "background-color": "#fff"}); 
-            $('img.ui-datepicker-trigger').css({'cursor':'pointer','margin-top':'-9.6%','right':'-10%','height':'5%'});  //아이콘(icon) 위치
+            $('img.ui-datepicker-trigger').css({'cursor':'pointer','margin-top':'-9.6%','right':'-12%','height':'5%'});  //아이콘(icon) 위치
             // $("img.ui-datepicker-trigger").attr("style"," height:15%; vertical-align:middle; cursor: Pointer; ");      
                  
             });
@@ -141,7 +141,7 @@ $result = mysqli_query($conn,$sql);
         <?php echo $myId?>님의 다이어리
         <img src="img/mypageIcon/sparkler2.svg" width=2%>
         <br><br>
-        <input type="image" name="button" src="img/LYarrow.svg" width=3% onclick="button2_click();" style="margin-right:10%;">
+        <input type="image" name="button" src="img/LYarrow.svg" width=3% onclick="button2_click();" style="margin-right:13%;">
 
         <script>
         function button2_click() {
@@ -180,7 +180,7 @@ $result = mysqli_query($conn,$sql);
          
          ?>
          
-         <input type="image" name="button" src="img/RYarrow.svg" width=3% onclick="button1_click();"  style="margin-left:10%;">
+         <input type="image" name="button" src="img/RYarrow.svg" width=3% onclick="button1_click();"  style="margin-left:14%;">
 
          <script>
         function button1_click() {
